@@ -1,57 +1,48 @@
 // const pesquisarCambio = async () => {
 async function pesquisarCambio() {
 
-  // let moedas = ['USD-BRL', 'EUR-BRL', 'BTC-BRL'];
+  let moedas = ['USD-BRL', 'EUR-BRL', 'BTC-BRL'];
 
-  /*   const response = await fetch('/movies');
-      // waits until the request completes...
-      console.log(response);
-    } */
-  // async function fetchMovies() {
-  const response = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL');
+  const response = await fetch(`https://economia.awesomeapi.com.br/last/${moedas}`);
   const cambio = await response.json();
   return cambio;
 }
+
 pesquisarCambio().then(cambio => {
   cambio; // fetched movies
-  let moedas = Object.keys(cambio);
-  for (let e of moedas) {
-    console.log(cambio[e])
-  }
-}
-)
-  // waits until the request completes...
+  let moeda = Object.keys(cambio);
+  const resultado = [];
+  for (let e of moeda) {
+    console.log(`
+    ${cambio[e]['code']} > ${cambio[e]['codein']}
+    low ${cambio[e]['low']} high ${cambio[e]['high']}`)
 
-  // await fetch(`https://economia.awesomeapi.com.br/last/${moedas.toString}`, {
-  /*   const vamo = await fetch(`https://economia.awesomeapi.com.br/last/USD-BRL`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error: ${response.status}`);
-      }
-      return response.json();
-    }).then((cambios) => {
-      if (cambios.length !== 0) {
-        console.log(JSON.stringify(cambios));
-        // document.getElementById('resposta').innerHTML =
-        //     `<div class="card" style="width: 18rem;">                
-        //     <div class="card-body">
-        //       <h5 class="card-title">${dogs[0]['name']}</h5>
-        //     </div>
-        //     <ul class="list-group list-group-flush">
-        //         <li class="list-group-item">Grupo: ${dogs[0]['breed_group']}</li>
-        //         <li class="list-group-item">Expectativa de vida: ${dogs[0]['life_spam']}</li>
-        //         <li class="list-group-item">Temperamento: ${dogs[0]['temperament']}</li>
-        //     </ul>                  
-        //     </div>
-        //   </div> <hr/>`
-      }
-    })
-    console.log(vamo) */
-  ;
+    resultado.push(`${cambio[e]['code']} > ${cambio[e]['codein']} - low ${cambio[e]['low']} high ${cambio[e]['high']}`)
+  }
+
+  let item = document.getElementsById('cambio')
+  item.innerHTML = `
+  <div>
+    <p>${resultado}</p>
+  </div>
+  `;
+  // item.style.animation-duration: 3s;
+  // item.style.animation-name: slidein;
+  
+  // @keyframes slidein {
+  //   from {
+  //     margin-left: 100%;
+  //     width: 300%
+  //   }
+  
+  //   to {
+  //     margin-left: 0%;
+  //     width: 100%;
+  //   }
+  // }
+  
+}
+) ;
 
 // ESTUDANDO COMO PUXAR DADOS DO XML
 
