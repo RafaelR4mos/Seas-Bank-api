@@ -142,15 +142,56 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="search-container">
+                    <h2>Faça a sua busca!</h2>
+
+                    <form>
+                        <div class="search">
+                            <div class="search-input">
+                                <input
+                                    type="text"
+                                    id="search-transaction-btn"
+                                    placeholder="Busque por Transações"
+                                />
+                            </div>
+                            <div>
+                                <button class="search-btn">
+                                    <img
+                                        src="./imgs/find-icon.svg"
+                                        alt="ícone de lupa representando uma busca"
+                                    />
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
                 <div class="transactions">
-                    <div class="transaction-title">
-                        <h2>Transações</h2>
-                        <div class="line"></div>
+                    <div class="transactions-header">
+                        <div class="transaction-title">
+                            <h2>Transações</h2>
+                        </div>
+
+                        <div class="transactions-btn">
+                            <button class="filter-btn" id="btn-entries">
+                                Entradas
+                            </button>
+                            <button class="filter-btn" id="btn-exits">
+                                Saídas
+                            </button>
+                            <button class="filter-btn" id="btn-all">All</button>
+                        </div>
                     </div>
+
                     <div class="date">
                         <span>19 de Fevereiro de 2023</span>
                     </div>
-                    <div class="transaction-container">
+
+                    <div
+                        id="transaction-container"
+                        class="transaction-container"
+                    >
                         <div class="transaction">
                             <div class="info">
                                 <div class="icon">
@@ -347,5 +388,6 @@
                 </div>
             </div>
         </main>
+        <script src="./js/script.js"></script>
     </body>
 </html>

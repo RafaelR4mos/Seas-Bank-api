@@ -146,24 +146,91 @@ body main .card-balance .balance-container .balance-header .balance-line {
 body main .card-balance .balance-container strong {
   font-weight: bold;
 }
+body main .search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+  padding: 48px 0;
+}
+body main .search-container h2 {
+  font-weight: 700;
+}
+body main .search-container .search {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-height: 80px;
+}
+body main .search-container .search .search-input {
+  flex-grow: 2;
+}
+body main .search-container .search .search-input input {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px 0 0 16px;
+  border: none;
+  padding: 0 18px;
+  background-color: #93d1e8;
+  color: #021733;
+  font-weight: 500;
+}
+body main .search-container .search .search-input input:focus {
+  outline: none;
+}
+body main .search-container .search .search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  max-height: 80px;
+  width: 100%;
+  height: 100%;
+  background-color: #01b8e3;
+  padding: 12px;
+  border-radius: 0 16px 16px 0;
+}
+body main .search-container .search .search-btn img {
+  width: 90%;
+  height: 90%;
+  max-height: 80px;
+}
 body main .transactions {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-body main .transactions .transaction-title {
+body main .transactions .transactions-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1.5px solid #798ba3;
+}
+body main .transactions .transactions-header .transaction-title {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
-body main .transactions .transaction-title h2 {
+body main .transactions .transactions-header .transaction-title h2 {
   font-weight: bold;
   text-transform: capitalize;
 }
-body main .transactions .transaction-title .line {
+body main .transactions .transactions-header .transaction-title .line {
   height: 1px;
   width: 100%;
   background-color: #798ba3;
+}
+body main .transactions .transactions-header .transactions-btn {
+  display: flex;
+  gap: 24px;
+}
+body main .transactions .transactions-header .transactions-btn .filter-btn {
+  border: none;
+  padding: 8px 12px;
+  height: fit-content;
+  background-color: #01b8e3;
+  color: #fff;
+  border-radius: 8px;
 }
 body main .transactions .date span {
   font-weight: 500;

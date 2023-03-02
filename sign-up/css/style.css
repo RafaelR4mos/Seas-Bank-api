@@ -84,6 +84,7 @@
   display: flex;
   justify-content: center;
   gap: 0.3rem;
+  width: 100%;
 }
 * body .sign-up-section .left-container .container form .inputs-cpf input::-webkit-outer-spin-button,
 * body .sign-up-section .left-container .container form .inputs-cpf input::-webkit-inner-spin-button {
@@ -100,6 +101,9 @@
 * body .sign-up-section .left-container .container form .inputs-cpf .addres-cpf-input:focus {
   outline: none;
   border: 1px solid rgba(255, 255, 255, 0.774);
+}
+* body .sign-up-section .left-container .container form .inputs-cpf input[placeholder=CPF] {
+  width: 100%;
 }
 * body .sign-up-section .left-container .container form .gender-number-container {
   width: 100%;

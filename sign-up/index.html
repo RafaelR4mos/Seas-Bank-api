@@ -1,142 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./css/style.css" />
-		<title>Seas Bank | Sign-up</title>
-		<script src="js/script.js"></script>
-	</head>
-	<body>
-		<section class="sign-up-section">
-			<div class="left-container">
-				<div class="container">
-					<div class="welcome">
-						<img
-							src="/imgs/gull-bird-flying-shape-svgrepo-com.svg"
-							alt="Logo do banco SeasBank (ave)"
-						/>
-						<h3>Seja bem-vindo</h3>
-					</div>
-					<form>
-						<div class="inputs-name-email input-div">
-							<input
-								type="text"
-								name="name-input"
-								id=""
-								class="upper-inputs inside-input input-placeholder input-focus"
-								placeholder="Informe seu nome"
-							/>
-							<input
-								type="email"
-								name="email-input"
-								id=""
-								class="upper-inputs inside-input .input-placeholder input-focus"
-								placeholder="Digite seu email"
-							/>
-						</div>
-						<div class="inputs-cpf">
-							<input
-								type="text"
-								name="cpf"
-								id=""
-								class="inside-input addres-cpf-input"
-								placeholder="CPF"
-							/>
-						</div>
-						<div class="inputs-cpf">
-							<input
-								type="number"
-								name="cep"
-								id=""
-								class="inside-input addres-cpf-input"
-								placeholder="CEP"
-								onblur="buscarCep(this.value)"
-							/>
-							<input
-								type="text"
-								name="addres"
-								id="addres"
-								class="inside-input addres-cpf-input"
-								placeholder="Logradouro"
-							/>							
-						</div>
-						<div class="inputs-cpf">
-							<input
-								type="text"
-								name="bairro"
-								id="bairro"
-								class="inside-input addres-cpf-input"
-								placeholder="BAIRRO"
-							/>
-							<input
-								type="text"
-								name="localidade"
-								id="localidade"
-								class="inside-input addres-cpf-input"
-								placeholder="Localidade"
-							/>							
-						</div>
-						<div class="inputs-cpf">
-							<input
-								type="text"
-								name="uf"
-								id="uf"
-								class="inside-input addres-cpf-input"
-								placeholder="UF"
-							/>
-							<input
-								type="text"
-								name="numero"
-								id="numero"
-								class="inside-input addres-cpf-input"
-								placeholder="Número"
-							/>							
-						</div>
-						
-						<div class="gender-number-container">
-							<div class="person-gender">
-								<h5>Gênero</h5>
-								<div class="male-gender">
-									<input type="radio" name="gender" id="" value="Masculino" />
-									<label for="gender">Masculino</label>
-								</div>
-								<div class="female-gender">
-									<input type="radio" name="gender" id="" value="Feminino" />
-									<label for="gender">Feminino</label>
-								</div>
-							</div>
-							<div class="number">
-								<input
-									type="number"
-									name="number"
-									id=""
-									placeholder="Celular"
-									class="inside-input input-placeholder input-focus"
-								/>
-							</div>
-						</div>
-						<div class="input-password">
-							<input
-								type="password"
-								name="password-account"
-								id=""
-								placeholder="Senha"
-								class="password inside-input .input-placeholder input-focus"
-							/>
-						</div>
-						<div class="open-account">
-							<button>
-								<a href="/dashboard/index.html" class="open">Abrir conta</a>
-							</button>
-						</div>
-					</form>
-				</div>
-			</div>
-			<div class="image-container desktop">
-				<img src="./imgs/4.webp" alt="Mulher mexendo em um notebook" />
-			</div>
-		</section>
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Seas Bank | Sign-up</title>
+    </head>
+    <body>
+        <section class="sign-up-section">
+            <div class="left-container">
+                <div class="container">
+                    <div class="welcome">
+                        <img
+                            src="/imgs/gull-bird-flying-shape-svgrepo-com.svg"
+                            alt="Logo do banco SeasBank (ave)"
+                        />
+                        <h3>Seja bem-vindo</h3>
+                    </div>
+                    <form>
+                        <div class="inputs-name-email input-div">
+                            <input
+                                type="text"
+                                name="name-input"
+                                id=""
+                                class="upper-inputs inside-input input-placeholder input-focus"
+                                placeholder="Informe seu nome"
+                                required
+                            />
+                            <input
+                                type="email"
+                                name="email-input"
+                                id=""
+                                class="upper-inputs inside-input .input-placeholder input-focus"
+                                placeholder="Digite seu email"
+                                required
+                            />
+                        </div>
+                        <div class="inputs-cpf">
+                            <input
+                                type="number"
+                                name="cpf"
+                                id=""
+                                class="inside-input addres-cpf-input"
+                                placeholder="CPF"
+                                required
+                            />
+                        </div>
+                        <div class="inputs-cpf">
+                            <input
+                                type="number"
+                                name="cep"
+                                id="cep-input"
+                                class="inside-input addres-cpf-input"
+                                placeholder="CEP"
+                            />
+                            <input
+                                type="text"
+                                name="addres"
+                                id="addres"
+                                class="inside-input addres-cpf-input"
+                                placeholder="Logradouro"
+                            />
+                        </div>
+                        <div class="inputs-cpf">
+                            <input
+                                type="text"
+                                name="bairro"
+                                id="bairro"
+                                class="inside-input addres-cpf-input"
+                                placeholder="BAIRRO"
+                            />
+                            <input
+                                type="text"
+                                name="localidade"
+                                id="localidade"
+                                class="inside-input addres-cpf-input"
+                                placeholder="Localidade"
+                            />
+                        </div>
+                        <div class="inputs-cpf">
+                            <input
+                                type="text"
+                                name="uf"
+                                id="uf"
+                                class="inside-input addres-cpf-input"
+                                placeholder="UF"
+                            />
+                            <input
+                                type="text"
+                                name="numero"
+                                id="numero"
+                                class="inside-input addres-cpf-input"
+                                placeholder="Número"
+                            />
+                        </div>
+
+                        <div class="gender-number-container">
+                            <div class="person-gender">
+                                <h5>Gênero</h5>
+                                <div class="male-gender">
+                                    <input
+                                        type="radio"
+                                        name="gender"
+                                        id=""
+                                        value="Masculino"
+                                    />
+                                    <label for="gender">Masculino</label>
+                                </div>
+                                <div class="female-gender">
+                                    <input
+                                        type="radio"
+                                        name="gender"
+                                        id=""
+                                        value="Feminino"
+                                    />
+                                    <label for="gender">Feminino</label>
+                                </div>
+                            </div>
+                            <div class="number">
+                                <input
+                                    type="number"
+                                    name="number"
+                                    id=""
+                                    placeholder="Celular"
+                                    class="inside-input input-placeholder input-focus"
+                                />
+                            </div>
+                        </div>
+                        <div class="input-password">
+                            <input
+                                type="password"
+                                name="password-account"
+                                id=""
+                                placeholder="Senha"
+                                class="password inside-input .input-placeholder input-focus"
+                            />
+                        </div>
+                        <div class="open-account">
+                            <button>
+                                <a href="/dashboard/js/script.js" class="open"
+                                    >Abrir conta</a
+                                >
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="image-container desktop">
+                <img src="./imgs/4.webp" alt="Mulher mexendo em um notebook" />
+            </div>
+        </section>
+        <script src="js/script.js"></script>
+    </body>
 </html>
