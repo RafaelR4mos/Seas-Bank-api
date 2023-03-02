@@ -1,0 +1,17 @@
+body {
+    overflow-x: hidden;
+}
+.cotation-values {
+    animation: slidein infinite linear;
+    animation-duration: 15s;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}

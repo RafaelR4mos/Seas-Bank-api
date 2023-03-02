@@ -1,48 +1,36 @@
 // const pesquisarCambio = async () => {
 async function pesquisarCambio() {
+    let moedas = ["USD-BRL", "EUR-BRL", "BTC-BRL"];
 
-  let moedas = ['USD-BRL', 'EUR-BRL', 'BTC-BRL'];
-
-  const response = await fetch(`https://economia.awesomeapi.com.br/last/${moedas}`);
-  const cambio = await response.json();
-  return cambio;
+    const response = await fetch(
+        `https://economia.awesomeapi.com.br/last/${moedas}`
+    );
+    const cambio = await response.json();
+    return cambio;
 }
 
-pesquisarCambio().then(cambio => {
-  cambio; // fetched movies
-  let moeda = Object.keys(cambio);
-  const resultado = [];
-  for (let e of moeda) {
-    console.log(`
-    ${cambio[e]['code']} > ${cambio[e]['codein']}
-    low ${cambio[e]['low']} high ${cambio[e]['high']}`)
+pesquisarCambio().then((cambio) => {
+    cambio; // fetched movies
+    let moeda = Object.keys(cambio);
+    const resultado = [];
+    for (let e of moeda) {
+        console.log(`
+    ${cambio[e]["code"]} > ${cambio[e]["codein"]}
+    low ${cambio[e]["low"]} high ${cambio[e]["high"]}`);
 
-    resultado.push(`${cambio[e]['code']} > ${cambio[e]['codein']} - low ${cambio[e]['low']} high ${cambio[e]['high']}`)
-  }
+        resultado.push(
+            `${cambio[e]["code"]} > ${cambio[e]["codein"]} - low ${cambio[e]["low"]} high ${cambio[e]["high"]}`
+        );
+    }
 
-  let item = document.getElementsById('cambio')
-  item.innerHTML = `
+    const item = document.getElementById("cambio");
+    item.innerHTML = `
   <div>
-    <p>${resultado}</p>
+    <p class="cotation-values">${resultado}</p>
   </div>
+
   `;
-  // item.style.animation-duration: 3s;
-  // item.style.animation-name: slidein;
-  
-  // @keyframes slidein {
-  //   from {
-  //     margin-left: 100%;
-  //     width: 300%
-  //   }
-  
-  //   to {
-  //     margin-left: 0%;
-  //     width: 100%;
-  //   }
-  // }
-  
-}
-) ;
+});
 
 // ESTUDANDO COMO PUXAR DADOS DO XML
 

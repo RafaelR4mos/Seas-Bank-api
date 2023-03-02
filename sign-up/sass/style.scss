@@ -195,9 +195,13 @@ $placeholder-color: #ffffff8e;
                                     height: 100%;
                                 }
                             }
-                            button:hover {
-                                color: black;
-                                scale: 1.1;
+                            #submit-account {
+                                cursor: pointer;
+                                width: 100%;
+
+                                &:hover {
+                                    background-color: rgba(74, 118, 134, 0.3);
+                                }
                             }
                         }
                     }
