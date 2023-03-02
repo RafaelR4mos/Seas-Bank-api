@@ -1,136 +1,145 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-			integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		/>
-		<link rel="stylesheet" href="./css/style.css" />
-		<!-- Seção para fonta (ainda decidir) -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./css/style.css" />
+        <!-- Seção para fonta (ainda decidir) -->
 
-		<!-- Seção para fonta (ainda decidir) -->
-		<title>Seas Bank | Login</title>
-	</head>
-	<body>
-		<div class="login-section">
-			<div class="left-container">
-				<div class="container">
-					<div class="welcome">
-						<img
-							src="/imgs/gull-bird-flying-shape-svgrepo-com.svg"
-							alt="Logo do banco SeasBank (ave)"
-						/>
-						<h3>Seja bem-vindo</h3>
-					</div>
-					<div class="inputs">
-						<input
-							type="number"
-							name="number-account"
-							inputmode="numeric"
-							id=""
-							class="input-pattern account"
-							placeholder="Número da conta"
-						/>
+        <!-- Seção para fonta (ainda decidir) -->
+        <title>Seas Bank | Login</title>
+    </head>
+    <body>
+        <div class="login-section">
+            <div class="left-container">
+                <div class="container">
+                    <div class="welcome">
+                        <img
+                            src="/imgs/gull-bird-flying-shape-svgrepo-com.svg"
+                            alt="Logo do banco SeasBank (ave)"
+                        />
+                        <h3>Seja bem-vindo</h3>
+                    </div>
+                    <div class="inputs">
+                        <input
+                            type="number"
+                            name="number-account"
+                            inputmode="numeric"
+                            id="account-number"
+                            class="input-pattern account"
+                            placeholder="Número da conta"
+                        />
 
-						<input
-							type="password"
-							name="password-account"
-							id=""
-							class="input-pattern password"
-							placeholder="Senha"
-						/>
-					</div>
-					<div class="features">
-						<div class="feat-line">
-							<div class="upper">
-								<input
-									type="checkbox"
-									name="keep-connected"
-									id=""
-									class="connect-checkbox"
-								/>
-								<label for="keep-connected">Me mantenha conectado</label>
-							</div>
-							<div class="lower">
-								<a href="#">Esqueci minha senha</a>
-							</div>
-						</div>
+                        <input
+                            type="password"
+                            name="password-account"
+                            id="account-password"
+                            class="input-pattern password"
+                            placeholder="Senha"
+                        />
+                    </div>
+                    <div class="features">
+                        <div class="feat-line">
+                            <div class="upper">
+                                <input
+                                    type="checkbox"
+                                    name="keep-connected"
+                                    id=""
+                                    class="connect-checkbox"
+                                />
+                                <label for="keep-connected"
+                                    >Me mantenha conectado</label
+                                >
+                            </div>
+                            <div class="lower">
+                                <a href="#">Esqueci minha senha</a>
+                            </div>
+                        </div>
 
-						<div class="fingerprint mobile">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="34"
-								height="34"
-								viewBox="0 0 34 34"
-								fill="none"
-							>
-								<g filter="url(#filter0_d_8_22)">
-									<path
-										d="M26.8222 6.17578C27.2531 6.76016 27.1823 7.61016 26.7042 8.14805C26.0785 8.85195 25.0396 8.71914 24.4611 7.96875C22.2063 5.04023 18.883 3.1875 15.1701 3.1875C8.38785 3.1875 2.89236 9.36992 2.89236 17V18.6535C2.89236 19.0586 2.88056 19.4637 2.85695 19.8688C2.81563 20.6656 2.21945 21.25 1.51111 21.25C0.655211 21.25 0.00590552 20.3867 0.0413222 19.4238C0.0531277 19.1648 0.0590305 18.9125 0.0590305 18.6535V17C0.0590305 7.61016 6.82361 0 15.1701 0C19.8569 0 24.0479 2.40391 26.8222 6.17578ZM27.9615 12.1258C28.7347 11.6941 29.6733 12.1125 29.874 13.0621C30.1396 14.3305 30.2813 15.652 30.2813 17.0066V18.6602C30.2813 19.0188 30.2754 19.384 30.2694 19.7426C30.2576 20.5859 29.6319 21.25 28.8764 21.25C28.0677 21.25 27.4243 20.4863 27.4361 19.5699C27.442 19.2645 27.442 18.959 27.442 18.6535V17C27.442 15.9973 27.3476 15.0211 27.1705 14.0848C27.0229 13.3012 27.3181 12.4777 27.9556 12.1191L27.9615 12.1258ZM15.1701 5.3125C20.9076 5.3125 25.559 10.5453 25.559 17V18.6535C25.559 20.493 25.4587 22.3258 25.2639 24.1453C25.1813 24.9223 24.5851 25.4934 23.8885 25.4934C23.0208 25.4934 22.3597 24.6168 22.4601 23.6473C22.6372 21.9938 22.7198 20.3203 22.7198 18.6469V17C22.7198 12.3051 19.3375 8.5 15.1642 8.5C14.4795 8.5 13.8184 8.59961 13.1927 8.79219C12.567 8.98477 11.8764 8.81875 11.4573 8.26758C10.8434 7.46406 11.05 6.21562 11.9472 5.88359C12.9625 5.51172 14.0486 5.3125 15.1701 5.3125ZM8.95452 9.87461C9.43854 10.5121 9.39723 11.4551 8.96632 12.1457C8.11632 13.5203 7.61459 15.1937 7.61459 17V18.6535C7.61459 20.5727 7.41979 22.4852 7.04202 24.3512C6.90035 25.0352 6.35139 25.5 5.7316 25.5C4.79306 25.5 4.12014 24.4641 4.32084 23.4348C4.62778 21.8676 4.78125 20.2672 4.78125 18.6602V17C4.78125 14.3039 5.58993 11.8203 6.95348 9.84805C7.45521 9.11758 8.41736 9.1707 8.95452 9.87461ZM15.1701 10.625C18.2986 10.625 20.8368 13.4805 20.8368 17V18.6535C20.8368 21.2898 20.6066 23.9195 20.1521 26.4961C20.034 27.1602 19.5146 27.625 18.9125 27.625C18.0743 27.625 17.4663 26.7418 17.6257 25.8187C18.033 23.4613 18.2396 21.0641 18.2396 18.6535V17C18.2396 15.0941 16.8642 13.5469 15.1701 13.5469C13.476 13.5469 12.1007 15.0941 12.1007 17V18.6535C12.1007 21.343 11.7879 24.0125 11.1622 26.6023C11.0146 27.2133 10.5188 27.625 9.95799 27.625C9.08438 27.625 8.46459 26.6555 8.68889 25.6992C9.22605 23.4016 9.50348 21.0375 9.50348 18.6535V17C9.50348 13.4805 12.0417 10.625 15.1701 10.625ZM16.5868 17V18.6535C16.5868 23.023 15.8726 27.3527 14.4795 31.4301L14.1313 32.4461C13.8479 33.2695 13.0333 33.6746 12.3014 33.3625C11.5694 33.0504 11.2094 32.1273 11.4868 31.3039L11.8351 30.2879C13.1042 26.5758 13.7535 22.6312 13.7535 18.6535V17C13.7535 16.1168 14.3851 15.4062 15.1701 15.4062C15.9552 15.4062 16.5868 16.1168 16.5868 17Z"
-										fill="#F0F0F0"
-									/>
-								</g>
-								<defs>
-									<filter
-										id="filter0_d_8_22"
-										x="-3.96006"
-										y="0"
-										width="38.2413"
-										height="41.4677"
-										filterUnits="userSpaceOnUse"
-										color-interpolation-filters="sRGB"
-									>
-										<feFlood flood-opacity="0" result="BackgroundImageFix" />
-										<feColorMatrix
-											in="SourceAlpha"
-											type="matrix"
-											values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-											result="hardAlpha"
-										/>
-										<feOffset dy="4" />
-										<feGaussianBlur stdDeviation="2" />
-										<feComposite in2="hardAlpha" operator="out" />
-										<feColorMatrix
-											type="matrix"
-											values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-										/>
-										<feBlend
-											mode="normal"
-											in2="BackgroundImageFix"
-											result="effect1_dropShadow_8_22"
-										/>
-										<feBlend
-											mode="normal"
-											in="SourceGraphic"
-											in2="effect1_dropShadow_8_22"
-											result="shape"
-										/>
-									</filter>
-								</defs>
-							</svg>
-						</div>
-					</div>
-					<div class="buttons">
-						<button class="submit-btn btn-pattern">
-							<a href="/dashboard/">Entrar</a>
-						</button>
+                        <div class="fingerprint mobile">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="34"
+                                height="34"
+                                viewBox="0 0 34 34"
+                                fill="none"
+                            >
+                                <g filter="url(#filter0_d_8_22)">
+                                    <path
+                                        d="M26.8222 6.17578C27.2531 6.76016 27.1823 7.61016 26.7042 8.14805C26.0785 8.85195 25.0396 8.71914 24.4611 7.96875C22.2063 5.04023 18.883 3.1875 15.1701 3.1875C8.38785 3.1875 2.89236 9.36992 2.89236 17V18.6535C2.89236 19.0586 2.88056 19.4637 2.85695 19.8688C2.81563 20.6656 2.21945 21.25 1.51111 21.25C0.655211 21.25 0.00590552 20.3867 0.0413222 19.4238C0.0531277 19.1648 0.0590305 18.9125 0.0590305 18.6535V17C0.0590305 7.61016 6.82361 0 15.1701 0C19.8569 0 24.0479 2.40391 26.8222 6.17578ZM27.9615 12.1258C28.7347 11.6941 29.6733 12.1125 29.874 13.0621C30.1396 14.3305 30.2813 15.652 30.2813 17.0066V18.6602C30.2813 19.0188 30.2754 19.384 30.2694 19.7426C30.2576 20.5859 29.6319 21.25 28.8764 21.25C28.0677 21.25 27.4243 20.4863 27.4361 19.5699C27.442 19.2645 27.442 18.959 27.442 18.6535V17C27.442 15.9973 27.3476 15.0211 27.1705 14.0848C27.0229 13.3012 27.3181 12.4777 27.9556 12.1191L27.9615 12.1258ZM15.1701 5.3125C20.9076 5.3125 25.559 10.5453 25.559 17V18.6535C25.559 20.493 25.4587 22.3258 25.2639 24.1453C25.1813 24.9223 24.5851 25.4934 23.8885 25.4934C23.0208 25.4934 22.3597 24.6168 22.4601 23.6473C22.6372 21.9938 22.7198 20.3203 22.7198 18.6469V17C22.7198 12.3051 19.3375 8.5 15.1642 8.5C14.4795 8.5 13.8184 8.59961 13.1927 8.79219C12.567 8.98477 11.8764 8.81875 11.4573 8.26758C10.8434 7.46406 11.05 6.21562 11.9472 5.88359C12.9625 5.51172 14.0486 5.3125 15.1701 5.3125ZM8.95452 9.87461C9.43854 10.5121 9.39723 11.4551 8.96632 12.1457C8.11632 13.5203 7.61459 15.1937 7.61459 17V18.6535C7.61459 20.5727 7.41979 22.4852 7.04202 24.3512C6.90035 25.0352 6.35139 25.5 5.7316 25.5C4.79306 25.5 4.12014 24.4641 4.32084 23.4348C4.62778 21.8676 4.78125 20.2672 4.78125 18.6602V17C4.78125 14.3039 5.58993 11.8203 6.95348 9.84805C7.45521 9.11758 8.41736 9.1707 8.95452 9.87461ZM15.1701 10.625C18.2986 10.625 20.8368 13.4805 20.8368 17V18.6535C20.8368 21.2898 20.6066 23.9195 20.1521 26.4961C20.034 27.1602 19.5146 27.625 18.9125 27.625C18.0743 27.625 17.4663 26.7418 17.6257 25.8187C18.033 23.4613 18.2396 21.0641 18.2396 18.6535V17C18.2396 15.0941 16.8642 13.5469 15.1701 13.5469C13.476 13.5469 12.1007 15.0941 12.1007 17V18.6535C12.1007 21.343 11.7879 24.0125 11.1622 26.6023C11.0146 27.2133 10.5188 27.625 9.95799 27.625C9.08438 27.625 8.46459 26.6555 8.68889 25.6992C9.22605 23.4016 9.50348 21.0375 9.50348 18.6535V17C9.50348 13.4805 12.0417 10.625 15.1701 10.625ZM16.5868 17V18.6535C16.5868 23.023 15.8726 27.3527 14.4795 31.4301L14.1313 32.4461C13.8479 33.2695 13.0333 33.6746 12.3014 33.3625C11.5694 33.0504 11.2094 32.1273 11.4868 31.3039L11.8351 30.2879C13.1042 26.5758 13.7535 22.6312 13.7535 18.6535V17C13.7535 16.1168 14.3851 15.4062 15.1701 15.4062C15.9552 15.4062 16.5868 16.1168 16.5868 17Z"
+                                        fill="#F0F0F0"
+                                    />
+                                </g>
+                                <defs>
+                                    <filter
+                                        id="filter0_d_8_22"
+                                        x="-3.96006"
+                                        y="0"
+                                        width="38.2413"
+                                        height="41.4677"
+                                        filterUnits="userSpaceOnUse"
+                                        color-interpolation-filters="sRGB"
+                                    >
+                                        <feFlood
+                                            flood-opacity="0"
+                                            result="BackgroundImageFix"
+                                        />
+                                        <feColorMatrix
+                                            in="SourceAlpha"
+                                            type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                            result="hardAlpha"
+                                        />
+                                        <feOffset dy="4" />
+                                        <feGaussianBlur stdDeviation="2" />
+                                        <feComposite
+                                            in2="hardAlpha"
+                                            operator="out"
+                                        />
+                                        <feColorMatrix
+                                            type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                                        />
+                                        <feBlend
+                                            mode="normal"
+                                            in2="BackgroundImageFix"
+                                            result="effect1_dropShadow_8_22"
+                                        />
+                                        <feBlend
+                                            mode="normal"
+                                            in="SourceGraphic"
+                                            in2="effect1_dropShadow_8_22"
+                                            result="shape"
+                                        />
+                                    </filter>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button id="submit-btn" class="submit-btn btn-pattern">
+                            Entrar
+                        </button>
 
-						<button class="sign-in-btn btn-pattern">
-							<a href="/plans/">Abrir conta</a>
-						</button>
-					</div>
-				</div>
-			</div>
+                        <button class="sign-in-btn btn-pattern">
+                            <a href="/plans/">Abrir conta</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-			<div class="image-container desktop">
-				<img src="./imgs/3.png" alt="Homem mexendo no computador" />
-			</div>
-		</div>
-	</body>
+            <div class="image-container desktop">
+                <img src="./imgs/3.png" alt="Homem mexendo no computador" />
+            </div>
+        </div>
+        <script src="./js/script.js"></script>
+    </body>
 </html>

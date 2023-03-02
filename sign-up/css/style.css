@@ -182,10 +182,15 @@
 }
 * body .sign-up-section .left-container .container form .open-account #submit-account {
   cursor: pointer;
-  width: 100%;
+  width: 80%;
+  margin-top: 32px;
+  background-color: #dadada;
+  transition: all 0.3s;
+  color: #000000;
+  font-weight: 700;
 }
 * body .sign-up-section .left-container .container form .open-account #submit-account:hover {
-  background-color: rgba(74, 118, 134, 0.3);
+  background-color: #ffffff;
 }
 @media screen and (min-width: 992px) {
   * body body {

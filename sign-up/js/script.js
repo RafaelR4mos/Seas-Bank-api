@@ -48,7 +48,6 @@ submitAccount.addEventListener("click", (e) => {
         } else {
             inputscpf.style.border = "none";
         }
-
         if (!cepInputvalue.trim()) {
             cepInput.style.border = "1px solid red";
         } else {

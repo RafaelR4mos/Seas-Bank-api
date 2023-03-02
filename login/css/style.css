@@ -125,9 +125,10 @@
 }
 * body .login-section .container .buttons .submit-btn {
   width: 80%;
-  background-color: #f0f0f0;
+  background-color: #dadada;
   border: none;
   transition: all 0.3s linear;
+  font-weight: 700;
 }
 * body .login-section .container .buttons .submit-btn a {
   color: black;
@@ -138,7 +139,7 @@
   width: 100%;
 }
 * body .login-section .container .buttons .submit-btn:hover {
-  background-color: rgba(240, 240, 240, 0.8);
+  background-color: #ffffff;
 }
 * body .login-section .container .buttons .sign-in-btn {
   width: 68%;

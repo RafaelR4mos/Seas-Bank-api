@@ -1,274 +1,275 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap%27');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap%27");
 
 $background-color: #202b3a;
 $input: #f0f0f052;
 $text-color: #ffffff;
 $placeholder-color: #ffffff8e;
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	list-style: none;
-	text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 
-	body {
-		width: 100vw;
-		height: 100vh;
-		font-family: 'Quicksand', sans-serif;
-		img {
-			width: 77px;
-			height: 68px;
-		}
+    body {
+        width: 100vw;
+        height: 100vh;
+        font-family: "Quicksand", sans-serif;
+        img {
+            width: 77px;
+            height: 68px;
+        }
 
-		.login-section {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-			height: 100%;
+        .login-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
 
-			.image-container {
-				display: none;
-			}
-			.left-container {
-				background-color: $background-color;
-				width: 100%;
-				height: 100%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-			.container {
-				width: 75%;
-				display: flex;
-				flex-direction: column;
+            .image-container {
+                display: none;
+            }
+            .left-container {
+                background-color: $background-color;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container {
+                width: 75%;
+                display: flex;
+                flex-direction: column;
 
-				.welcome {
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-					gap: 1.5rem;
+                .welcome {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1.5rem;
 
-					img {
-						margin-left: -1rem;
-					}
+                    img {
+                        margin-left: -1rem;
+                    }
 
-					h3 {
-						color: white;
-						font-size: 1.3rem;
-						font-weight: bold;
-					}
-				}
+                    h3 {
+                        color: white;
+                        font-size: 1.3rem;
+                        font-weight: bold;
+                    }
+                }
 
-				.inputs {
-					input::-webkit-outer-spin-button,
-					input::-webkit-inner-spin-button {
-						-webkit-appearance: none;
-						margin: 0;
-					}
-					padding-top: 2rem;
-					display: flex;
-					flex-direction: column;
-					gap: 1.5rem;
+                .inputs {
+                    input::-webkit-outer-spin-button,
+                    input::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+                    padding-top: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
 
-					.input-pattern {
-						background-color: $input;
-						font-size: 0.8rem;
-						color: $text-color;
-						padding: 0.6rem;
-						border: none;
-						border-radius: 16px;
-						text-align: center;
-					}
-					.input-pattern::placeholder {
-						color: $placeholder-color;
-						text-align: center;
-					}
-					.input-pattern:focus {
-						outline: none;
-						border: 1px solid rgba(255, 255, 255, 0.774);
-					}
-				}
+                    .input-pattern {
+                        background-color: $input;
+                        font-size: 0.8rem;
+                        color: $text-color;
+                        padding: 0.6rem;
+                        border: none;
+                        border-radius: 16px;
+                        text-align: center;
+                    }
+                    .input-pattern::placeholder {
+                        color: $placeholder-color;
+                        text-align: center;
+                    }
+                    .input-pattern:focus {
+                        outline: none;
+                        border: 1px solid rgba(255, 255, 255, 0.774);
+                    }
+                }
 
-				.features {
-					display: flex;
-					flex-direction: column;
-					padding: 0.5rem 0rem;
-					gap: 0.35rem;
-					.upper {
-						display: flex;
-						align-items: center;
-						gap: 0.5rem;
-						.connect-checkbox {
-							width: 10px;
-							height: 10px;
-						}
+                .features {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0.5rem 0rem;
+                    gap: 0.35rem;
+                    .upper {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        .connect-checkbox {
+                            width: 10px;
+                            height: 10px;
+                        }
 
-						label {
-							color: $text-color;
-							font-size: 0.85rem;
-							font-weight: 400;
-						}
-					}
-					.lower {
-						a {
-							color: #f0f0f0a2;
-							font-size: 0.85rem;
-							font-weight: 400;
-						}
-					}
-					.fingerprint {
-						display: flex;
-						align-self: center;
-						padding: 1rem 0rem;
-					}
-				}
+                        label {
+                            color: $text-color;
+                            font-size: 0.85rem;
+                            font-weight: 400;
+                        }
+                    }
+                    .lower {
+                        a {
+                            color: #f0f0f0a2;
+                            font-size: 0.85rem;
+                            font-weight: 400;
+                        }
+                    }
+                    .fingerprint {
+                        display: flex;
+                        align-self: center;
+                        padding: 1rem 0rem;
+                    }
+                }
 
-				.buttons {
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					justify-content: center;
-					gap: 1rem;
-					.btn-pattern {
-						height: 2.5rem;
-						border-radius: 16px;
-						cursor: pointer;
-					}
-					.submit-btn {
-						width: 80%;
-						background-color: #f0f0f0;
-						border: none;
-						transition: all 0.3s linear;
-						a {
-							color: black;
-							display: flex;
-							justify-content: center;
-							align-items: center;
-							height: 100%;
-							width: 100%;
-						}
-					}
-					.submit-btn:hover {
-						background-color: rgba(240, 240, 240, 0.8);
-					}
-					.sign-in-btn {
-						width: 68%;
-						// padding: 0.8rem;
-						// border-radius: 16px;
-						border: 1px solid #4a7686;
-						background-color: transparent;
-						color: #ffffff;
-						transition: all 0.3s linear;
+                .buttons {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+                    .btn-pattern {
+                        height: 2.5rem;
+                        border-radius: 16px;
+                        cursor: pointer;
+                    }
+                    .submit-btn {
+                        width: 80%;
+                        background-color: #dadada;
+                        border: none;
+                        transition: all 0.3s linear;
+                        font-weight: 700;
+                        a {
+                            color: black;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                    .submit-btn:hover {
+                        background-color: #ffffff;
+                    }
+                    .sign-in-btn {
+                        width: 68%;
+                        // padding: 0.8rem;
+                        // border-radius: 16px;
+                        border: 1px solid #4a7686;
+                        background-color: transparent;
+                        color: #ffffff;
+                        transition: all 0.3s linear;
 
-						a {
-							display: flex;
-							justify-content: center;
-							align-items: center;
-							height: 100%;
-							width: 100%;
-							color: $text-color;
-						}
-					}
+                        a {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100%;
+                            width: 100%;
+                            color: $text-color;
+                        }
+                    }
 
-					.sign-in-btn:hover {
-						background-color: $input;
-						color: white;
-						scale: 1.1;
-					}
-				}
-			}
-		}
+                    .sign-in-btn:hover {
+                        background-color: $input;
+                        color: white;
+                        scale: 1.1;
+                    }
+                }
+            }
+        }
 
-		@media screen and (min-width: 992px) {
-			body {
-				width: 100vw;
-				height: 100%;
-			}
-			img {
-				width: 100%;
-				height: 100%;
-			}
-			.login-section {
-				display: flex;
-				justify-content: center;
+        @media screen and (min-width: 992px) {
+            body {
+                width: 100vw;
+                height: 100%;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            .login-section {
+                display: flex;
+                justify-content: center;
 
-				.left-container {
-					width: 50%;
-					height: 100%;
-					padding: 2rem;
-					.container {
-						gap: 0.3rem;
-						.welcome {
-							img {
-								width: 100px;
-								height: 100px;
-							}
-							h3 {
-								font-size: 2.5rem;
-							}
-						}
-						.inputs {
-							.input-pattern {
-								padding: 1.1rem;
-								font-size: 1rem;
-							}
-						}
+                .left-container {
+                    width: 50%;
+                    height: 100%;
+                    padding: 2rem;
+                    .container {
+                        gap: 0.3rem;
+                        .welcome {
+                            img {
+                                width: 100px;
+                                height: 100px;
+                            }
+                            h3 {
+                                font-size: 2.5rem;
+                            }
+                        }
+                        .inputs {
+                            .input-pattern {
+                                padding: 1.1rem;
+                                font-size: 1rem;
+                            }
+                        }
 
-						.features {
-							gap: 0rem;
-							.feat-line {
-								display: flex;
-							}
+                        .features {
+                            gap: 0rem;
+                            .feat-line {
+                                display: flex;
+                            }
 
-							.upper {
-								width: 50%;
+                            .upper {
+                                width: 50%;
 
-								.connect-checkbox {
-									width: 20px;
-									height: 20px;
-								}
-								label {
-									font-size: 1rem;
-								}
-							}
-							.lower {
-								display: flex;
-								align-items: center;
-								justify-content: end;
-								width: 50%;
-								text-align: end;
-								a {
-									font-size: 1rem;
-								}
-							}
+                                .connect-checkbox {
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                                label {
+                                    font-size: 1rem;
+                                }
+                            }
+                            .lower {
+                                display: flex;
+                                align-items: center;
+                                justify-content: end;
+                                width: 50%;
+                                text-align: end;
+                                a {
+                                    font-size: 1rem;
+                                }
+                            }
 
-							.fingerprint {
-								display: none;
-							}
-						}
-						.buttons {
-							.btn-pattern {
-								height: 3.5rem;
-								font-size: 1rem;
-								border-radius: 16px;
-								cursor: pointer;
-							}
-						}
-					}
-				}
+                            .fingerprint {
+                                display: none;
+                            }
+                        }
+                        .buttons {
+                            .btn-pattern {
+                                height: 3.5rem;
+                                font-size: 1rem;
+                                border-radius: 16px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
 
-				.image-container {
-					padding: 1rem;
-					max-width: 50%;
-					height: 100%;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					background-color: white;
-				}
-			}
-		}
-	}
+                .image-container {
+                    padding: 1rem;
+                    max-width: 50%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: white;
+                }
+            }
+        }
+    }
 }
