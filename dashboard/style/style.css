@@ -228,9 +228,13 @@ body main .transactions .transactions-header .transactions-btn .filter-btn {
   border: none;
   padding: 8px 12px;
   height: fit-content;
-  background-color: #01b8e3;
+  background-color: transparent;
+  border: 2px solid #01b8e3;
   color: #fff;
   border-radius: 8px;
+}
+body main .transactions .transactions-header .transactions-btn .filter-btn.active {
+  background-color: #01b8e3;
 }
 body main .transactions .date span {
   font-weight: 500;
@@ -264,6 +268,7 @@ body main .transactions .transaction-container .transaction .info .transaction-t
 }
 body main .transactions .transaction-container .transaction .info .transaction-title-info .header-info strong {
   font-size: 1rem;
+  text-transform: capitalize;
 }
 body main .transactions .transaction-container .transaction .info .transaction-title-info .header-info .transaction-details-icon {
   width: 15px;

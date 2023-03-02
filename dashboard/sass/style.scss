@@ -309,9 +309,14 @@ body {
                         border: none;
                         padding: 8px 12px;
                         height: fit-content;
-                        background-color: $icon-color;
+                        background-color: transparent;
+                        border: 2px solid $icon-color;
                         color: #fff;
                         border-radius: 8px;
+
+                        &.active {
+                            background-color: $icon-color;
+                        }
                     }
                 }
             }
@@ -347,6 +352,7 @@ body {
                                 gap: 6px;
                                 strong {
                                     font-size: 1rem;
+                                    text-transform: capitalize;
                                 }
                                 .transaction-details-icon {
                                     width: 15px;
