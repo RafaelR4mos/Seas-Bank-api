@@ -203,3 +203,37 @@ function clearList() {
         transactionContainer.removeChild(transactionContainer.firstChild);
     }
 }
+
+// const pesquisarCambio = async () => {
+async function pesquisarCambio() {
+    let moedas = ["USD-BRL", "EUR-BRL", "BTC-BRL"];
+
+    const response = await fetch(
+        `https://economia.awesomeapi.com.br/last/${moedas}`
+    );
+    const cambio = await response.json();
+    return cambio;
+}
+
+pesquisarCambio().then((cambio) => {
+    cambio; // fetched movies
+    let moeda = Object.keys(cambio);
+    const resultado = [];
+    for (let e of moeda) {
+        console.log(`
+        ${cambio[e]["code"]} > ${cambio[e]["codein"]}
+        low ${cambio[e]["low"]} high ${cambio[e]["high"]}`);
+
+        resultado.push(
+            `${cambio[e]["code"]} > ${cambio[e]["codein"]} - low ${cambio[e]["low"]} high ${cambio[e]["high"]}`
+        );
+    }
+
+    console.log(resultado);
+    const item = document.getElementById("cambio");
+    item.innerHTML = `
+      <div>
+        <p class="cotation-values">${resultado}</p>
+      </div>
+      `;
+});

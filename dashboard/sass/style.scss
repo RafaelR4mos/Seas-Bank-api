@@ -36,13 +36,40 @@ body {
     background-color: $background-color;
     color: #fff;
     font-family: "Quicksand", sans-serif;
+    overflow-x: hidden;
+
+    header {
+        display: flex;
+        align-items: center;
+        background: rgb(0, 132, 164);
+        background: linear-gradient(
+            184deg,
+            rgba(0, 132, 164, 1) 0%,
+            rgba(28, 102, 116, 1) 100%
+        );
+        margin-bottom: 48px;
+    }
+    .cotation-values {
+        animation: slidein infinite linear;
+        animation-duration: 20s;
+    }
+
+    @keyframes slidein {
+        from {
+            transform: translateX(0%);
+        }
+
+        to {
+            transform: translateX(120%);
+        }
+    }
 
     main {
         .container {
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            padding: 12px 12px 24px 12px;
+            padding: 48px 12px;
         }
         .card-balance {
             display: flex;
