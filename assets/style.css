@@ -19,15 +19,22 @@
     color: var(--color5);
 }
 
+a {
+    text-decoration: none;
+    color: #ecf5f8;
+}
+
 header {
     background-color: var(--color1);
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    padding: 20px 0;
     align-items: center;
     position: fixed;
     z-index: 10;
+    -webkit-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 1);
 }
 
 .logo > a > p {
@@ -40,7 +47,7 @@ header {
     font-weight: bold;
 }
 
-header > .logo > a > img {
+header > nav > .logo > a > img {
     width: 50px;
     height: 50px;
     padding-bottom: 10px;
@@ -53,16 +60,18 @@ header > .logo > a > img {
 
 header > nav {
     display: flex;
-    justify-content: space-evenly;
-    width: 40%;
+    width: 100%;
+    gap: 24px;
+    justify-content: space-around;
     align-items: center;
     font-size: 20px;
 }
 
 header > nav > ul {
-    width: 300px;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 0;
 }
 
 header > nav > ul > li {
@@ -70,7 +79,12 @@ header > nav > ul > li {
     padding-left: 10px;
 }
 
-nav > button {
+header > nav > ul > li a:hover {
+    color: #fff;
+    font-weight: 600;
+}
+
+nav > div > button {
     width: 150px;
     height: 50px;
     color: var(--color1);
@@ -90,19 +104,16 @@ nav > button a {
     color: var(--color1);
 }
 
-.sign-up-btn:hover {
-    background-color: rgba(250, 255, 250, 0.7);
-}
-
-.login-btn {
+.login-btn,
+.sign-up-btn {
     background-color: transparent;
     border: 1px solid var(--color3);
     transition: all 0.3s;
     padding: 0;
 }
 
-nav > button a,
-.login-btn a {
+.login-btn a,
+.sign-up-btn a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,15 +121,13 @@ nav > button a,
     height: 100%;
 }
 
-.login-btn a {
-    color: var(--color5);
-}
-
-.login-btn:hover {
+.login-btn:hover,
+.sign-up-btn:hover {
     background-color: var(--color5);
 }
 
-.login-btn:hover a {
+.login-btn:hover a,
+.sign-up-btn:hover a {
     color: #000000;
 }
 
@@ -156,6 +165,183 @@ main > .first > .container1 > .mobile-only {
     font-size: 48px;
     color: var(--color5);
     font-weight: 500;
+}
+
+/* TESTIMONIALS SECTION */
+.testimonials-section {
+    padding: 24px 64px 48px;
+    /* height: 80vh; */
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    background-color: var(--color1);
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-header > div {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    gap: 16px;
+    font-size: 32px;
+}
+
+.section-header > h2 {
+    line-height: 100%;
+}
+
+.section-header span {
+    font-size: 24px;
+}
+
+.section-header > div img {
+    width: 70px;
+}
+
+.testimonials-cards {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.testimonial-card:nth-child(even) {
+    margin-left: auto;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #d9d9d9;
+    width: 49%;
+    padding: 24px 48px;
+    border-radius: 12px;
+    gap: 16px;
+}
+
+.card-header {
+    color: #000000;
+    display: flex;
+    gap: 16px;
+}
+
+.card-header span,
+.card-header strong {
+    color: #000000;
+}
+
+.card-badget {
+    position: relative;
+    margin-left: auto;
+    margin-top: -24px;
+    border-radius: 0 0 12px 12px;
+    width: 50px;
+    height: 60px;
+    background-color: #295869;
+}
+
+.card-title span {
+    font-weight: 700;
+    color: #202b3a;
+}
+
+.card-text p {
+    color: #000000;
+}
+
+.rate-btn,
+.comment-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    margin: 64px auto 48px;
+    color: #000000;
+    font-size: 24px;
+    font-weight: 600;
+    background-color: #c8eefc;
+    padding: 12px 22px;
+    border-radius: 8px;
+    gap: 8px;
+    transition: all 0.3s;
+    width: fit-content;
+}
+
+.rate-btn,
+.comment-submit:hover {
+    background-color: #ecf5f8;
+}
+
+.modal-content {
+    background-color: #122136;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-header .btn-close {
+    background-color: #c8eefc;
+}
+
+.modal-content h2 {
+    font-weight: 700;
+}
+
+.modal-content h2,
+h3 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.form-container {
+    padding: 24px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.input-container input,
+.input-container select,
+.input-container textarea {
+    border: none;
+    background-color: #202b3a;
+    color: #fff;
+    border-radius: 12px;
+    padding: 8px;
+    width: 100%;
+}
+
+.input-container textarea {
+    max-height: 150px;
+}
+
+.comment-submit {
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.comment-submit img {
+    width: 30px;
 }
 
 /* ---------- SECOND SECTION ------------*/
