@@ -33,6 +33,38 @@ submitAccount.addEventListener("click", (e) => {
         !numerovalue.trim() ||
         !passwordvalue.trim()
     ) {
+        if (!nameInputValue.trim()) {
+            nameInput.style.border = "1px solid red";
+        } else {
+            nameInput.style.border = "none";
+        }
+        if (!emailInputValue.trim()) {
+            emailInput.style.border = "1px solid red";
+        } else {
+            emailInput.style.border = "none";
+        }
+        if (!inputscpfvalue.trim()) {
+            inputscpf.style.border = "1px solid red";
+        } else {
+            inputscpf.style.border = "none";
+        }
+
+        if (!cepInputvalue.trim()) {
+            cepInput.style.border = "1px solid red";
+        } else {
+            cepInput.style.border = "none";
+        }
+        if (!numerovalue.trim()) {
+            numero.style.border = "1px solid red";
+        } else {
+            numero.style.border = "none";
+        }
+
+        if (!passwordvalue.trim()) {
+            password.style.border = "1px solid red";
+        } else {
+            password.style.border = "none";
+        }
         alert(
             "Por favor, preencha todos os campos. Algum campo do formulário está vazio."
         );
@@ -47,12 +79,6 @@ function buscarCep(cep) {
         .then((data) => {
             if (data.erro) {
                 alert("CEP não encontrado.");
-                nameInput.style.borderColor = "red";
-                emailInput.style.borderColor = "red";
-                inputscpf.style.borderColor = "red";
-                cepInput.style.borderColor = "red";
-                numero.style.borderColor = "red";
-                password.style.borderColor = "red";
             } else {
                 document.getElementById("addres").value = data.logradouro;
                 document.getElementById("bairro").value = data.bairro;
