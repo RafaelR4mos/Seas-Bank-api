@@ -1,255 +1,262 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap%27');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap%27");
 $background-color: #202b3a;
 $input: #f0f0f052;
 $text-color: #ffffff;
 $placeholder-color: #ffffff8e;
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	list-style: none;
-	text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 
-	body {
-		width: 100vw;
-		height: 100vh;
-		font-family: 'Quicksand', sans-serif;
-		img {
-			width: 77px;
-			height: 68px;
-		}
+    body {
+        width: 100vw;
+        height: 100vh;
+        font-family: "Quicksand", sans-serif;
+        img {
+            width: 77px;
+            height: 68px;
+        }
 
-		.sign-up-section {
-			width: 100%;
-			height: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			.image-container {
-				display: none;
-			}
-			.left-container {
-				width: 100%;
-				height: 100%;
-				background-color: $background-color;
-				display: flex;
-				justify-content: center;
-				align-items: center;
+        .sign-up-section {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .image-container {
+                display: none;
+            }
+            .left-container {
+                width: 100%;
+                height: 100%;
+                background-color: $background-color;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
-				.container {
-					width: 75%;
-					display: flex;
-					flex-direction: column;
+                .container {
+                    width: 75%;
+                    display: flex;
+                    flex-direction: column;
 
-					.welcome {
-						display: flex;
-						flex-direction: column;
-						align-items: center;
-						gap: 0.8rem;
+                    .welcome {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 0.8rem;
 
-						img {
-							margin-left: -1rem;
-						}
+                        img {
+                            margin-left: -1rem;
+                        }
 
-						h3 {
-							color: white;
-							font-size: 1.3rem;
-							font-weight: bold;
-						}
-					}
+                        h3 {
+                            color: white;
+                            font-size: 1.3rem;
+                            font-weight: bold;
+                        }
+                    }
 
-					form {
-						display: flex;
-						flex-direction: column;
-						gap: 0.7rem;
-						.input-div {
-							padding-top: 1.2rem;
-							display: flex;
-							flex-direction: column;
-							gap: 0.5rem;
-						}
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.7rem;
+                        .input-div {
+                            padding-top: 1.2rem;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.5rem;
+                        }
 
-						.inside-input {
-							background-color: $input;
-							font-size: 0.8rem;
-							color: $text-color;
-							padding: 0.6rem;
-							border: none;
-							border-radius: 16px;
-							text-align: center;
-						}
+                        .inside-input {
+                            background-color: $input;
+                            font-size: 0.8rem;
+                            color: $text-color;
+                            padding: 0.6rem;
+                            border: none;
+                            border-radius: 16px;
+                            text-align: center;
+                        }
 
-						.inputs-name-email {
-							.upper-inputs::placeholder {
-								color: $placeholder-color;
-								text-align: center;
-							}
-							.upper-inputs:focus {
-								outline: none;
-								border: 1px solid rgba(255, 255, 255, 0.774);
-							}
-						}
-						.inputs-cpf {
-							input::-webkit-outer-spin-button,
-							input::-webkit-inner-spin-button {
-								-webkit-appearance: none;
-								margin: 0;
-							}
-							display: flex;
-							justify-content: center;
-							gap: 0.3rem;
+                        .inputs-name-email {
+                            .upper-inputs::placeholder {
+                                color: $placeholder-color;
+                                text-align: center;
+                            }
+                            .upper-inputs:focus {
+                                outline: none;
+                                border: 1px solid rgba(255, 255, 255, 0.774);
+                            }
+                        }
 
-							.addres-cpf-input {
-								width: 50%;
-							}
-							.addres-cpf-input::placeholder {
-								color: $placeholder-color;
-								text-align: center;
-							}
-							.addres-cpf-input:focus {
-								outline: none;
-								border: 1px solid rgba(255, 255, 255, 0.774);
-							}
-						}
-						.gender-number-container {
-							width: 100%;
-							display: flex;
-							color: white;
-							align-items: center;
-							font-size: 0.9rem;
+                        .inputs-cpf {
+                            input::-webkit-outer-spin-button,
+                            input::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;
+                            }
+                            display: flex;
+                            justify-content: center;
+                            gap: 0.3rem;
 
-							.person-gender {
-								width: 50%;
-								display: flex;
-								flex-direction: column;
-								h5 {
-									font-size: 0.9rem;
-									font-weight: 600;
-								}
-								input {
-									align-self: flex-start;
-								}
-							}
-							.number {
-								width: 50%;
-								input::-webkit-outer-spin-button,
-								input::-webkit-inner-spin-button {
-									-webkit-appearance: none;
-									margin: 0;
-								}
-								input {
-									width: 100%;
-								}
-								input::placeholder {
-									color: $placeholder-color;
-									text-align: center;
-								}
-								input:focus {
-									outline: none;
-									border: 1px solid rgba(255, 255, 255, 0.774);
-								}
-							}
-						}
+                            .addres-cpf-input {
+                                width: 50%;
+                            }
+                            .addres-cpf-input::placeholder {
+                                color: $placeholder-color;
+                                text-align: center;
+                            }
+                            .addres-cpf-input:focus {
+                                outline: none;
+                                border: 1px solid rgba(255, 255, 255, 0.774);
+                            }
 
-						.input-password {
-							width: 100%;
-							.password {
-								width: 100%;
-							}
-							.password::placeholder {
-								color: $placeholder-color;
-								text-align: center;
-							}
-							.password:focus {
-								outline: none;
-								border: 1px solid rgba(255, 255, 255, 0.774);
-							}
-						}
-						.open-account {
-							display: flex;
-							justify-content: center;
-							button {
-								width: 80%;
-								height: 2.5rem;
-								border-radius: 16px;
-								border: none;
-								text-align: center;
-								color: black;
-								font-weight: bold;
-								transition: all 0.3s linear;
-								cursor: pointer;
-								a {
-									color: black;
-									display: flex;
-									align-items: center;
-									justify-content: center;
-									width: 100%;
-									height: 100%;
-								}
-							}
-							button:hover {
-								color: black;
-								scale: 1.1;
-							}
-						}
-					}
-				}
-			}
-		}
+                            input[placeholder="CPF"] {
+                                width: 100%;
+                            }
 
-		@media screen and (min-width: 992px) {
-			body {
-				width: 100vw;
-				height: 100%;
-			}
-			img {
-				width: 100%;
-				height: 100%;
-			}
-			.sign-up-section {
-				display: flex;
+                            width: 100%;
+                        }
+                        .gender-number-container {
+                            width: 100%;
+                            display: flex;
+                            color: white;
+                            align-items: center;
+                            font-size: 0.9rem;
 
-				.left-container {
-					width: 50%;
-					height: 100%;
-					padding: 2rem;
-					.container {
-						gap: 0.3rem;
-						form {
-							gap: 0.7rem;
-							.inside-input {
-								padding: 1.1rem;
-								font-size: 1rem;
-							}
-							.open-account {
-								button {
-									height: 3.5rem;
-									font-size: 1rem;
-								}
-							}
-						}
-						.welcome {
-							img {
-								width: 100px;
-								height: 100px;
-							}
-							h3 {
-								font-size: 2.5rem;
-							}
-						}
-					}
-				}
+                            .person-gender {
+                                width: 50%;
+                                display: flex;
+                                flex-direction: column;
+                                h5 {
+                                    font-size: 0.9rem;
+                                    font-weight: 600;
+                                }
+                                input {
+                                    align-self: flex-start;
+                                }
+                            }
+                            .number {
+                                width: 50%;
+                                input::-webkit-outer-spin-button,
+                                input::-webkit-inner-spin-button {
+                                    -webkit-appearance: none;
+                                    margin: 0;
+                                }
+                                input {
+                                    width: 100%;
+                                }
+                                input::placeholder {
+                                    color: $placeholder-color;
+                                    text-align: center;
+                                }
+                                input:focus {
+                                    outline: none;
+                                    border: 1px solid rgba(255, 255, 255, 0.774);
+                                }
+                            }
+                        }
 
-				.image-container {
-					display: flex;
-					width: 50%;
-					height: 100%;
-					padding: 1rem;
-					align-items: center;
-					justify-content: center;
-				}
-			}
-		}
-	}
+                        .input-password {
+                            width: 100%;
+                            .password {
+                                width: 100%;
+                            }
+                            .password::placeholder {
+                                color: $placeholder-color;
+                                text-align: center;
+                            }
+                            .password:focus {
+                                outline: none;
+                                border: 1px solid rgba(255, 255, 255, 0.774);
+                            }
+                        }
+                        .open-account {
+                            display: flex;
+                            justify-content: center;
+                            button {
+                                width: 80%;
+                                height: 2.5rem;
+                                border-radius: 16px;
+                                border: none;
+                                text-align: center;
+                                color: black;
+                                font-weight: bold;
+                                transition: all 0.3s linear;
+                                cursor: pointer;
+                                a {
+                                    color: black;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                            button:hover {
+                                color: black;
+                                scale: 1.1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            body {
+                width: 100vw;
+                height: 100%;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            .sign-up-section {
+                display: flex;
+
+                .left-container {
+                    width: 50%;
+                    height: 100%;
+                    padding: 2rem;
+                    .container {
+                        gap: 0.3rem;
+                        form {
+                            gap: 0.7rem;
+                            .inside-input {
+                                padding: 1.1rem;
+                                font-size: 1rem;
+                            }
+                            .open-account {
+                                button {
+                                    height: 3.5rem;
+                                    font-size: 1rem;
+                                }
+                            }
+                        }
+                        .welcome {
+                            img {
+                                width: 100px;
+                                height: 100px;
+                            }
+                            h3 {
+                                font-size: 2.5rem;
+                            }
+                        }
+                    }
+                }
+
+                .image-container {
+                    display: flex;
+                    width: 50%;
+                    height: 100%;
+                    padding: 1rem;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
 }
