@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./css/style.css" />
 		<title>Seas Bank | Sign-up</title>
+		<script src="js/script.js"></script>
 	</head>
 	<body>
 		<section class="sign-up-section">
@@ -38,19 +39,62 @@
 						<div class="inputs-cpf">
 							<input
 								type="text"
-								name="addres"
-								id=""
-								class="inside-input addres-cpf-input"
-								placeholder="Endereço"
-							/>
-							<input
-								type="number"
 								name="cpf"
 								id=""
 								class="inside-input addres-cpf-input"
 								placeholder="CPF"
 							/>
 						</div>
+						<div class="inputs-cpf">
+							<input
+								type="number"
+								name="cep"
+								id=""
+								class="inside-input addres-cpf-input"
+								placeholder="CEP"
+								onblur="buscarCep(this.value)"
+							/>
+							<input
+								type="text"
+								name="addres"
+								id="addres"
+								class="inside-input addres-cpf-input"
+								placeholder="Logradouro"
+							/>							
+						</div>
+						<div class="inputs-cpf">
+							<input
+								type="text"
+								name="bairro"
+								id="bairro"
+								class="inside-input addres-cpf-input"
+								placeholder="BAIRRO"
+							/>
+							<input
+								type="text"
+								name="localidade"
+								id="localidade"
+								class="inside-input addres-cpf-input"
+								placeholder="Localidade"
+							/>							
+						</div>
+						<div class="inputs-cpf">
+							<input
+								type="text"
+								name="uf"
+								id="uf"
+								class="inside-input addres-cpf-input"
+								placeholder="UF"
+							/>
+							<input
+								type="text"
+								name="numero"
+								id="numero"
+								class="inside-input addres-cpf-input"
+								placeholder="Número"
+							/>							
+						</div>
+						
 						<div class="gender-number-container">
 							<div class="person-gender">
 								<h5>Gênero</h5>
