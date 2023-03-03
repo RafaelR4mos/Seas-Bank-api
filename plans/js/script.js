@@ -8,6 +8,6 @@ planBtn.forEach((btn) => {
         console.log(targetBtn);
 
         localStorage.setItem("planCard", targetBtn);
-        window.location.href = "../sign-up";
+        window.location.href = "../sign-up/";
     });
 });
