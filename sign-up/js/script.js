@@ -24,7 +24,7 @@ window.onload = () => {
 };
 
 goBackBtn.addEventListener("click", () => {
-    window.location.href = "../plans";
+    window.location.href = "../plans/";
 });
 cepInput.addEventListener("input", () => {
     const cpfInputValue = cepInput.value;
