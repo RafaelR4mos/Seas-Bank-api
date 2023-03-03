@@ -218,7 +218,7 @@ main > .first > .container1 > .mobile-only {
 .testimonial-card {
     display: flex;
     flex-direction: column;
-    background-color: #d9d9d9;
+    background-color: var(--color3);
     width: 49%;
     padding: 24px 48px;
     border-radius: 12px;
@@ -226,14 +226,20 @@ main > .first > .container1 > .mobile-only {
 }
 
 .card-header {
-    color: #000000;
+    color: #fff;
     display: flex;
+    align-items: center;
     gap: 16px;
 }
 
 .card-header span,
 .card-header strong {
-    color: #000000;
+    color: #fff;
+}
+
+.card-header strong {
+    padding-left: 5px;
+    border-left: 2px solid var(--color4);
 }
 
 .card-badget {
@@ -246,13 +252,44 @@ main > .first > .container1 > .mobile-only {
     background-color: #295869;
 }
 
+.card-header strong {
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+.card-header .platinum {
+    color: #295869;
+    font-weight: 700;
+}
+
+.card-badget.gold {
+    background-color: #ebb62d;
+}
+
+.card-header .gold {
+    color: #ebb62d;
+    font-weight: 700;
+}
+
+.card-badget.silver {
+    background-color: #e6e6e6;
+}
+
+.card-header .silver {
+    color: #e6e6e6;
+    font-weight: 700;
+}
+
 .card-title span {
+    font-size: 20px;
     font-weight: 700;
     color: #202b3a;
 }
 
 .card-text p {
-    color: #000000;
+    color: #d1d1d1;
+    width: 90%;
+    word-break: break-all;
 }
 
 .rate-btn,
@@ -338,10 +375,7 @@ h3 {
 .comment-submit {
     font-size: 20px;
     margin: 0 auto;
-}
-
-.comment-submit img {
-    width: 30px;
+    height: 100%;
 }
 
 /* ---------- SECOND SECTION ------------*/

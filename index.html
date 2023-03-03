@@ -89,8 +89,8 @@
                     <span>Liberte-se da maré de burocracia</span>
                 </div>
 
-                <div class="testimonials-cards">
-                    <div class="testimonial-card">
+                <div id="testimonials-container" class="testimonials-cards">
+                    <!-- <div class="testimonial-card">
                         <div class="card-header">
                             <strong>Thássia Silva</strong>
                             <span>Seas Platinum</span>
@@ -145,130 +145,128 @@
                                 ipsum lorem lorem lorem ipsum lorem ipsum lorem
                             </p>
                         </div>
-                    </div>
+                    </div> -->
+                </div>
+                <button
+                    class="rate-btn"
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                >
+                    <img src="./imgs/star-icon.svg" alt="ícone de estrela" />
+                    Avalie você também!
+                </button>
 
-                    <button
-                        class="rate-btn"
-                        type="button"
-                        class="btn btn-primary"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                    >
-                        <img
-                            src="./imgs/star-icon.svg"
-                            alt="ícone de estrela"
-                        />
-                        Avalie você também!
-                    </button>
-
-                    <!-- Modal -->
-                    <div
-                        class="modal fade"
-                        id="exampleModal"
-                        tabindex="-1"
-                        aria-labelledby="exampleModalLabel"
-                        aria-hidden="true"
-                    >
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1
-                                        class="modal-title fs-5"
-                                        id="exampleModalLabel"
-                                    ></h1>
-                                    <button
-                                        type="button"
-                                        class="btn-close"
-                                        data-bs-dismiss="modal"
-                                        aria-label="Close"
-                                    ></button>
-                                </div>
-                                <div class="modal-body">
-                                    <h2>Preencha os campos</h2>
-                                    <form>
-                                        <div class="form-container">
-                                            <div class="input-container">
-                                                <label for="comment-name"
-                                                    >Digite seu nome:</label
-                                                >
-                                                <input
-                                                    id="comment-name"
-                                                    type="text"
-                                                    placeholder="Seu nome aqui"
-                                                />
-                                            </div>
-
-                                            <div class="input-container">
-                                                <label for="comment-email"
-                                                    >Digite seu e-mail:</label
-                                                >
-                                                <input
-                                                    id="comment-email"
-                                                    type="email"
-                                                    placeholder="exemplo@email.com"
-                                                />
-                                            </div>
-
-                                            <div class="input-container">
-                                                <label for="comment-plan"
-                                                    >Qual o seu plano?</label
-                                                >
-                                                <select
-                                                    name="plan select"
-                                                    id="comment-plan"
-                                                >
-                                                    <option value="default">
-                                                        Escolha um plano
-                                                    </option>
-                                                    <option value="silver">
-                                                        Silver
-                                                    </option>
-                                                    <option value="gold">
-                                                        Gold
-                                                    </option>
-                                                    <option value="platinum">
-                                                        Platinum
-                                                    </option>
-                                                </select>
-                                            </div>
-
-                                            <h3 for="rate-us">Nos avalie!</h3>
-
-                                            <div class="input-container">
-                                                <label for="comment-title"
-                                                    >Digite aqui o tópico/tema
-                                                    da sua avaliação:</label
-                                                >
-                                                <input
-                                                    type="text"
-                                                    id="comment-title"
-                                                    placeholder="tema/tópico do seu comentário aqui"
-                                                />
-                                            </div>
-
-                                            <div class="input-container">
-                                                <textarea
-                                                    name="avaliação usuário"
-                                                    id="comment-text"
-                                                    cols="10"
-                                                    rows="5"
-                                                    placeholder="Digite aqui a sua avaliação do Seas Bank"
-                                                ></textarea>
-                                            </div>
-
-                                            <button
-                                                class="comment-submit"
-                                                type="submit"
+                <!-- Modal -->
+                <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                >
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1
+                                    class="modal-title fs-5"
+                                    id="exampleModalLabel"
+                                ></h1>
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    id="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                ></button>
+                            </div>
+                            <div class="modal-body">
+                                <h2>Preencha os campos</h2>
+                                <form id="comment-form">
+                                    <div class="form-container">
+                                        <div class="input-container">
+                                            <label for="comment-name"
+                                                >Digite seu nome:</label
                                             >
-                                                <img
-                                                    src="./imgs/star-icon.svg"
-                                                    alt="ícone de estrela"
-                                                />
-                                                submeter Resposta
-                                            </button>
+                                            <input
+                                                id="comment-name"
+                                                type="text"
+                                                placeholder="Seu nome aqui"
+                                                required
+                                            />
                                         </div>
-                                    </form>
-                                </div>
+
+                                        <div class="input-container">
+                                            <label for="comment-email"
+                                                >Digite seu e-mail:</label
+                                            >
+                                            <input
+                                                id="comment-email"
+                                                type="email"
+                                                placeholder="exemplo@email.com"
+                                                required
+                                            />
+                                        </div>
+
+                                        <div class="input-container">
+                                            <label for="comment-plan"
+                                                >Qual o seu plano?</label
+                                            >
+                                            <select
+                                                name="plan select"
+                                                id="comment-plan"
+                                                required
+                                            >
+                                                <option value="default">
+                                                    Escolha um plano
+                                                </option>
+                                                <option value="silver">
+                                                    Silver
+                                                </option>
+                                                <option value="gold">
+                                                    Gold
+                                                </option>
+                                                <option value="platinum">
+                                                    Platinum
+                                                </option>
+                                            </select>
+                                        </div>
+
+                                        <h3 for="rate-us">Nos avalie!</h3>
+
+                                        <div class="input-container">
+                                            <label for="comment-title"
+                                                >Digite aqui o tópico/tema da
+                                                sua avaliação:</label
+                                            >
+                                            <input
+                                                type="text"
+                                                id="comment-title"
+                                                placeholder="tema/tópico do seu comentário aqui"
+                                                required
+                                            />
+                                        </div>
+
+                                        <div class="input-container">
+                                            <textarea
+                                                name="avaliação usuário"
+                                                id="comment-text"
+                                                cols="10"
+                                                rows="5"
+                                                placeholder="Digite aqui a sua avaliação do Seas Bank"
+                                                required
+                                            ></textarea>
+                                        </div>
+
+                                        <input
+                                            type="submit"
+                                            value="Submeter Resposta"
+                                            class="comment-submit"
+                                            id="commnent-submit"
+                                        />
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -376,7 +374,6 @@
                     </form>
                 </div>
             </section>
-
             <section class="fourth">
                 <h3>Perguntas Frequentes</h3>
                 <div>
@@ -422,6 +419,6 @@
                 </div>
             </section>
         </main>
-        <script src="modal.js"></script>
+        <script src="./assets/js/script.js"></script>
     </body>
 </html>
