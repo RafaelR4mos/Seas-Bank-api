@@ -14,8 +14,9 @@ Projeto desenvolvido através do programa vem ser da DBC Company durante o módu
 <p align="center">
     <span>🔵Landing Page do Seas</span>
 </p>
+
 <p align="center">
-  <img alt="License" src="./assets/seas-bank-landing-page.png">
+  <img alt="License" src="./assets/seasbank-v2.png">
 </p>
 
 <p align="center">
@@ -31,6 +32,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 -   HTML
 -   CSS, Sass, Botstrap
 -   Git e Github
+-   Javascript - Fetch
+-   APIS
 
 ## 💻 Projeto
 
@@ -44,7 +47,7 @@ O Seas possui ao todo 5 páginas:
 -   Login Page -> Página dedicada para fazer login e direcionar o usuário para o dashboard do seu plano. Caso o usuário não tiver um plano ele ainda pode ser direcionado a página de planos para selecionar o seu cartão e então fazer o cadastro no nosso banco.
 -   Plano Page -> A página de plano apresenta 3 opções de cartões para o usuário escolher, logo após escolher o cartão o usuário faz o cadastro no Seas.
 -   Cadastro Page -> Esta página é dedicada ao cadastro e preenchimento de informações necessárias para abrir uma conta no Seas e fazer login na plataforma para acessas o dashboard.
-- DashBoard -> O dashboard é onde você controla as suas finanças com informações sobre seu saldo de conta, transferências, entradas e saídas.
+-   DashBoard -> O dashboard é onde você controla as suas finanças com informações sobre seu saldo de conta, transferências, entradas e saídas.
 
 > Confira nosso figma para mais informações: <a href="https://www.figma.com/file/TeE3EuxF2qeCYmfIl4IU5I/SeasBank?node-id=0%3A1&t=ixenGRYFPNTQMBFp-1" target="_blank"> -> Acesse nosso design!</a>
 
