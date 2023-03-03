@@ -10,14 +10,14 @@ submitBtn.addEventListener("click", (e) => {
 
     if (!accountNumbnerValue.trim() || !accountPasswordValue.trim()) {
         if (!accountNumbnerValue.trim()) {
-            accountNumbner.style.border = "1px solid red";
+            accountNumbner.style.borderInline = "3px solid red";
         } else {
-            accountNumbner.style.border = "none";
+            accountNumbner.style.borderInline = "none";
         }
         if (!accountPasswordValue.trim()) {
-            accountPassword.style.border = "1px solid red";
+            accountPassword.style.borderInline = "3px solid red";
         } else {
-            accountPassword.style.border = "none";
+            accountPassword.style.borderInline = "none";
         }
         alert(
             "Por favor, preencha todos os campos. Algum campo do formulário está vazio."
