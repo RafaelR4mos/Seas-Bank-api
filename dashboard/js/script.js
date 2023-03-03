@@ -222,10 +222,11 @@ pesquisarCambio().then((cambio) => {
     for (let e of moeda) {
         console.log(`
         ${cambio[e]["code"]} > ${cambio[e]["codein"]}
-        low ${cambio[e]["low"].toLocaleString('pt-BR', {style: "currency", currency: "USD"})} high ${cambio[e]["high"].toLocaleString('pt-BR', {style: "currency", currency: cambio[e]["codein"]})}`);
+        low ${parseFloat(cambio[e]["low"], 10).toLocaleString('pt-BR', {style: "currency", currency: cambio[e]["codein"]})}
+        high ${parseFloat(cambio[e]["high"],10).toLocaleString('pt-BR', {style: "currency", currency: cambio[e]["codein"]})}`);
 
         resultado.push(
-            `${cambio[e]["code"]} > ${cambio[e]["codein"]} - low ${cambio[e]["low"].toLocaleString('pt-BR', {style: "currency", currency: cambio[e]["codein"]})} high ${cambio[e]["high"].toLocaleString('pt-BR', {style: "currency", currency: cambio[e]["codein"]})}`
+            `${cambio[e]["code"]} > ${cambio[e]["codein"]} - low ${parseFloat(cambio[e]["low"], 10).toLocaleString('pt-BR', {style: "currency", currency: cambio[e]["codein"]})} high ${parseFloat(cambio[e]["high"], 10).toLocaleString('pt-BR', {style: "currency", currency: cambio[e]["codein"]})} | `
         );
     }
 

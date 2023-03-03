@@ -10,12 +10,13 @@ submitBtn.addEventListener("click", (e) => {
 
     if (!accountNumbnerValue.trim() || !accountPasswordValue.trim()) {
         if (!accountNumbnerValue.trim()) {
-            accountNumbner.style.border = "1px solid red";
+            accountNumbner.style.border = "3px solid red";
+            accountNumbner.style.boxSizing="border-box";
         } else {
             accountNumbner.style.border = "none";
         }
         if (!accountPasswordValue.trim()) {
-            accountPassword.style.border = "1px solid red";
+            accountPassword.style.border = "3px solid red";
         } else {
             accountPassword.style.border = "none";
         }

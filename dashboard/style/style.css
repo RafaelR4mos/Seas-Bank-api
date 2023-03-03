@@ -29,14 +29,14 @@ body header {
 }
 body .cotation-values {
   animation: slidein infinite linear;
-  animation-duration: 20s;
+  animation-duration: 30s;
 }
 @keyframes slidein {
   from {
     transform: translateX(120%);
   }
   to {
-    transform: translateX(-120%);
+    transform: translateX(-100%);
   }
 }
 body main .container {

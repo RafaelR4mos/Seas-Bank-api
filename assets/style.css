@@ -249,12 +249,20 @@ main > .first > .container1 > .mobile-only {
     border-radius: 0 0 12px 12px;
     width: 50px;
     height: 60px;
-    background-color: #295869;
+    background-color: #547f8f;
 }
 
 .card-header strong {
     text-transform: capitalize;
     font-size: 20px;
+}
+
+.card-badget.default {
+    background-color: #7d8991e1;
+}
+
+.card-badget.platinum {
+    background-color: #295869;
 }
 
 .card-header .platinum {
