@@ -6,7 +6,26 @@ const inputscpf = document.getElementById("inputs-cpf");
 const cepInput = document.getElementById("cep-input");
 const numero = document.getElementById("numero");
 const password = document.getElementById("password");
+const cardText = document.getElementById("card-text");
+const goBackBtn = document.getElementById("go-back-btn");
 
+window.onload = () => {
+    const selectedCard = localStorage.getItem("planCard");
+    cardText.innerText = selectedCard;
+
+    if (selectedCard == "gold") {
+        cardText.style.backgroundColor = "#EBB62D";
+    } else if (selectedCard == "silver") {
+        cardText.style.backgroundColor = "#F0F0F0";
+        cardText.style.color = "#000000";
+    } else if (selectedCard == "platinum") {
+        cardText.style.backgroundColor = "#4A7686";
+    }
+};
+
+goBackBtn.addEventListener("click", () => {
+    window.location.href = "../plans";
+});
 cepInput.addEventListener("input", () => {
     const cpfInputValue = cepInput.value;
 
@@ -68,6 +87,9 @@ submitAccount.addEventListener("click", (e) => {
             "Por favor, preencha todos os campos. Algum campo do formulário está vazio."
         );
     } else {
+        const userName = nameInput.value;
+
+        localStorage.setItem("userinfo", userName);
         window.location.href = "../dashboard/";
     }
 });

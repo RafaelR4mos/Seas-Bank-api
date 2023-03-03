@@ -15,7 +15,18 @@
     <body>
         <section class="sign-up-section">
             <div class="left-container">
+                <div class="go-back-btn">
+                    <button id="go-back-btn">
+                        <img src="./imgs/arrow-u-up-left.svg" alt="" />
+                    </button>
+                </div>
                 <div class="container">
+                    <div class="card-selected-container">
+                        <div>
+                            <span>Você selecionou:</span>
+                            <div id="card-text">Platinum</div>
+                        </div>
+                    </div>
                     <div class="welcome">
                         <img
                             src="./imgs/gull-bird-flying-shape-svgrepo-com.svg"
@@ -74,7 +85,7 @@
                                 name="bairro"
                                 id="bairro"
                                 class="inside-input addres-cpf-input"
-                                placeholder="BAIRRO"
+                                placeholder="Bairro"
                             />
                             <input
                                 type="text"
@@ -108,7 +119,6 @@
                                     <input
                                         type="radio"
                                         name="gender"
-                                        id=""
                                         value="Masculino"
                                     />
                                     <label for="gender">Masculino</label>
@@ -117,7 +127,6 @@
                                     <input
                                         type="radio"
                                         name="gender"
-                                        id=""
                                         value="Feminino"
                                     />
                                     <label for="gender">Feminino</label>
@@ -127,7 +136,7 @@
                                 <input
                                     type="number"
                                     name="number"
-                                    id=""
+                                    id="number-input"
                                     placeholder="Celular"
                                     class="inside-input input-placeholder input-focus"
                                 />

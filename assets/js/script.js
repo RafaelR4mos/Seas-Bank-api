@@ -89,6 +89,12 @@ function getFormData(e) {
 
     posts.push(commentData);
 
+    commentName.value = "";
+    commentEmail.value = "";
+    commentPlan.value = "";
+    commentTitle.value = "";
+    commentText.value = "";
+
     clearList();
     setComments(
         posts.map((post) => {

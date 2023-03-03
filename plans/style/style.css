@@ -102,15 +102,13 @@ a {
   border: none;
   outline: none;
   border-radius: 12px;
-  padding: 12px;
+  padding: 16px 0;
   text-align: center;
   background-color: #4a7686;
-}
-.plans-container .plan .plan-btn a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  color: #f8f8f8;
+  cursor: pointer;
+  padding: 12px 0;
 }
 
 .card-plan.gold {
@@ -237,15 +235,8 @@ a {
     flex-direction: row;
   }
   .page-container .plans-container .plan .plan-btn {
-    padding: 0;
-    transition: all 0.3s;
-  }
-  .page-container .plans-container .plan .plan-btn a {
     padding: 12px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+    transition: all 0.3s;
   }
   .page-container .plans-container .plan .plan-btn:hover {
     background-color: rgba(74, 118, 134, 0.8);

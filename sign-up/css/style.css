@@ -10,6 +10,43 @@
   width: 100vw;
   height: 100vh;
   font-family: "Quicksand", sans-serif;
+  overflow: hidden;
+}
+* body .go-back-btn {
+  position: absolute;
+  top: 48px;
+  left: 48px;
+}
+* body .go-back-btn button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+* body .go-back-btn img {
+  width: 50px;
+}
+* body .card-selected-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  margin-left: auto;
+}
+* body .card-selected-container div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  color: #ffffff;
+}
+* body .card-selected-container div span {
+  font-weight: 500;
+}
+* body .card-selected-container div div {
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 8px;
+  font-weight: 700;
+  text-transform: capitalize;
 }
 * body img {
   width: 77px;
@@ -191,6 +228,11 @@
 }
 * body .sign-up-section .left-container .container form .open-account #submit-account:hover {
   background-color: #ffffff;
+}
+@media (min-width: 1200px) {
+  * body body .sign-up-section .left-container {
+    padding: 1rem;
+  }
 }
 @media screen and (min-width: 992px) {
   * body body {

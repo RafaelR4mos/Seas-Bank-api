@@ -2,6 +2,7 @@ const searchInputBtn = document.querySelector("#search-transaction-btn");
 const searchInput = document.querySelector("#search-transaction-input");
 const transactionContainer = document.querySelector(".transaction-container");
 const filterBtn = document.querySelectorAll(".filter-btn");
+const userName = document.getElementById("username");
 
 var transactionData = [
     {
@@ -85,6 +86,12 @@ var transactionData = [
         value: "15",
     },
 ];
+
+window.onload = () => {
+    const user = window.localStorage.getItem("userinfo");
+    const userFormated = user.toLowerCase();
+    userName.innerText = `Olá, ${userFormated}`;
+};
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#btn-all").classList.add("active");
@@ -184,7 +191,6 @@ function setList(results) {
                         >R$
                         <strong class="${results[i].type}">${results[i].value}</strong></span
                     >
-                    <button>Detalhes</button>
                 </div>
                 `;
 
@@ -222,11 +228,26 @@ pesquisarCambio().then((cambio) => {
     for (let e of moeda) {
         console.log(`
         ${cambio[e]["code"]} > ${cambio[e]["codein"]}
-        low ${parseFloat(cambio[e]["low"], 10).toLocaleString('pt-BR', {style: "currency", currency: cambio[e]["codein"]})}
-        high ${parseFloat(cambio[e]["high"],10).toLocaleString('pt-BR', {style: "currency", currency: cambio[e]["codein"]})}`);
+        low ${parseFloat(cambio[e]["low"], 10).toLocaleString("pt-BR", {
+            style: "currency",
+            currency: cambio[e]["codein"],
+        })}
+        high ${parseFloat(cambio[e]["high"], 10).toLocaleString("pt-BR", {
+            style: "currency",
+            currency: cambio[e]["codein"],
+        })}`);
 
         resultado.push(
-            `${cambio[e]["code"]} > ${cambio[e]["codein"]} - low ${parseFloat(cambio[e]["low"], 10).toLocaleString('pt-BR', {style: "currency", currency: cambio[e]["codein"]})} high ${parseFloat(cambio[e]["high"], 10).toLocaleString('pt-BR', {style: "currency", currency: cambio[e]["codein"]})} | `
+            `${cambio[e]["code"]} > ${cambio[e]["codein"]} - low ${parseFloat(
+                cambio[e]["low"],
+                10
+            ).toLocaleString("pt-BR", {
+                style: "currency",
+                currency: cambio[e]["codein"],
+            })} high ${parseFloat(cambio[e]["high"], 10).toLocaleString(
+                "pt-BR",
+                { style: "currency", currency: cambio[e]["codein"] }
+            )} | `
         );
     }
 

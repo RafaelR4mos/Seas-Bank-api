@@ -45,6 +45,9 @@ body main .container {
   gap: 1rem;
   padding: 48px 12px;
 }
+body main .user-name {
+  text-transform: capitalize;
+}
 body main .card-balance {
   display: flex;
   flex-direction: column;
@@ -365,9 +368,6 @@ header .offcanvas .offcanvas-body .offcanvas-container .offcanvas-links nav ul l
 }
 header .offcanvas .offcanvas-body .offcanvas-container .offcanvas-links nav ul li .active {
   color: white;
-}
-header .offcanvas .offcanvas-body .offcanvas-container .offcanvas-links nav ul li .disabled-link {
-  color: rgba(255, 255, 255, 0.3);
 }
 
 @media (min-width: 998px) {

@@ -71,6 +71,11 @@ body {
             gap: 1rem;
             padding: 48px 12px;
         }
+
+        .user-name {
+            text-transform: capitalize;
+        }
+
         .card-balance {
             display: flex;
             flex-direction: column;
@@ -471,9 +476,6 @@ header {
                                 }
                                 .active {
                                     color: white;
-                                }
-                                .disabled-link {
-                                    color: rgba(255, 255, 255, 0.3);
                                 }
                             }
                         }

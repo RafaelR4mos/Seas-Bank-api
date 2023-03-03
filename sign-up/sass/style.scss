@@ -15,6 +15,51 @@ $placeholder-color: #ffffff8e;
         width: 100vw;
         height: 100vh;
         font-family: "Quicksand", sans-serif;
+        overflow: hidden;
+
+        .go-back-btn {
+            position: absolute;
+            top: 48px;
+            left: 48px;
+
+            button {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+            }
+
+            img {
+                width: 50px;
+            }
+        }
+
+        .card-selected-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 24px;
+            margin-left: auto;
+
+            div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 16px;
+                color: #ffffff;
+
+                span {
+                    font-weight: 500;
+                }
+
+                div {
+                    background-color: transparent;
+                    border-radius: 8px;
+                    padding: 8px;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                }
+            }
+        }
+
         img {
             width: 77px;
             height: 68px;
@@ -209,6 +254,16 @@ $placeholder-color: #ffffff8e;
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 1200px) {
+            body {
+                .sign-up-section {
+                    .left-container {
+                        padding: 1rem;
                     }
                 }
             }
