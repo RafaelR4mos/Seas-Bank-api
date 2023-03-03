@@ -51,7 +51,7 @@ body {
     }
     .cotation-values {
         animation: slidein infinite linear;
-        animation-duration: 20s;
+        animation-duration: 30s;
     }
 
     @keyframes slidein {
@@ -60,7 +60,7 @@ body {
         }
 
         to {
-            transform: translateX(-120%);
+            transform: translateX(-100%);
         }
     }
 
