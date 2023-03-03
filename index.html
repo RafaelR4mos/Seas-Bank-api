@@ -15,6 +15,25 @@
             integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
             crossorigin="anonymous"
         ></script>
+        <script>
+			function validarEmail() {
+			  var email = document.getElementById("email");
+			  var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			  if (!regex.test(email.value)) {
+				alert("Por favor, informe um endereço de e-mail válido.");
+				email.focus();
+				return false;
+			  }
+			  return true;
+			}
+			
+			function mascaraTelefone() {
+			  var telefone = document.getElementById("telefone");
+			  telefone.value = telefone.value.replace(/\D/g, "");
+			  telefone.value = telefone.value.replace(/^(\d{2})(\d)/g, "($1) $2");
+			  telefone.value = telefone.value.replace(/(\d)(\d{4})$/, "$1-$2");
+			}
+		  </script>
         <link
             rel="shortcut icon"
             href="./imgs/gull-bird-flying-shape-svgrepo-com.svg"
@@ -349,6 +368,7 @@
                                 name="name"
                                 id=""
                                 placeholder="Digite seu nome"
+                                required
                             />
                         </div>
 
@@ -357,22 +377,25 @@
                             <input
                                 type="email"
                                 name="email"
-                                id=""
+                                id="email"
                                 placeholder="Digite seu email"
+                                required
                             />
                         </div>
 
                         <div class="number">
                             <label for="number">Informe seu número:</label>
                             <input
-                                type="number"
+                                type="text"
                                 name="number"
-                                id=""
+                                id="telefone"
                                 placeholder="(ddd) xxxx-xxxx"
+                                onkeyup="mascaraTelefone()"
+                                required
                             />
                         </div>
 
-                        <input type="submit" value="Inscreva-se!" />
+                        <input type="submit" value="Inscreva-se!" onclick="return validarEmail()"/>
                     </form>
                 </div>
             </section>
