@@ -16,24 +16,30 @@
             crossorigin="anonymous"
         ></script>
         <script>
-			function validarEmail() {
-			  var email = document.getElementById("email");
-			  var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-			  if (!regex.test(email.value)) {
-				alert("Por favor, informe um endereço de e-mail válido.");
-				email.focus();
-				return false;
-			  }
-			  return true;
-			}
-			
-			function mascaraTelefone() {
-			  var telefone = document.getElementById("telefone");
-			  telefone.value = telefone.value.replace(/\D/g, "");
-			  telefone.value = telefone.value.replace(/^(\d{2})(\d)/g, "($1) $2");
-			  telefone.value = telefone.value.replace(/(\d)(\d{4})$/, "$1-$2");
-			}
-		  </script>
+            function validarEmail() {
+                var email = document.getElementById("email");
+                var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!regex.test(email.value)) {
+                    alert("Por favor, informe um endereço de e-mail válido.");
+                    email.focus();
+                    return false;
+                }
+                return true;
+            }
+
+            function mascaraTelefone() {
+                var telefone = document.getElementById("telefone");
+                telefone.value = telefone.value.replace(/\D/g, "");
+                telefone.value = telefone.value.replace(
+                    /^(\d{2})(\d)/g,
+                    "($1) $2"
+                );
+                telefone.value = telefone.value.replace(
+                    /(\d)(\d{4})$/,
+                    "$1-$2"
+                );
+            }
+        </script>
         <link
             rel="shortcut icon"
             href="./imgs/gull-bird-flying-shape-svgrepo-com.svg"
@@ -108,64 +114,10 @@
                     <span>Liberte-se da maré de burocracia</span>
                 </div>
 
-                <div id="testimonials-container" class="testimonials-cards">
-                    <!-- <div class="testimonial-card">
-                        <div class="card-header">
-                            <strong>Thássia Silva</strong>
-                            <span>Seas Platinum</span>
-                            <div class="card-badget"></div>
-                        </div>
-
-                        <div class="card-title">
-                            <span>Ótimos planos</span>
-                        </div>
-
-                        <div class="card-text">
-                            <p>
-                                lorem ipsum lorem ipsum lorem lorem ipsum lorem
-                                ipsum lorem lorem lorem ipsum lorem ipsum lorem
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-card">
-                        <div class="card-header">
-                            <strong>Thássia Silva</strong>
-                            <span>Seas Platinum</span>
-                            <div class="card-badget"></div>
-                        </div>
-
-                        <div class="card-title">
-                            <span>Ótimos planos</span>
-                        </div>
-
-                        <div class="card-text">
-                            <p>
-                                lorem ipsum lorem ipsum lorem lorem ipsum lorem
-                                ipsum lorem lorem lorem ipsum lorem ipsum lorem
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-card">
-                        <div class="card-header">
-                            <strong>Thássia Silva</strong>
-                            <span>Seas Platinum</span>
-                            <div class="card-badget"></div>
-                        </div>
-
-                        <div class="card-title">
-                            <span>Ótimos planos</span>
-                        </div>
-
-                        <div class="card-text">
-                            <p>
-                                lorem ipsum lorem ipsum lorem lorem ipsum lorem
-                                ipsum lorem lorem lorem ipsum lorem ipsum lorem
-                            </p>
-                        </div>
-                    </div> -->
-                </div>
+                <div
+                    id="testimonials-container"
+                    class="testimonials-cards"
+                ></div>
                 <button
                     class="rate-btn"
                     type="button"
@@ -393,7 +345,11 @@
                             />
                         </div>
 
-                        <input type="submit" value="Inscreva-se!" onclick="return validarEmail()"/>
+                        <input
+                            type="submit"
+                            value="Inscreva-se!"
+                            onclick="return validarEmail()"
+                        />
                     </form>
                 </div>
             </section>
