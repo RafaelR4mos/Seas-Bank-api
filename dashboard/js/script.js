@@ -3,6 +3,7 @@ const searchInput = document.querySelector("#search-transaction-input");
 const transactionContainer = document.querySelector(".transaction-container");
 const filterBtn = document.querySelectorAll(".filter-btn");
 const userName = document.getElementById("username");
+const saldoConta = document.getElementById("saldoConta");
 
 var transactionData = [];
 const origen = window.localStorage.getItem("origen");
@@ -99,6 +100,12 @@ window.onload = () => {
     const userCardFormated = user.toUpperCase();
     userName.innerText = `Olá, ${userFormated}`;
     userNameCard.innerText = `${userFormated}`;
+    if(origen == "sign-up"){
+        saldoConta.innerText = 'R$ 0,00';
+    } else {
+        saldoConta.innerText = 'R$ 1.500,00';
+    }
+    
 };
 
 document.addEventListener("DOMContentLoaded", () => {
