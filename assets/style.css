@@ -169,8 +169,8 @@ main > .first > .container1 > .mobile-only {
 
 /* TESTIMONIALS SECTION */
 .testimonials-section {
-    padding: 24px 64px 48px;
-    /* height: 80vh; */
+    padding: 24px 5%;
+    /* height: calc(100vh - 72px); */
     display: flex;
     flex-direction: column;
     gap: 48px;
@@ -192,8 +192,9 @@ main > .first > .container1 > .mobile-only {
     font-size: 32px;
 }
 
-.section-header > h2 {
+.section-header > div h2 {
     line-height: 100%;
+    margin-bottom: 0;
 }
 
 .section-header span {
@@ -205,24 +206,36 @@ main > .first > .container1 > .mobile-only {
 }
 
 .testimonials-cards {
-    margin-top: 64px;
+    margin-top: 32px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 48px;
-}
-
-.testimonial-card:nth-child(even) {
-    margin-left: auto;
 }
 
 .testimonial-card {
     display: flex;
     flex-direction: column;
     background-color: var(--color3);
-    width: 49%;
+    width: 430px;
+    height: 270px;
     padding: 24px 48px;
     border-radius: 12px;
     gap: 16px;
+}
+
+.testimonial-card:nth-child(1n + 4) {
+    background: linear-gradient(
+        180deg,
+        #d9d9d9 0%,
+        #4a7686 0.01%,
+        rgba(74, 118, 134, 0.32) 41.2%,
+        rgba(74, 118, 134, 0) 86.59%
+    );
+}
+
+.testimonial-card:nth-child(1n + 7) {
+    display: none;
 }
 
 .card-header {
@@ -307,7 +320,7 @@ main > .first > .container1 > .mobile-only {
     align-items: center;
     border: none;
     cursor: pointer;
-    margin: 64px auto 48px;
+    margin: 16px auto 48px;
     color: #000000;
     font-size: 24px;
     font-weight: 600;
