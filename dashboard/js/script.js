@@ -90,7 +90,9 @@ var transactionData = [
 window.onload = () => {
     const user = window.localStorage.getItem("userinfo");
     const userFormated = user.toLowerCase();
+    const userCardFormated = user.toUpperCase();
     userName.innerText = `Olá, ${userFormated}`;
+    userNameCard.innerText = `${userFormated}`;
 };
 
 document.addEventListener("DOMContentLoaded", () => {
