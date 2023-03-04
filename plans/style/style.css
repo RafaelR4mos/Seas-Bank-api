@@ -7,10 +7,22 @@
   text-decoration: none;
 }
 
+header {
+  padding: 12px 48px;
+}
+header .header-container {
+  display: flex;
+  align-items: center;
+}
+header .header-container img {
+  width: 50px;
+}
+
 body {
   background-color: #202b3a;
   color: #fff;
   font-family: "Quicksand", sans-serif;
+  overflow-y: scroll;
 }
 
 a {
