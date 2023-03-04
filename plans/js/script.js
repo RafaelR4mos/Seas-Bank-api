@@ -1,7 +1,5 @@
 const planBtn = document.querySelectorAll(".plan-btn");
-const planAnchor = document.querySelectorAll(".plan-anchor");
-
-console.log(planBtn);
+const planAnchor = document.getElementById("plan-anchor");
 
 planAnchor.addEventListener("click", () => {
     window.location.href = "../";
