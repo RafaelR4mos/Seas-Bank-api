@@ -3,89 +3,97 @@ const searchInput = document.querySelector("#search-transaction-input");
 const transactionContainer = document.querySelector(".transaction-container");
 const filterBtn = document.querySelectorAll(".filter-btn");
 const userName = document.getElementById("username");
+const saldoConta = document.getElementById("saldoConta");
+const numberCard = document.getElementById("numberCard");
 
-var transactionData = [
-    {
-        transactionTitle: "cinema jung",
-        date: "28-02-2023",
-        time: "21:15",
-        category: "entertainment",
-        type: "spent",
-        value: "44.99",
-    },
-    {
-        transactionTitle: "supermercado mayra",
-        date: "28-02-2023",
-        time: "12:00",
-        category: "store",
-        type: "spent",
-        value: "90",
-    },
-    {
-        transactionTitle: "supermercado Pablo",
-        date: "28-02-2023",
-        time: "09:00",
-        category: "store",
-        type: "spent",
-        value: "200",
-    },
-    {
-        transactionTitle: "pix lucas amaral",
-        date: "28-02-2023",
-        time: "10:00",
-        category: "transference",
-        type: "income",
-        value: "25",
-    },
-    {
-        transactionTitle: "dog do maicon",
-        date: "28-02-2023",
-        time: "21:15",
-        category: "entertainment",
-        type: "spent",
-        value: "60",
-    },
-    {
-        transactionTitle: "salario dbc",
-        date: "01-03-2023",
-        time: "08:00",
-        category: "entertainment",
-        type: "income",
-        value: "800",
-    },
-    {
-        transactionTitle: "informatica da cris",
-        date: "01-03-2023",
-        time: "17:00",
-        category: "store",
-        type: "income",
-        value: "90",
-    },
-    {
-        transactionTitle: "restaurante do rafa",
-        date: "01-03-2023",
-        time: "12:00",
-        category: "store",
-        type: "spent",
-        value: "70",
-    },
-    {
-        transactionTitle: "lojas renner",
-        date: "01-03-2023",
-        time: "20:00",
-        category: "food",
-        type: "spent",
-        value: "70",
-    },
-    {
-        transactionTitle: "pix do alisson",
-        date: "02-03-2023",
-        time: "10:00",
-        category: "transference",
-        type: "income",
-        value: "15",
-    },
-];
+var transactionData = [];
+const origen = window.localStorage.getItem("origen");
+if(!origen == "sign-up"){
+    transactionData = [
+        {
+            transactionTitle: "cinema jung",
+            date: "28-02-2023",
+            time: "21:15",
+            category: "entertainment",
+            type: "spent",
+            value: "44.99",
+        },
+        {
+            transactionTitle: "supermercado mayra",
+            date: "28-02-2023",
+            time: "12:00",
+            category: "store",
+            type: "spent",
+            value: "90",
+        },
+        {
+            transactionTitle: "supermercado Pablo",
+            date: "28-02-2023",
+            time: "09:00",
+            category: "store",
+            type: "spent",
+            value: "200",
+        },
+        {
+            transactionTitle: "pix lucas amaral",
+            date: "28-02-2023",
+            time: "10:00",
+            category: "transference",
+            type: "income",
+            value: "25",
+        },
+        {
+            transactionTitle: "dog do maicon",
+            date: "28-02-2023",
+            time: "21:15",
+            category: "entertainment",
+            type: "spent",
+            value: "60",
+        },
+        {
+            transactionTitle: "salario dbc",
+            date: "01-03-2023",
+            time: "08:00",
+            category: "entertainment",
+            type: "income",
+            value: "800",
+        },
+        {
+            transactionTitle: "informatica da cris",
+            date: "01-03-2023",
+            time: "17:00",
+            category: "store",
+            type: "income",
+            value: "90",
+        },
+        {
+            transactionTitle: "restaurante do rafa",
+            date: "01-03-2023",
+            time: "12:00",
+            category: "store",
+            type: "spent",
+            value: "70",
+        },
+        {
+            transactionTitle: "lojas renner",
+            date: "01-03-2023",
+            time: "20:00",
+            category: "food",
+            type: "spent",
+            value: "70",
+        },
+        {
+            transactionTitle: "pix do alisson",
+            date: "02-03-2023",
+            time: "10:00",
+            category: "transference",
+            type: "income",
+            value: "15",
+        }
+    ];
+}
+
+
 
 window.onload = () => {
     const user = window.localStorage.getItem("userinfo");
@@ -93,6 +101,12 @@ window.onload = () => {
     const userCardFormated = user.toUpperCase();
     userName.innerText = `Olá, ${userFormated}`;
     userNameCard.innerText = `${userFormated}`;
+    if(origen == "sign-up"){
+        saldoConta.innerText = 'R$ 0,00';
+    } else {
+        saldoConta.innerText = 'R$ 1.500,00';
+    }
+    numberCard.innerText = generateCreditCardNumber();
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -261,3 +275,38 @@ pesquisarCambio().then((cambio) => {
       </div>
       `;
 });
+
+function generateCreditCardNumber() {
+    let creditCardNumber = "4";
+
+    for (let i = 0; i < 14; i++) {
+      creditCardNumber += Math.floor(Math.random() * 10);
+    }
+  
+    const checkDigit = generateLuhnCheckDigit(creditCardNumber);
+  
+    creditCardNumber += checkDigit;
+
+    const formattedNumber = creditCardNumber.match(/.{1,4}/g).join(" ");
+
+    return formattedNumber;
+  }
+  
+  function generateLuhnCheckDigit(number) {
+    const reversedNumber = number.split("").reverse().join("");
+    let sum = 0;
+    for (let i = 0; i < reversedNumber.length; i++) {
+      const digit = parseInt(reversedNumber.charAt(i));
+      if (i % 2 === 1) {
+        sum += digit * 2 >= 10 ? digit * 2 - 9 : digit * 2;
+      } else {
+        sum += digit;
+      }
+    }
+    const checkDigit = (10 - sum % 10) % 10;
+    return checkDigit.toString();
+  }
+  
+  
+  
+  
