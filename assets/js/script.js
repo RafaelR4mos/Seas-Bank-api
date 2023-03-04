@@ -38,7 +38,7 @@ fetch("https://jsonplaceholder.typicode.com/posts/")
         console.log(comment);
         setComments(
             comment.filter((comment) => {
-                if (comment.id <= 3) {
+                if (comment.id <= 6) {
                     return comment;
                 }
             })
