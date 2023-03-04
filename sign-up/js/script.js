@@ -88,8 +88,10 @@ submitAccount.addEventListener("click", (e) => {
         );
     } else {
         const userName = nameInput.value;
+        const origen = 'sign-up';
 
         localStorage.setItem("userinfo", userName);
+        localStorage.setItem("origen",origen);
         window.location.href = "../dashboard/";
     }
 });

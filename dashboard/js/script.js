@@ -4,88 +4,94 @@ const transactionContainer = document.querySelector(".transaction-container");
 const filterBtn = document.querySelectorAll(".filter-btn");
 const userName = document.getElementById("username");
 
-var transactionData = [
-    {
-        transactionTitle: "cinema jung",
-        date: "28-02-2023",
-        time: "21:15",
-        category: "entertainment",
-        type: "spent",
-        value: "44.99",
-    },
-    {
-        transactionTitle: "supermercado mayra",
-        date: "28-02-2023",
-        time: "12:00",
-        category: "store",
-        type: "spent",
-        value: "90",
-    },
-    {
-        transactionTitle: "supermercado Pablo",
-        date: "28-02-2023",
-        time: "09:00",
-        category: "store",
-        type: "spent",
-        value: "200",
-    },
-    {
-        transactionTitle: "pix lucas amaral",
-        date: "28-02-2023",
-        time: "10:00",
-        category: "transference",
-        type: "income",
-        value: "25",
-    },
-    {
-        transactionTitle: "dog do maicon",
-        date: "28-02-2023",
-        time: "21:15",
-        category: "entertainment",
-        type: "spent",
-        value: "60",
-    },
-    {
-        transactionTitle: "salario dbc",
-        date: "01-03-2023",
-        time: "08:00",
-        category: "entertainment",
-        type: "income",
-        value: "800",
-    },
-    {
-        transactionTitle: "informatica da cris",
-        date: "01-03-2023",
-        time: "17:00",
-        category: "store",
-        type: "income",
-        value: "90",
-    },
-    {
-        transactionTitle: "restaurante do rafa",
-        date: "01-03-2023",
-        time: "12:00",
-        category: "store",
-        type: "spent",
-        value: "70",
-    },
-    {
-        transactionTitle: "lojas renner",
-        date: "01-03-2023",
-        time: "20:00",
-        category: "food",
-        type: "spent",
-        value: "70",
-    },
-    {
-        transactionTitle: "pix do alisson",
-        date: "02-03-2023",
-        time: "10:00",
-        category: "transference",
-        type: "income",
-        value: "15",
-    },
-];
+var transactionData = [];
+const origen = window.localStorage.getItem("origen");
+if(!origen == "sign-up"){
+    transactionData = [
+        {
+            transactionTitle: "cinema jung",
+            date: "28-02-2023",
+            time: "21:15",
+            category: "entertainment",
+            type: "spent",
+            value: "44.99",
+        },
+        {
+            transactionTitle: "supermercado mayra",
+            date: "28-02-2023",
+            time: "12:00",
+            category: "store",
+            type: "spent",
+            value: "90",
+        },
+        {
+            transactionTitle: "supermercado Pablo",
+            date: "28-02-2023",
+            time: "09:00",
+            category: "store",
+            type: "spent",
+            value: "200",
+        },
+        {
+            transactionTitle: "pix lucas amaral",
+            date: "28-02-2023",
+            time: "10:00",
+            category: "transference",
+            type: "income",
+            value: "25",
+        },
+        {
+            transactionTitle: "dog do maicon",
+            date: "28-02-2023",
+            time: "21:15",
+            category: "entertainment",
+            type: "spent",
+            value: "60",
+        },
+        {
+            transactionTitle: "salario dbc",
+            date: "01-03-2023",
+            time: "08:00",
+            category: "entertainment",
+            type: "income",
+            value: "800",
+        },
+        {
+            transactionTitle: "informatica da cris",
+            date: "01-03-2023",
+            time: "17:00",
+            category: "store",
+            type: "income",
+            value: "90",
+        },
+        {
+            transactionTitle: "restaurante do rafa",
+            date: "01-03-2023",
+            time: "12:00",
+            category: "store",
+            type: "spent",
+            value: "70",
+        },
+        {
+            transactionTitle: "lojas renner",
+            date: "01-03-2023",
+            time: "20:00",
+            category: "food",
+            type: "spent",
+            value: "70",
+        },
+        {
+            transactionTitle: "pix do alisson",
+            date: "02-03-2023",
+            time: "10:00",
+            category: "transference",
+            type: "income",
+            value: "15",
+        }
+    ];
+}
+
+
 
 window.onload = () => {
     const user = window.localStorage.getItem("userinfo");
