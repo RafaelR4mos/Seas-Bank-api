@@ -8,7 +8,8 @@
 }
 
 header {
-  padding: 12px 48px;
+  padding: 12px 48px 12px;
+  height: 8vh;
 }
 header .header-container {
   display: flex;
@@ -23,6 +24,7 @@ body {
   color: #fff;
   font-family: "Quicksand", sans-serif;
   overflow-y: scroll;
+  height: fit-content;
 }
 
 a {
@@ -32,8 +34,9 @@ a {
 .page-container {
   display: flex;
   flex-direction: column;
-  gap: 24px;
   padding: 48px 16px 48px;
+  gap: 24px;
+  height: 100vh;
 }
 
 .page-title-container {
@@ -56,8 +59,8 @@ a {
 .plans-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 48px;
 }
 .plans-container .plan {
@@ -212,6 +215,7 @@ a {
 
 @media (min-width: 1400px) {
   .plans-container {
+    justify-content: flex-start;
     gap: 64px;
   }
   .plans-container .plan {
@@ -240,7 +244,7 @@ a {
     padding: 0 16px;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 92vh;
   }
   .page-container .plans-container {
     display: flex;
