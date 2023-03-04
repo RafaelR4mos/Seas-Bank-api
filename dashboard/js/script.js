@@ -4,6 +4,7 @@ const transactionContainer = document.querySelector(".transaction-container");
 const filterBtn = document.querySelectorAll(".filter-btn");
 const userName = document.getElementById("username");
 const saldoConta = document.getElementById("saldoConta");
+const numberCard = document.getElementById("numberCard");
 
 var transactionData = [];
 const origen = window.localStorage.getItem("origen");
@@ -105,7 +106,7 @@ window.onload = () => {
     } else {
         saldoConta.innerText = 'R$ 1.500,00';
     }
-    
+    numberCard.innerText = generateCreditCardNumber();
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -274,3 +275,38 @@ pesquisarCambio().then((cambio) => {
       </div>
       `;
 });
+
+function generateCreditCardNumber() {
+    let creditCardNumber = "4";
+
+    for (let i = 0; i < 14; i++) {
+      creditCardNumber += Math.floor(Math.random() * 10);
+    }
+  
+    const checkDigit = generateLuhnCheckDigit(creditCardNumber);
+  
+    creditCardNumber += checkDigit;
+
+    const formattedNumber = creditCardNumber.match(/.{1,4}/g).join(" ");
+
+    return formattedNumber;
+  }
+  
+  function generateLuhnCheckDigit(number) {
+    const reversedNumber = number.split("").reverse().join("");
+    let sum = 0;
+    for (let i = 0; i < reversedNumber.length; i++) {
+      const digit = parseInt(reversedNumber.charAt(i));
+      if (i % 2 === 1) {
+        sum += digit * 2 >= 10 ? digit * 2 - 9 : digit * 2;
+      } else {
+        sum += digit;
+      }
+    }
+    const checkDigit = (10 - sum % 10) % 10;
+    return checkDigit.toString();
+  }
+  
+  
+  
+  
