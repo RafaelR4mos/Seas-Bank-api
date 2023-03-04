@@ -15,7 +15,7 @@ $placeholder-color: #ffffff8e;
         width: 100vw;
         height: 100vh;
         font-family: "Quicksand", sans-serif;
-        overflow: hidden;
+        overflow-y: scroll;
 
         .go-back-btn {
             position: absolute;
