@@ -99,11 +99,12 @@ if(!origen == "sign-up"){
 window.onload = () => {
     const userCpf = window.localStorage.getItem("userinfo");
     const clienteJSON = localStorage.getItem(userCpf);
+    console.log(JSON.stringify(clienteJSON));
     const cliente = Cliente.fromJSON(JSON.parse(clienteJSON));
 
 
-    const userFormated = cliente.toLowerCase();
-    const userCardFormated = cliente.toUpperCase();
+    const userFormated = cliente.nome.toLowerCase();
+    const userCardFormated = cliente.nome.toUpperCase();
     userName.innerText = `Olá, ${userFormated}`;
     userNameCard.innerText = `${userFormated}`;
     if(origen == "sign-up"){
