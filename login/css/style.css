@@ -5,15 +5,24 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+  font-family: "Quicksand", sans-serif;
 }
 * body {
   width: 100vw;
   height: 100vh;
-  font-family: "Quicksand", sans-serif;
 }
-* body img {
-  width: 77px;
-  height: 68px;
+* body .go-back-btn {
+  position: absolute;
+  top: 48px;
+  left: 48px;
+}
+* body .go-back-btn button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+* body .go-back-btn img {
+  width: 50px;
 }
 * body .login-section {
   display: flex;
@@ -161,7 +170,6 @@
 * body .login-section .container .buttons .sign-in-btn:hover {
   background-color: rgba(240, 240, 240, 0.3215686275);
   color: white;
-  scale: 1.1;
 }
 @media screen and (min-width: 992px) {
   * body body {
@@ -231,13 +239,16 @@
     cursor: pointer;
   }
   * body .login-section .image-container {
-    padding: 1rem;
-    max-width: 50%;
-    height: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
+  }
+  * body .login-section .image-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 }
 
