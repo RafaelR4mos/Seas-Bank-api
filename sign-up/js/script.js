@@ -54,6 +54,7 @@ submitAccount.addEventListener("click", (e) => {
     ) {
         if (!nameInputValue.trim()) {
             nameInput.style.border = "1px solid red";
+            nameInput.blur();
         } else {
             nameInput.style.border = "none";
         }
@@ -88,10 +89,10 @@ submitAccount.addEventListener("click", (e) => {
         );
     } else {
         const userName = nameInput.value;
-        const origen = 'sign-up';
+        const origen = "sign-up";
 
         localStorage.setItem("userinfo", userName);
-        localStorage.setItem("origen",origen);
+        localStorage.setItem("origen", origen);
         window.location.href = "../dashboard/";
     }
 });
