@@ -8,6 +8,9 @@ const commentTitle = document.getElementById("comment-title");
 const commentText = document.getElementById("comment-text");
 const testimonialsContainer = document.getElementById("testimonials-container");
 
+const sizeTitleComent = 30
+const sizeTextComent = 140
+
 // var posts = [
 //     {
 //         name: "thassia silva",
@@ -58,13 +61,13 @@ function setComments(results) {
             console.log(results);
             const commentData = `
             <div class="card-header">
-                <strong>${results[i].title.slice(0, 30)}</strong>
+                <strong>${results[i].title.slice(0, sizeTitleComent)}</strong>
             </div>
     
     
             <div class="card-text">
                 <p>
-                    ${results[i].body.slice(0, 141)}
+                    ${results[i].body.slice(0, sizeTextComent)}
                 </p>
             </div>`;
 
@@ -75,15 +78,15 @@ function setComments(results) {
     } else {
         const testimonialCard = document.createElement("div");
         testimonialCard.classList.add("testimonial-card");
-        // testimonialCard.classList.add("new-card");
+        // testimonialCard.classList.add("new-card");        
         const commentData = `
         <div class="card-header">
-            <strong>${results.title.slice(0, 30)}</strong>
+            <strong>${results.title.slice(0, sizeTitleComent)}</strong>
         </div>
 
         <div class="card-text">
             <p>
-                ${results.body.slice(0, 141)}
+                ${results.body.slice(0, sizeTextComent)}
             </p>
         </div>`;
 
@@ -101,8 +104,8 @@ function clearList() {
 function getFormData(e) {
     e.preventDefault();
 
-    const title = commentTitle.value.slice(0, 31);
-    const text = commentText.value.slice(0, 141);
+    const title = commentTitle.value.slice(0, sizeTitleComent);
+    const text = commentText.value.slice(0, sizeTextComent);
 
     fetch("https://jsonplaceholder.typicode.com/posts", {
         method: "POST",
@@ -141,19 +144,35 @@ function getFormData(e) {
     btnClose.click();
 }
 
+function countCharTitle() {
+    // commentTitle.onkeyup()
+    let charTitle = sizeTitleComent - commentTitle.value.length;
+    document.getElementById('counter-title').innerText = charTitle;
+    console.log(`restantes: ${charTitle} | Ocupados: ${commentTitle.value.length}`)
+    return charTitle;
+}
+
+function countCharText() {
+    let charText = sizeTextComent - commentText.value.length;
+    console.log(`restantes: ${charText} | Ocupados: ${commentText.value.length}`)
+    return charText;
+}
+
+function verifyNameComment(e) {
+    e.preventDefault();
+    regexName = /[a-zA-Z]{2}/g;
+    if (regexName.test(commentName.value)) {
+        commentName.classList.add("invalid-input");
+    } else {
+        commentName.classList.remove("invalid-input");
+    }
+}
+
 commentForm.addEventListener("submit", getFormData);
+commentTitle.addEventListener("keyup", countCharTitle);
+commentText.addEventListener("keyup", countCharText);
+commentName.addEventListener("blur", verifyNameComment);
 
-// commentTitle.addEventListener("keydown", countChar);
-// commentText.addEventListener("keydown", countChar);
-
-// function countChar(e) {
-//     e.preventDefault();
-
-//     let charTitle = 30 - commentTitle.value.length;
-//     console.log(charTitle)
-//     // const remains = size - element.value.length;
-//     return charTitle;
-// }
 
 /* function limitLength(length) {
     var telefone = document.getElementById("telefone");
