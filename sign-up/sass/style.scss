@@ -164,6 +164,11 @@ $placeholder-color: #ffffff8e;
 
                             width: 100%;
                         }
+
+                        .invalid-input {
+                            outline: 2px solid rgba(255, 0, 0, 0.6);
+                        }
+                        
                         .gender-number-container {
                             width: 100%;
                             display: flex;

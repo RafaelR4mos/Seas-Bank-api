@@ -102,7 +102,6 @@ function getFormData(e) {
     e.preventDefault();
 
     const title = commentTitle.value.slice(0, 31);
-    console.log(title)
     const text = commentText.value.slice(0, 141);
 
     fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -128,7 +127,6 @@ function getFormData(e) {
     //     title:
     // };
 
-    commentName.value = "";
     commentEmail.value = "";
     commentPlan.value = "";
     commentTitle.value = "";
@@ -145,7 +143,19 @@ function getFormData(e) {
 
 commentForm.addEventListener("submit", getFormData);
 
-function limitLength(length) {
+// commentTitle.addEventListener("keydown", countChar);
+// commentText.addEventListener("keydown", countChar);
+
+// function countChar(e) {
+//     e.preventDefault();
+
+//     let charTitle = 30 - commentTitle.value.length;
+//     console.log(charTitle)
+//     // const remains = size - element.value.length;
+//     return charTitle;
+// }
+
+/* function limitLength(length) {
     var telefone = document.getElementById("telefone");
     telefone.value = telefone.value.replace(/\D/g, "");
     telefone.value = telefone.value.replace(
@@ -156,4 +166,4 @@ function limitLength(length) {
         /(\d)(\d{4})$/,
         "$1-$2"
     );
-}
+} */
