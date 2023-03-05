@@ -9,7 +9,7 @@ const numberCard = document.getElementById("numberCard");
 
 var transactionData = [];
 const origen = window.localStorage.getItem("origen");
-if(!origen == "sign-up"){
+if(origen == "login"){
     transactionData = [
         {
             transactionTitle: "cinema jung",
@@ -99,7 +99,6 @@ if(!origen == "sign-up"){
 window.onload = () => {
     const userCpf = window.localStorage.getItem("userinfo");
     const clienteJSON = localStorage.getItem(userCpf);
-    console.log(JSON.stringify(clienteJSON));
     const cliente = Cliente.fromJSON(JSON.parse(clienteJSON));
 
 

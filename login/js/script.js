@@ -1,3 +1,5 @@
+import Cliente from "../../js/entidade/cliente.js";
+
 const submitBtn = document.getElementById("submit-btn");
 const accountNumbner = document.getElementById("account-number");
 const accountPassword = document.getElementById("account-password");
@@ -28,6 +30,23 @@ submitBtn.addEventListener("click", (e) => {
             "Por favor, preencha todos os campos. Algum campo do formulário está vazio."
         );
     } else {
-        window.location.href = "../dashboard/";
+        const clienteJSON = localStorage.getItem(accountNumbnerValue);
+        if(clienteJSON == null){
+            alert(
+                "Cliente inexistente na base."
+            );
+        }else{
+            const cliente = Cliente.fromJSON(JSON.parse(clienteJSON));
+            if(cliente.cpf == accountNumbnerValue && cliente.senha == accountPasswordValue){
+                const origen = 'login';
+                window.localStorage.setItem("origen",origen);
+                window.location.href = "../dashboard/";
+            }else{
+                alert(
+                    "Dados do cliente não conferem. Tente novamente."
+                );
+            }
+
+        }
     }
 });
