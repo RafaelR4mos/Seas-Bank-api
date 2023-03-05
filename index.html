@@ -15,31 +15,6 @@
             integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
             crossorigin="anonymous"
         ></script>
-        <script>
-            function validarEmail() {
-                var email = document.getElementById("email");
-                var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!regex.test(email.value)) {
-                    alert("Por favor, informe um endereço de e-mail válido.");
-                    email.focus();
-                    return false;
-                }
-                return true;
-            }
-
-            function mascaraTelefone() {
-                var telefone = document.getElementById("telefone");
-                telefone.value = telefone.value.replace(/\D/g, "");
-                telefone.value = telefone.value.replace(
-                    /^(\d{2})(\d)/g,
-                    "($1) $2"
-                );
-                telefone.value = telefone.value.replace(
-                    /(\d)(\d{4})$/,
-                    "$1-$2"
-                );
-            }
-        </script>
         <link
             rel="shortcut icon"
             href="./imgs/gull-bird-flying-shape-svgrepo-com.svg"
@@ -53,7 +28,6 @@
             referrerpolicy="no-referrer"
         />
 
-        <link rel="stylesheet" href="" />
         <link rel="stylesheet" href="./assets/style.css" />
         <title>SeasBank</title>
     </head>
@@ -80,7 +54,7 @@
 
                 <div>
                     <button class="sign-up-btn">
-                        <a href="./plans/index.html">Faça Parte</a>
+                        <a href="./plans/index.html">Faça parte</a>
                     </button>
                     <button class="login-btn">
                         <a href="./login/">Faça login</a>
@@ -94,9 +68,6 @@
                     <h2>
                         Navegue por um mar de possibilidades <br />com SeasBank
                     </h2>
-                    <button class="mobile-only">
-                        <a href="./plans/">Faça Parte!</a>
-                    </button>
                 </div>
             </section>
 
@@ -281,7 +252,7 @@
                 </div>
             </section>
 
-            <section class="third">
+            <section id="third" class="third">
                 <div class="section-title">
                     <h2>Entre na nossa Onda</h2>
                     <span>Escolha <strong>Seas!</strong></span>
@@ -319,7 +290,7 @@
                 </div>
             </section>
 
-            <section id="contact">
+            <section id="contact" class="contact-section">
                 <div class="formu">
                     <div class="section-title">
                         <h2>Fique por dentro das novidades!</h2>
@@ -364,11 +335,21 @@
                         </div>
 
                         <input
+                            id="submit-btn-news"
                             type="submit"
                             value="Inscreva-se!"
-                            onclick="return validarEmail()"
+                            onclick="validarEmail()"
                         />
                     </form>
+
+                    <div id="liveAlertPlaceholder"></div>
+                    <!-- <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="liveAlertBtn"
+                    >
+                        Show live alert
+                    </button> -->
                 </div>
             </section>
             <section id="fourth" class="fourth">
