@@ -1,8 +1,10 @@
+import Cliente from "../../js/entidade/cliente.js";
+
 const submitAccount = document.getElementById("submit-account");
 
 const nameInput = document.getElementById("name-input");
 const emailInput = document.getElementById("email-input");
-const inputscpf = document.getElementById("inputs-cpf");
+const inputscpf = document.getElementById("cpf-input");
 const cepInput = document.getElementById("cep-input");
 const numero = document.getElementById("numero");
 const password = document.getElementById("password");
@@ -42,6 +44,7 @@ submitAccount.addEventListener("click", (e) => {
     let inputscpfvalue = inputscpf.value;
     let cepInputvalue = cepInput.value;
     let numerovalue = numero.value;
+    let celularValue = celular.value;
     let passwordvalue = password.value;
 
     if (
@@ -87,10 +90,12 @@ submitAccount.addEventListener("click", (e) => {
             "Por favor, preencha todos os campos. Algum campo do formulário está vazio."
         );
     } else {
-        const userName = nameInput.value;
         const origen = 'sign-up';
+        const cliente = new Cliente(nameInputValue,emailInputValue, inputscpfvalue,
+        cepInputvalue,numerovalue,celularValue,passwordvalue);
 
-        localStorage.setItem("userinfo", userName);
+        localStorage.setItem("userinfo",cliente.cpf);
+        localStorage.setItem(cliente.cpf, cliente);
         localStorage.setItem("origen",origen);
         window.location.href = "../dashboard/";
     }
