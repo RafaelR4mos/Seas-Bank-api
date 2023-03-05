@@ -10,12 +10,14 @@ $placeholder-color: #ffffff8e;
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    font-family: "Quicksand", sans-serif;
 
     body {
         width: 100vw;
         height: 100vh;
-        font-family: "Quicksand", sans-serif;
+
         overflow-y: scroll;
+        overflow-x: hidden;
 
         .go-back-btn {
             position: absolute;
@@ -58,11 +60,6 @@ $placeholder-color: #ffffff8e;
                     text-transform: capitalize;
                 }
             }
-        }
-
-        img {
-            width: 77px;
-            height: 68px;
         }
 
         .sign-up-section {
@@ -168,7 +165,7 @@ $placeholder-color: #ffffff8e;
                         .invalid-input {
                             outline: 2px solid rgba(255, 0, 0, 0.6);
                         }
-                        
+
                         .gender-number-container {
                             width: 100%;
                             display: flex;
@@ -320,10 +317,14 @@ $placeholder-color: #ffffff8e;
                 .image-container {
                     display: flex;
                     width: 50%;
-                    height: 100%;
-                    padding: 1rem;
                     align-items: center;
                     justify-content: center;
+
+                    img {
+                        object-fit: contain;
+                        max-height: 520px;
+                        width: 100%;
+                    }
                 }
             }
         }

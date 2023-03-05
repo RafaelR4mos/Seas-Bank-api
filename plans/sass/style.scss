@@ -12,14 +12,16 @@ $white: #fff;
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    font-family: "Quicksand", sans-serif;
 }
 
 header {
-    padding: 12px 48px 12px;
+    padding: 32px 48px 12px;
     height: 8vh;
     .header-container {
         display: flex;
         align-items: center;
+        cursor: pointer;
 
         img {
             width: 50px;
@@ -30,7 +32,6 @@ header {
 body {
     background-color: $background-color;
     color: #fff;
-    font-family: "Quicksand", sans-serif;
     overflow-y: scroll;
     height: fit-content;
 }
