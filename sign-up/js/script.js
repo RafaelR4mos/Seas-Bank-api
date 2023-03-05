@@ -1,10 +1,8 @@
-import Cliente from "../../js/entidade/cliente.js";
-
 const submitAccount = document.getElementById("submit-account");
 
 const nameInput = document.getElementById("name-input");
 const emailInput = document.getElementById("email-input");
-const inputscpf = document.getElementById("cpf-input");
+const inputscpf = document.getElementById("inputs-cpf");
 const cepInput = document.getElementById("cep-input");
 const numero = document.getElementById("numero");
 const password = document.getElementById("password");
@@ -44,7 +42,6 @@ submitAccount.addEventListener("click", (e) => {
     let inputscpfvalue = inputscpf.value;
     let cepInputvalue = cepInput.value;
     let numerovalue = numero.value;
-    let celularValue = celular.value;
     let passwordvalue = password.value;
 
     if (
@@ -56,47 +53,45 @@ submitAccount.addEventListener("click", (e) => {
         !passwordvalue.trim()
     ) {
         if (!nameInputValue.trim()) {
-            nameInput.style.border = "1px solid red";
+            nameInput.classList.add("invalid-input");
         } else {
-            nameInput.style.border = "none";
+            nameInput.classList.remove("invalid-input");
         }
         if (!emailInputValue.trim()) {
-            emailInput.style.border = "1px solid red";
+            emailInput.classList.add("invalid-input");
         } else {
-            emailInput.style.border = "none";
+            emailInput.classList.remove("invalid-input");
         }
         if (!inputscpfvalue.trim()) {
-            inputscpf.style.border = "1px solid red";
+            inputscpf.classList.add("invalid-input");
         } else {
-            inputscpf.style.border = "none";
+            inputscpf.classList.remove("invalid-input");
         }
         if (!cepInputvalue.trim()) {
-            cepInput.style.border = "1px solid red";
+            cepInput.classList.add("invalid-input");
         } else {
-            cepInput.style.border = "none";
+            cepInput.classList.remove("invalid-input");
         }
         if (!numerovalue.trim()) {
-            numero.style.border = "1px solid red";
+            numero.classList.add("invalid-input");
         } else {
-            numero.style.border = "none";
+            numero.classList.remove("invalid-input");
         }
 
         if (!passwordvalue.trim()) {
-            password.style.border = "1px solid red";
+            password.classList.add("invalid-input");
         } else {
-            password.style.border = "none";
+            password.classList.remove("invalid-input");
         }
         alert(
             "Por favor, preencha todos os campos. Algum campo do formulário está vazio."
         );
     } else {
-        const origen = 'sign-up';
-        const cliente = new Cliente(nameInputValue,emailInputValue, inputscpfvalue,
-        cepInputvalue,numerovalue,celularValue,passwordvalue);
+        const userName = nameInput.value;
+        const origen = "sign-up";
 
-        localStorage.setItem("userinfo",cliente.cpf);
-        localStorage.setItem(cliente.cpf, cliente);
-        localStorage.setItem("origen",origen);
+        localStorage.setItem("userinfo", userName);
+        localStorage.setItem("origen", origen);
         window.location.href = "../dashboard/";
     }
 });

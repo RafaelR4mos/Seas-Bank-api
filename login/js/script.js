@@ -1,6 +1,11 @@
 const submitBtn = document.getElementById("submit-btn");
 const accountNumbner = document.getElementById("account-number");
 const accountPassword = document.getElementById("account-password");
+const goBackBtnLogin = document.getElementById("go-back-btn-login");
+
+goBackBtnLogin.addEventListener("click", () => {
+    window.location.href = "../";
+});
 
 submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -10,15 +15,14 @@ submitBtn.addEventListener("click", (e) => {
 
     if (!accountNumbnerValue.trim() || !accountPasswordValue.trim()) {
         if (!accountNumbnerValue.trim()) {
-            accountNumbner.style.border = "3px solid red";
-            accountNumbner.style.boxSizing="border-box";
+            accountNumbner.classList.add("invalid-input");
         } else {
-            accountNumbner.style.border = "none";
+            accountNumbner.classList.remove("invalid-input");
         }
         if (!accountPasswordValue.trim()) {
-            accountPassword.style.border = "3px solid red";
+            accountPassword.classList.add("invalid-input");
         } else {
-            accountPassword.style.border = "none";
+            accountPassword.classList.remove("invalid-input");
         }
         alert(
             "Por favor, preencha todos os campos. Algum campo do formulário está vazio."

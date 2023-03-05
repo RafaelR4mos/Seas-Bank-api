@@ -5,15 +5,25 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+  font-family: "Quicksand", sans-serif;
 }
 * body {
   width: 100vw;
   height: 100vh;
-  font-family: "Quicksand", sans-serif;
+  overflow-x: hidden;
 }
-* body img {
-  width: 77px;
-  height: 68px;
+* body .go-back-btn {
+  position: absolute;
+  top: 48px;
+  left: 48px;
+}
+* body .go-back-btn button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+* body .go-back-btn img {
+  width: 50px;
 }
 * body .login-section {
   display: flex;
@@ -46,6 +56,7 @@
   gap: 1.5rem;
 }
 * body .login-section .container .welcome img {
+  max-width: 130px;
   margin-left: -1rem;
 }
 * body .login-section .container .welcome h3 {
@@ -78,8 +89,10 @@
   text-align: center;
 }
 * body .login-section .container .inputs .input-pattern:focus {
-  outline: none;
-  border: 1px solid rgba(255, 255, 255, 0.774);
+  outline: 1.5px solid rgba(255, 255, 255, 0.774);
+}
+* body .login-section .container .inputs .invalid-input {
+  outline: 2px solid rgba(255, 0, 0, 0.6);
 }
 * body .login-section .container .features {
   display: flex;
@@ -159,7 +172,6 @@
 * body .login-section .container .buttons .sign-in-btn:hover {
   background-color: rgba(240, 240, 240, 0.3215686275);
   color: white;
-  scale: 1.1;
 }
 @media screen and (min-width: 992px) {
   * body body {
@@ -229,13 +241,16 @@
     cursor: pointer;
   }
   * body .login-section .image-container {
-    padding: 1rem;
-    max-width: 50%;
-    height: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
+  }
+  * body .login-section .image-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 }
 

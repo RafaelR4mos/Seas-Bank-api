@@ -7,6 +7,9 @@
     --color4: #f1eaa4;
     --color5: #fafffa;
     --color6: #b6dbf0;
+    --card-gradient: 180deg, #d9d9d9 0%, #4a7686 0.01%,
+        rgba(74, 118, 134, 0.32) 41.2%, rgba(74, 118, 134, 0) 86.59%;
+    --text-color: #d1d1d1;
 }
 
 * {
@@ -28,7 +31,7 @@ header {
     background-color: var(--color1);
     width: 100%;
     display: flex;
-    padding: 20px 0;
+    padding: 20px 12px;
     align-items: center;
     position: fixed;
     z-index: 10;
@@ -40,7 +43,7 @@ header {
 .logo > a > p {
     font-size: 32px;
     font-weight: lighter;
-    margin-left: 50px;
+    margin-bottom: 0;
 }
 
 .logo > a > p > span {
@@ -79,9 +82,12 @@ header > nav > ul > li {
     padding-left: 10px;
 }
 
+header > nav > ul > li a {
+    transition: all 0.3s;
+}
+
 header > nav > ul > li a:hover {
     color: #fff;
-    font-weight: 600;
 }
 
 nav > div > button {
@@ -145,7 +151,7 @@ body {
 main > .first > .container1 {
     width: 100%;
     height: 300px;
-    background-image: url("../imgs/ocean.jpg");
+    background-image: url("./imgs/ocean.jpg");
     background-size: cover;
     background-position: bottom;
     opacity: 0.9;
@@ -155,6 +161,7 @@ main > .first > .container1 {
     font-size: 32px;
     text-align: center;
 }
+
 main > .first > .container1 > .mobile-only {
     display: none;
 }
@@ -403,7 +410,7 @@ h3 {
 .second {
     display: flex;
     justify-content: space-evenly;
-    height: 470px;
+    height: 500px;
     width: 100%;
     background-color: var(--color3);
 }
@@ -412,7 +419,7 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 100%;
+    width: 60%;
     height: 470px;
     background-color: #4a7686;
     z-index: 1;
@@ -426,7 +433,6 @@ h3 {
 .left-text > p {
     display: flex;
     align-items: center;
-    font-weight: lighter;
     font-size: 25px;
 }
 
@@ -438,63 +444,86 @@ h3 {
 }
 
 .card-img {
-    width: 50%;
-    height: 470px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 100%;
     background-color: var(--color3);
 }
 
 .card-img > img {
-    height: 100%;
-    width: 100%;
-    scale: 1.4;
-    margin-left: -175px;
-    z-index: 9;
+    object-fit: cover;
+    transform: rotate(-45deg) scale(1.1);
 }
 
-/* ---------- Third SECTION ------------*/
-
+/* ---------- CARDS SECTION ------------*/
 .third {
     display: flex;
-    height: 600px;
+    flex-direction: column;
+    gap: 64px;
+    align-items: center;
+    padding: 64px 32px 84px;
+    height: 100%;
+    background-color: var(--color1);
+}
+
+.section-title {
+    text-align: center;
+}
+
+.section-title h2 {
+    font-weight: 700;
+}
+
+.section-title span {
+    font-size: 22px;
+    font-weight: 400;
 }
 
 .cards {
-    width: 50%;
+    width: 100%;
     height: 100%;
-    background-color: var(--color2);
+
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 32px;
     align-items: center;
 }
 
 .cards > .card {
-    height: 40%;
-    width: 40%;
-    background-color: var(--color6);
+    width: 350px;
+    height: 280px;
+    background-color: var(--color3);
     border-radius: 20px;
     box-shadow: 2px 2px 10px #202b3a;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     text-align: left;
     padding: 20px;
 }
 
 .cards > .card > h3 {
-    color: var(--color1);
+    color: var(--color5);
+    font-weight: 700;
     margin-bottom: 30px;
+    min-height: 68px;
 }
 
 .cards > .card > p {
-    color: var(--color1);
+    color: var(--text-color);
+    text-align: center;
 }
 
+/* ---------- Contacts SECTION ------------*/
+
 .formu {
-    width: 50%;
+    width: 100%;
     height: 100%;
-    background-color: var(--color6);
+    padding: 48px 12px 68px;
+    background-color: var(--color3);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -503,7 +532,7 @@ h3 {
 }
 
 .formu h2 {
-    color: #000000;
+    color: var(--color5);
     font-weight: 700;
     font-size: 30px;
     text-align: center;
@@ -512,29 +541,35 @@ h3 {
 form {
     display: flex;
     align-items: center;
+    width: 50%;
 }
 
 form > div > label {
     color: var(--color1);
     font-size: x-large;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    margin-left: 6px;
+    font-size: 18px;
+}
+
+form > div {
+    width: 100%;
 }
 
 form > div > input {
     border: 1px solid transparent;
     border-radius: 10px;
-    width: 500px;
+    width: 100%;
     height: 32px;
-    padding: 18px;
+    padding: 16px;
     background-color: var(--color5);
     color: black;
     font-size: 16px;
 }
 
 form > div > input:focus {
-    outline: 0;
-    box-shadow: 2px 2px 10px #202b3a;
+    outline: 2.5px solid var(--color1);
 }
 
 form > div > input[type="number"]::-webkit-inner-spin-button {
@@ -551,7 +586,6 @@ form > input[type="submit"] {
     justify-content: center;
     border-radius: 15px;
     border: 1px solid transparent;
-    box-shadow: 2px 2px 10px #202b3a;
     width: 150px;
     height: 50px;
     padding: 10px;
@@ -560,6 +594,12 @@ form > input[type="submit"] {
     font-size: 18px;
     font-weight: bolder;
     cursor: pointer;
+    transition: all 0.3s;
+}
+
+form > input[type="submit"]:hover {
+    background-color: var(--color1);
+    color: var(--color5);
 }
 
 .formu > form {
@@ -577,7 +617,7 @@ form > input[type="submit"] {
 
 /* ---------- Fourth SECTION ------------*/
 .fourth {
-    background-color: var(--color3);
+    background-color: var(--color1);
     display: flex;
     height: 500px;
     justify-content: center;
@@ -630,12 +670,55 @@ form > input[type="submit"] {
     max-width: 85%;
 }
 
+@media (min-width: 2072px) and (max-width: 2500px) {
+    .testimonial-card:nth-child(1n + 5) {
+        background: linear-gradient(var(--card-gradient));
+    }
+}
+
+@media (min-width: 1532px) and (max-width: 2071px) {
+    .testimonial-card:nth-child(1n + 4) {
+        background: linear-gradient(
+            180deg,
+            #d9d9d9 0%,
+            #4a7686 0.01%,
+            rgba(74, 118, 134, 0.32) 41.2%,
+            rgba(74, 118, 134, 0) 86.59%
+        );
+    }
+
+    .testimonial-card:nth-child(1n + 7) {
+        display: none;
+    }
+}
+
+@media (min-width: 1020px) and (max-width: 1530px) {
+    .testimonial-card:nth-child(1n + 3) {
+        background: linear-gradient(var(--card-gradient));
+    }
+
+    .testimonial-card:nth-child(1n + 5) {
+        display: none;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 1019px) {
+    .testimonial-card:nth-child(1n + 3) {
+        background: linear-gradient(var(--card-gradient));
+    }
+
+    .testimonial-card:nth-child(1n + 4) {
+        display: none;
+    }
+}
+
 @media (max-width: 1200px) {
     header {
         flex-direction: column;
         gap: 10px;
         z-index: 10;
     }
+
     header > nav {
         width: 70%;
         justify-content: center;
@@ -712,6 +795,7 @@ form > input[type="submit"] {
         margin-left: 0;
         padding: 0;
     }
+
     .left-text > p {
         font-size: 18px;
     }
@@ -842,6 +926,7 @@ form > input[type="submit"] {
     header {
         padding: 12px 0;
     }
+
     header nav a,
     nav button a {
         font-size: 16px;
