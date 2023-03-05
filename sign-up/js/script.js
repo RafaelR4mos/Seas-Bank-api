@@ -53,35 +53,35 @@ submitAccount.addEventListener("click", (e) => {
         !passwordvalue.trim()
     ) {
         if (!nameInputValue.trim()) {
-            nameInput.style.border = "1px solid red";
+            nameInput.classList.add("invalid-input");
         } else {
-            nameInput.style.border = "none";
+            nameInput.classList.remove("invalid-input");
         }
         if (!emailInputValue.trim()) {
-            emailInput.style.border = "1px solid red";
+            emailInput.classList.add("invalid-input");
         } else {
-            emailInput.style.border = "none";
+            emailInput.classList.remove("invalid-input");
         }
         if (!inputscpfvalue.trim()) {
-            inputscpf.style.border = "1px solid red";
+            inputscpf.classList.add("invalid-input");
         } else {
-            inputscpf.style.border = "none";
+            inputscpf.classList.remove("invalid-input");
         }
         if (!cepInputvalue.trim()) {
-            cepInput.style.border = "1px solid red";
+            cepInput.classList.add("invalid-input");
         } else {
-            cepInput.style.border = "none";
+            cepInput.classList.remove("invalid-input");
         }
         if (!numerovalue.trim()) {
-            numero.style.border = "1px solid red";
+            numero.classList.add("invalid-input");
         } else {
-            numero.style.border = "none";
+            numero.classList.remove("invalid-input");
         }
 
         if (!passwordvalue.trim()) {
-            password.style.border = "1px solid red";
+            password.classList.add("invalid-input");
         } else {
-            password.style.border = "none";
+            password.classList.remove("invalid-input");
         }
         alert(
             "Por favor, preencha todos os campos. Algum campo do formulário está vazio."
@@ -91,7 +91,7 @@ submitAccount.addEventListener("click", (e) => {
         const origen = 'sign-up';
 
         localStorage.setItem("userinfo", userName);
-        localStorage.setItem("origen",origen);
+        localStorage.setItem("origen", origen);
         window.location.href = "../dashboard/";
     }
 });

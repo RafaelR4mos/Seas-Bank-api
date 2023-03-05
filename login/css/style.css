@@ -78,8 +78,10 @@
   text-align: center;
 }
 * body .login-section .container .inputs .input-pattern:focus {
-  outline: none;
-  border: 1px solid rgba(255, 255, 255, 0.774);
+  outline: 1.5px solid rgba(255, 255, 255, 0.774);
+}
+* body .login-section .container .inputs .invalid-input {
+  outline: 2px solid rgba(255, 0, 0, 0.6);
 }
 * body .login-section .container .features {
   display: flex;

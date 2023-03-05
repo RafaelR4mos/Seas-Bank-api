@@ -58,13 +58,13 @@ function setComments(results) {
             console.log(results);
             const commentData = `
             <div class="card-header">
-                <strong>${results[i].title}</strong>
+                <strong>${results[i].title.slice(0, 30)}</strong>
             </div>
     
     
             <div class="card-text">
                 <p>
-                    ${results[i].body}
+                    ${results[i].body.slice(0, 141)}
                 </p>
             </div>`;
 
@@ -78,12 +78,12 @@ function setComments(results) {
         // testimonialCard.classList.add("new-card");
         const commentData = `
         <div class="card-header">
-            <strong>${results.title}</strong>
+            <strong>${results.title.slice(0, 30)}</strong>
         </div>
 
         <div class="card-text">
             <p>
-                ${results.body}
+                ${results.body.slice(0, 141)}
             </p>
         </div>`;
 
@@ -101,8 +101,9 @@ function clearList() {
 function getFormData(e) {
     e.preventDefault();
 
-    const title = commentTitle.value;
-    const text = commentText.value;
+    const title = commentTitle.value.slice(0, 31);
+    console.log(title)
+    const text = commentText.value.slice(0, 141);
 
     fetch("https://jsonplaceholder.typicode.com/posts", {
         method: "POST",
@@ -143,3 +144,16 @@ function getFormData(e) {
 }
 
 commentForm.addEventListener("submit", getFormData);
+
+function limitLength(length) {
+    var telefone = document.getElementById("telefone");
+    telefone.value = telefone.value.replace(/\D/g, "");
+    telefone.value = telefone.value.replace(
+        /^(\d{2})(\d)/g,
+        "($1) $2"
+    );
+    telefone.value = telefone.value.replace(
+        /(\d)(\d{4})$/,
+        "$1-$2"
+    );
+}

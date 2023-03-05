@@ -9,16 +9,15 @@ submitBtn.addEventListener("click", (e) => {
     let accountPasswordValue = accountPassword.value;
 
     if (!accountNumbnerValue.trim() || !accountPasswordValue.trim()) {
-        if (!accountNumbnerValue.trim()) {
-            accountNumbner.style.border = "3px solid red";
-            accountNumbner.style.boxSizing="border-box";
+        if (!accountNumbnerValue.trim()) {            
+            accountNumbner.classList.add("invalid-input")
         } else {
-            accountNumbner.style.border = "none";
+            accountNumbner.classList.remove("invalid-input")            
         }
         if (!accountPasswordValue.trim()) {
-            accountPassword.style.border = "3px solid red";
+            accountPassword.classList.add("invalid-input")
         } else {
-            accountPassword.style.border = "none";
+            accountPassword.classList.remove("invalid-input")
         }
         alert(
             "Por favor, preencha todos os campos. Algum campo do formulário está vazio."

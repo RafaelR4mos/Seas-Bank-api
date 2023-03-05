@@ -4,6 +4,7 @@ $background-color: #202b3a;
 $input: #f0f0f052;
 $text-color: #ffffff;
 $placeholder-color: #ffffff8e;
+
 * {
     margin: 0;
     padding: 0;
@@ -15,6 +16,7 @@ $placeholder-color: #ffffff8e;
         width: 100vw;
         height: 100vh;
         font-family: "Quicksand", sans-serif;
+
         img {
             width: 77px;
             height: 68px;
@@ -30,6 +32,7 @@ $placeholder-color: #ffffff8e;
             .image-container {
                 display: none;
             }
+
             .left-container {
                 background-color: $background-color;
                 width: 100%;
@@ -38,6 +41,7 @@ $placeholder-color: #ffffff8e;
                 justify-content: center;
                 align-items: center;
             }
+
             .container {
                 width: 75%;
                 display: flex;
@@ -62,11 +66,13 @@ $placeholder-color: #ffffff8e;
                 }
 
                 .inputs {
+
                     input::-webkit-outer-spin-button,
                     input::-webkit-inner-spin-button {
                         -webkit-appearance: none;
                         margin: 0;
                     }
+
                     padding-top: 2rem;
                     display: flex;
                     flex-direction: column;
@@ -81,13 +87,20 @@ $placeholder-color: #ffffff8e;
                         border-radius: 16px;
                         text-align: center;
                     }
+
                     .input-pattern::placeholder {
                         color: $placeholder-color;
                         text-align: center;
                     }
+
                     .input-pattern:focus {
-                        outline: none;
-                        border: 1px solid rgba(255, 255, 255, 0.774);
+                        // outline: none;
+                        // border: 1px solid rgba(255, 255, 255, 0.774);
+                        outline: 1.5px solid rgba(255, 255, 255, 0.774);
+                    }
+
+                    .invalid-input {
+                        outline: 2px solid rgba(255, 0, 0, 0.6);
                     }
                 }
 
@@ -96,10 +109,12 @@ $placeholder-color: #ffffff8e;
                     flex-direction: column;
                     padding: 0.5rem 0rem;
                     gap: 0.35rem;
+
                     .upper {
                         display: flex;
                         align-items: center;
                         gap: 0.5rem;
+
                         .connect-checkbox {
                             width: 10px;
                             height: 10px;
@@ -111,6 +126,7 @@ $placeholder-color: #ffffff8e;
                             font-weight: 400;
                         }
                     }
+
                     .lower {
                         a {
                             color: #f0f0f0a2;
@@ -118,6 +134,7 @@ $placeholder-color: #ffffff8e;
                             font-weight: 400;
                         }
                     }
+
                     .fingerprint {
                         display: flex;
                         align-self: center;
@@ -131,17 +148,20 @@ $placeholder-color: #ffffff8e;
                     align-items: center;
                     justify-content: center;
                     gap: 1rem;
+
                     .btn-pattern {
                         height: 2.5rem;
                         border-radius: 16px;
                         cursor: pointer;
                     }
+
                     .submit-btn {
                         width: 80%;
                         background-color: #dadada;
                         border: none;
                         transition: all 0.3s linear;
                         font-weight: 700;
+
                         a {
                             color: black;
                             display: flex;
@@ -151,9 +171,11 @@ $placeholder-color: #ffffff8e;
                             width: 100%;
                         }
                     }
+
                     .submit-btn:hover {
                         background-color: #ffffff;
                     }
+
                     .sign-in-btn {
                         width: 68%;
                         // padding: 0.8rem;
@@ -187,10 +209,12 @@ $placeholder-color: #ffffff8e;
                 width: 100vw;
                 height: 100%;
             }
+
             img {
                 width: 100%;
                 height: 100%;
             }
+
             .login-section {
                 display: flex;
                 justify-content: center;
@@ -199,17 +223,21 @@ $placeholder-color: #ffffff8e;
                     width: 50%;
                     height: 100%;
                     padding: 2rem;
+
                     .container {
                         gap: 0.3rem;
+
                         .welcome {
                             img {
                                 width: 100px;
                                 height: 100px;
                             }
+
                             h3 {
                                 font-size: 2.5rem;
                             }
                         }
+
                         .inputs {
                             .input-pattern {
                                 padding: 1.1rem;
@@ -219,6 +247,7 @@ $placeholder-color: #ffffff8e;
 
                         .features {
                             gap: 0rem;
+
                             .feat-line {
                                 display: flex;
                             }
@@ -230,16 +259,19 @@ $placeholder-color: #ffffff8e;
                                     width: 20px;
                                     height: 20px;
                                 }
+
                                 label {
                                     font-size: 1rem;
                                 }
                             }
+
                             .lower {
                                 display: flex;
                                 align-items: center;
                                 justify-content: end;
                                 width: 50%;
                                 text-align: end;
+
                                 a {
                                     font-size: 1rem;
                                 }
@@ -249,6 +281,7 @@ $placeholder-color: #ffffff8e;
                                 display: none;
                             }
                         }
+
                         .buttons {
                             .btn-pattern {
                                 height: 3.5rem;
