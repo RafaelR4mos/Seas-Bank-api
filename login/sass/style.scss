@@ -16,6 +16,7 @@ $placeholder-color: #ffffff8e;
     body {
         width: 100vw;
         height: 100vh;
+        overflow-x: hidden;
 
         .go-back-btn {
             position: absolute;
@@ -66,6 +67,7 @@ $placeholder-color: #ffffff8e;
                     gap: 1.5rem;
 
                     img {
+                        max-width: 130px;
                         margin-left: -1rem;
                     }
 

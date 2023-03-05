@@ -410,7 +410,7 @@ h3 {
 .second {
     display: flex;
     justify-content: space-evenly;
-    height: 500px;
+    height: 100%;
     width: 100%;
     background-color: var(--color3);
 }
@@ -447,8 +447,7 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
-    height: 100%;
+    width: 50%;
     background-color: var(--color3);
 }
 
@@ -519,11 +518,14 @@ h3 {
 
 /* ---------- Contacts SECTION ------------*/
 
+.contact-section {
+    background-color: var(--color3);
+}
+
 .formu {
     width: 100%;
     height: 100%;
     padding: 48px 12px 68px;
-    background-color: var(--color3);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -692,6 +694,12 @@ form > input[type="submit"]:hover {
     }
 }
 
+@media (max-width: 1250px) {
+    header nav ul {
+        display: none;
+    }
+}
+
 @media (min-width: 1020px) and (max-width: 1530px) {
     .testimonial-card:nth-child(1n + 3) {
         background: linear-gradient(var(--card-gradient));
@@ -717,54 +725,48 @@ form > input[type="submit"]:hover {
         flex-direction: column;
         gap: 10px;
         z-index: 10;
+        padding: 8px;
     }
 
     header > nav {
-        width: 70%;
+        width: 100%;
         justify-content: center;
+        flex-direction: column;
         gap: 8px;
+    }
+
+    header > nav div {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
     }
 
     header > nav > input {
         display: none;
     }
 
-    .login-btn {
-        margin: 0;
+    .container1 {
+        padding-top: 132px;
     }
 
+    .login-btn,
     .sign-up-btn {
-        display: none;
+        max-width: 100px;
+        margin: 0;
     }
 
     .logo > a > p {
         margin-left: 0px;
     }
 
+    .first {
+        padding-top: 0;
+    }
+
     .first > .container1 {
         flex-direction: column;
         gap: 15px;
-    }
-
-    main > .first > .container1 > .mobile-only {
-        display: block;
-        width: 150px;
-        height: 50px;
-        color: var(--color1);
-        font-weight: 900;
-        border-radius: 0.5cm;
-        border: none;
-        font-size: 15px;
-        cursor: pointer;
-        background-color: #ffffffaf;
-    }
-
-    main > .first > .container1 > .mobile-only a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #202b3a;
-        font-weight: 700;
     }
 
     .first > .container1 > h2 {
@@ -778,6 +780,11 @@ form > input[type="submit"]:hover {
     .second {
         justify-items: center;
         align-content: center;
+    }
+
+    .testimonial-card {
+        width: 320px;
+        padding: 24px 32px;
     }
 
     .textos {
@@ -806,6 +813,7 @@ form > input[type="submit"]:hover {
         justify-content: center;
         width: 100%;
         position: absolute;
+        display: none;
     }
 
     .card-img > img {
@@ -865,7 +873,7 @@ form > input[type="submit"]:hover {
 
     .third .cards {
         padding: 20px 0px;
-        gap: 10px;
+        gap: 24px;
         justify-content: center;
         width: 100%;
     }

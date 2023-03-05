@@ -1,3 +1,4 @@
+import Cliente from "../../js/entidade/cliente.js";
 const searchInputBtn = document.querySelector("#search-transaction-btn");
 const searchInput = document.querySelector("#search-transaction-input");
 const transactionContainer = document.querySelector(".transaction-container");
@@ -8,7 +9,7 @@ const numberCard = document.getElementById("numberCard");
 
 var transactionData = [];
 const origen = window.localStorage.getItem("origen");
-if(!origen == "sign-up"){
+if(origen == "login"){
     transactionData = [
         {
             transactionTitle: "cinema jung",
@@ -96,9 +97,13 @@ if(!origen == "sign-up"){
 
 
 window.onload = () => {
-    const user = window.localStorage.getItem("userinfo");
-    const userFormated = user.toLowerCase();
-    const userCardFormated = user.toUpperCase();
+    const userCpf = window.localStorage.getItem("userinfo");
+    const clienteJSON = localStorage.getItem(userCpf);
+    const cliente = Cliente.fromJSON(JSON.parse(clienteJSON));
+
+
+    const userFormated = cliente.nome.toLowerCase();
+    const userCardFormated = cliente.nome.toUpperCase();
     userName.innerText = `Olá, ${userFormated}`;
     userNameCard.innerText = `${userFormated}`;
     if(origen == "sign-up"){

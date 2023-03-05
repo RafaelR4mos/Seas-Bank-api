@@ -7,38 +7,53 @@ const commentPlan = document.getElementById("comment-plan");
 const commentTitle = document.getElementById("comment-title");
 const commentText = document.getElementById("comment-text");
 const testimonialsContainer = document.getElementById("testimonials-container");
+const headerHeight = document.querySelector("header").offsetHeight;
 
 const sizeTitleComent = 30
 const sizeTextComent = 140
 
-// var posts = [
-//     {
-//         name: "thassia silva",
-//         email: "thassia.silva@gmail.com",
-//         plan: "platinum",
-//         title: "Ótimos Planos",
-//         text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-//     },
-//     {
-//         name: "bruno costa",
-//         email: "bruno.costa@gmail.com",
-//         plan: "gold",
-//         title: "Ótimo atendimento da equipe de suporte",
-//         text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-//     },
-//     {
-//         name: "Felipe Ferreira",
-//         email: "felipe.ferreira@gmail.com",
-//         plan: "silver",
-//         title: "Plano acessível e com vantagens",
-//         text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-//     },
-// ];
+function setSectionPadding() {
+    const testimonialSection = document.getElementById("testimonials");
+    const infoSection = document.getElementById("second-section");
+    const benefitsSection = document.getElementById("third");
+    const contactSection = document.getElementById("contact");
+    const faqSection = document.getElementById("fourth");
+
+    testimonialSection.style.paddingTop = `${headerHeight}px`;
+    infoSection.style.paddingTop = `${headerHeight}px`;
+    benefitsSection.style.paddingTop = `${headerHeight}px`;
+    contactSection.style.paddingTop = `${headerHeight}px`;
+    faqSection.style.paddingTop = `${headerHeight}px`;
+}
+
+window.onload = () => {
+    setSectionPadding();
+};
+
+const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
+
+const alert = (message, type) => {
+    const wrapper = document.createElement("div");
+    wrapper.innerHTML = [
+        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        "</div>",
+    ].join("");
+
+    alertPlaceholder.append(wrapper);
+};
+
+const alertTrigger = document.getElementById("submit-btn-news");
+if (alertTrigger) {
+    alertTrigger.addEventListener("click", () => {
+        alert("Nice, you triggered this alert message!", "success");
+    });
+}
 
 fetch("https://jsonplaceholder.typicode.com/posts/")
     .then((response) => response.json())
     .then((comment) => {
-        console.log(comment);
         setComments(
             comment.filter((comment) => {
                 if (comment.id <= 6) {
@@ -49,22 +64,15 @@ fetch("https://jsonplaceholder.typicode.com/posts/")
     });
 
 function setComments(results) {
-    console.log(Array.isArray(results));
-
     if (Array.isArray(results)) {
         let i = 0;
         for (comments of results) {
             const testimonialCard = document.createElement("div");
             testimonialCard.classList.add("testimonial-card");
-            // testimonialCard.classList.add("pre-rendered-cards");
-            console.log(i);
-            console.log(results);
             const commentData = `
             <div class="card-header">
                 <strong>${results[i].title.slice(0, sizeTitleComent)}</strong>
             </div>
-    
-    
             <div class="card-text">
                 <p>
                     ${results[i].body.slice(0, sizeTextComent)}
@@ -78,7 +86,6 @@ function setComments(results) {
     } else {
         const testimonialCard = document.createElement("div");
         testimonialCard.classList.add("testimonial-card");
-        // testimonialCard.classList.add("new-card");        
         const commentData = `
         <div class="card-header">
             <strong>${results.title.slice(0, sizeTitleComent)}</strong>
@@ -123,24 +130,11 @@ function getFormData(e) {
             setComments(json);
         });
 
-    // var commentData = {
-    //     name:
-    //     email: commentEmail.value,
-    //     plan: commentPlan.value,
-    //     title:
-    // };
-
     commentEmail.value = "";
     commentPlan.value = "";
     commentTitle.value = "";
     commentText.value = "";
 
-    // clearList();
-    // setComments(
-    //     posts.map((post) => {
-    //         return post;
-    //     })
-    // );
     btnClose.click();
 }
 
@@ -175,14 +169,25 @@ commentName.addEventListener("blur", verifyNameComment);
 
 
 /* function limitLength(length) {
+function validarEmail(e) {
+    e.preventDefault();
+
+    var email = document.getElementById("email");
+    var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regex.test(email.value)) {
+        alert("Por favor, informe um endereço de e-mail válido.");
+        email.focus();
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function mascaraTelefone() {
     var telefone = document.getElementById("telefone");
     telefone.value = telefone.value.replace(/\D/g, "");
-    telefone.value = telefone.value.replace(
-        /^(\d{2})(\d)/g,
-        "($1) $2"
-    );
-    telefone.value = telefone.value.replace(
-        /(\d)(\d{4})$/,
-        "$1-$2"
-    );
-} */
+    telefone.value = telefone.value.replace(/^(\d{2})(\d)/g, "($1) $2");
+    telefone.value = telefone.value.replace(/(\d)(\d{4})$/, "$1-$2");
+}
+
+commentForm.addEventListener("submit", getFormData);

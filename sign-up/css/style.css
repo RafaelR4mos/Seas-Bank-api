@@ -79,6 +79,7 @@
   gap: 0.8rem;
 }
 * body .sign-up-section .left-container .container .welcome img {
+  max-width: 130px;
   margin-left: -1rem;
 }
 * body .sign-up-section .left-container .container .welcome h3 {

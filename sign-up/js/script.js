@@ -1,10 +1,12 @@
+import Cliente from "../../js/entidade/cliente.js"
 const submitAccount = document.getElementById("submit-account");
 
 const nameInput = document.getElementById("name-input");
 const emailInput = document.getElementById("email-input");
-const inputscpf = document.getElementById("inputs-cpf");
+const inputscpf = document.getElementById("cpf-input");
 const cepInput = document.getElementById("cep-input");
-const numero = document.getElementById("numero");
+const numeroresidencia = document.getElementById("numeroresidencia");
+const numerocelular = document.getElementById("numerocelular");
 const password = document.getElementById("password");
 const cardText = document.getElementById("card-text");
 const goBackBtn = document.getElementById("go-back-btn");
@@ -41,7 +43,8 @@ submitAccount.addEventListener("click", (e) => {
     let emailInputValue = emailInput.value;
     let inputscpfvalue = inputscpf.value;
     let cepInputvalue = cepInput.value;
-    let numerovalue = numero.value;
+    let numeroresidenciavalue = numeroresidencia.value;
+    let numerocelularvalue = numerocelular.value;
     let passwordvalue = password.value;
 
     if (
@@ -49,7 +52,8 @@ submitAccount.addEventListener("click", (e) => {
         !emailInputValue.trim() ||
         !inputscpfvalue.trim() ||
         !cepInputvalue.trim() ||
-        !numerovalue.trim() ||
+        !numeroresidenciavalue.trim() ||
+        !numerocelularvalue.trim() ||
         !passwordvalue.trim()
     ) {
         if (!nameInputValue.trim()) {
@@ -72,10 +76,15 @@ submitAccount.addEventListener("click", (e) => {
         } else {
             cepInput.classList.remove("invalid-input");
         }
-        if (!numerovalue.trim()) {
-            numero.classList.add("invalid-input");
+        if (!numeroresidenciavalue.trim()) {
+            numeroresidencia.classList.add("invalid-input");
         } else {
-            numero.classList.remove("invalid-input");
+            numeroresidencia.classList.remove("invalid-input");
+        }
+        if (!numerocelularvalue.trim()) {
+            numerocelular.classList.add("invalid-input");
+        } else {
+            numerocelular.classList.remove("invalid-input");
         }
 
         if (!passwordvalue.trim()) {
@@ -87,11 +96,14 @@ submitAccount.addEventListener("click", (e) => {
             "Por favor, preencha todos os campos. Algum campo do formulário está vazio."
         );
     } else {
-        const userName = nameInput.value;
-        const origen = "sign-up";
+        const origen = 'sign-up';
+        const cliente = new Cliente(nameInputValue,emailInputValue, inputscpfvalue,
+            cepInputvalue,numeroresidenciavalue,numerocelularvalue,passwordvalue);
 
-        localStorage.setItem("userinfo", userName);
-        localStorage.setItem("origen", origen);
+        localStorage.setItem("userinfo",cliente.cpf);        
+        const clienteJSON = JSON.stringify(cliente);
+        localStorage.setItem(cliente.cpf, clienteJSON);
+        localStorage.setItem("origen",origen);
         window.location.href = "../dashboard/";
     }
 });
