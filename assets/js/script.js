@@ -141,7 +141,7 @@ function getFormData(e) {
 function countCharTitle() {
     // commentTitle.onkeyup()
     let charTitle = sizeTitleComent - commentTitle.value.length;
-    document.getElementById('counter-title').innerText = charTitle;
+    // document.getElementById('counter-title').innerText = charTitle;
     console.log(`restantes: ${charTitle} | Ocupados: ${commentTitle.value.length}`)
     return charTitle;
 }
@@ -191,3 +191,4 @@ function mascaraTelefone() {
 }
 
 commentForm.addEventListener("submit", getFormData);
+*/
