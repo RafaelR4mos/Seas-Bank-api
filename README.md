@@ -16,11 +16,15 @@ Projeto desenvolvido através do programa vem ser da DBC Company durante o módu
 </p>
 
 <p align="center">
-  <img alt="License" src="./assets/seasbank-v2.png">
+  <img alt="License" src="./assets/seas-api-done.png">
 </p>
 
 <p align="center">
-  <a href="https://task-03-trilha-front-end.vercel.app" target="_blank"> -> Acesse o deploy do projeto!</a>
+  Para conferir o nosso projeto basta clicar no link abaixo:
+</p>
+
+<p align="center">
+  <a href="seas-bank-api.vercel.app/" target="_blank"> -> Acesse o deploy do projeto!</a>
 </p>
 
 <br>
@@ -30,10 +34,10 @@ Projeto desenvolvido através do programa vem ser da DBC Company durante o módu
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 -   HTML
--   CSS, Sass, Botstrap
+-   Styles: CSS, Sass, Botstrap, SweetAlerts
 -   Git e Github
 -   Javascript - Fetch
--   APIS
+-   APIS: CEP, Currency Exchange, JSONPlaceholder
 
 ## 💻 Projeto
 
@@ -57,4 +61,4 @@ Esse projeto está sob a licença MIT.
 
 ---
 
-Made with 💙 by Guilherme, Leonardo e Rafael
+Made with 💙 by Guilherme, Leonardo, Miguel, Rafael e Rayane
