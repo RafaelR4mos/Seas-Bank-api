@@ -8,6 +8,10 @@ const commentTitle = document.getElementById("comment-title");
 const commentText = document.getElementById("comment-text");
 const testimonialsContainer = document.getElementById("testimonials-container");
 const headerHeight = document.querySelector("header").offsetHeight;
+const counterTitle = document.getElementById('counter-title');
+const limitedInput = document.querySelectorAll('.limited-input');
+const counter = document.querySelectorAll('.counter');
+console.log(counter)
 
 const sizeTitleComent = 30
 const sizeTextComent = 140
@@ -139,18 +143,32 @@ function getFormData(e) {
 }
 
 function countCharTitle() {
-    // commentTitle.onkeyup()
+    counterTitle.style.display = "flex";
     let charTitle = sizeTitleComent - commentTitle.value.length;
-    // document.getElementById('counter-title').innerText = charTitle;
+    counterTitle.innerText = `${charTitle} / ${sizeTitleComent}`;
+    if (charTitle < 0) {
+        counterTitle.classList.add("counter-overflow");
+    } else {
+        counterTitle.classList.remove("counter-overflow");
+    }
     console.log(`restantes: ${charTitle} | Ocupados: ${commentTitle.value.length}`)
     return charTitle;
 }
 
-function countCharText() {
-    let charText = sizeTextComent - commentText.value.length;
-    console.log(`restantes: ${charText} | Ocupados: ${commentText.value.length}`)
-    return charText;
+function countChars(e) {
+    const item = e.target;
+    const size = parseInt(item.dataset.char, 10);
+    const counter = item.parentElement.firstElementChild.firstElementChild;
+    let chars = size - item.value.length;
+    console.log(item.parentElement.firstElementChild)
+    item.innerText = `${chars} / ${size}`;
 }
+
+// function countCharText() {
+//     let charText = sizeTextComent - commentText.value.length;
+//     console.log(`restantes: ${charText} | Ocupados: ${commentText.value.length}`)
+//     return charText;
+// }
 
 function verifyNameComment(e) {
     e.preventDefault();
@@ -162,9 +180,11 @@ function verifyNameComment(e) {
     }
 }
 
+limitedInput.forEach((item) => item.addEventListener("keyup", countChars))
 commentForm.addEventListener("submit", getFormData);
 commentTitle.addEventListener("keyup", countCharTitle);
-commentText.addEventListener("keyup", countCharText);
+commentTitle.addEventListener("blur", () => counterTitle.style.display = "none");
+// commentText.addEventListener("keyup", countCharText);
 commentName.addEventListener("blur", verifyNameComment);
 
 

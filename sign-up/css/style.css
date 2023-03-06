@@ -152,6 +152,17 @@
 }
 * body .sign-up-section .left-container .container form .gender-number-container .number {
   width: 100%;
+  /* 
+                                  input[type=number]::-webkit-outer-spin-button,
+                                  input[type=number]::-webkit-inner-spin-button {
+                                      -webkit-appearance: none;
+                                      margin: 0;
+                                  }
+
+                                  input[type=number] {
+                                      -moz-appearance: textfield;
+                                      appearance: textfield;
+                                  } */
 }
 * body .sign-up-section .left-container .container form .gender-number-container .number input::-webkit-outer-spin-button,
 * body .sign-up-section .left-container .container form .gender-number-container .number input::-webkit-inner-spin-button {
