@@ -122,6 +122,11 @@ $placeholder-color: #ffffff8e;
                     padding: 0.5rem 0rem;
                     gap: 0.35rem;
 
+                    .feat-line {
+                        justify-content: flex-end;
+                        margin-bottom: 12px;
+                    }
+
                     .upper {
                         display: flex;
                         align-items: center;
@@ -155,6 +160,7 @@ $placeholder-color: #ffffff8e;
                 }
 
                 .buttons {
+                    margin-top: 1rem;
                     display: flex;
                     flex-direction: column;
                     align-items: center;

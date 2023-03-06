@@ -100,6 +100,10 @@
   padding: 0.5rem 0rem;
   gap: 0.35rem;
 }
+* body .login-section .container .features .feat-line {
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
 * body .login-section .container .features .upper {
   display: flex;
   align-items: center;
@@ -125,6 +129,7 @@
   padding: 1rem 0rem;
 }
 * body .login-section .container .buttons {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
