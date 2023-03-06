@@ -18,6 +18,10 @@ $placeholder-color: #ffffff8e;
         height: 100vh;
         overflow-x: hidden;
 
+        a {
+            text-decoration: none;
+        }
+
         .go-back-btn {
             position: absolute;
             top: 48px;

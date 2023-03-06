@@ -12,6 +12,9 @@
   height: 100vh;
   overflow-x: hidden;
 }
+* body a {
+  text-decoration: none;
+}
 * body .go-back-btn {
   position: absolute;
   top: 48px;
