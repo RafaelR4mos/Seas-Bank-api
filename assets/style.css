@@ -406,6 +406,20 @@ h3 {
     height: 100%;
 }
 
+.counter-title-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.counter-title {
+    color: #777777;
+    padding-right: 8px;
+}
+
+.counter-title.counter-overflow, .counter-text.counter-overflow {
+    color: #e15656;
+}
+
 /* ---------- SECOND SECTION ------------*/
 .second {
     display: flex;

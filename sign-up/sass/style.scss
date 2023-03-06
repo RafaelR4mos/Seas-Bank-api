@@ -68,9 +68,11 @@ $placeholder-color: #ffffff8e;
             display: flex;
             justify-content: center;
             align-items: center;
+
             .image-container {
                 display: none;
             }
+
             .left-container {
                 width: 100%;
                 height: 100%;
@@ -106,6 +108,7 @@ $placeholder-color: #ffffff8e;
                         display: flex;
                         flex-direction: column;
                         gap: 0.7rem;
+
                         .input-div {
                             padding-top: 1.2rem;
                             display: flex;
@@ -128,6 +131,7 @@ $placeholder-color: #ffffff8e;
                                 color: $placeholder-color;
                                 text-align: center;
                             }
+
                             .upper-inputs:focus {
                                 outline: none;
                                 border: 1px solid rgba(255, 255, 255, 0.774);
@@ -135,11 +139,13 @@ $placeholder-color: #ffffff8e;
                         }
 
                         .inputs-cpf {
+
                             input::-webkit-outer-spin-button,
                             input::-webkit-inner-spin-button {
                                 -webkit-appearance: none;
                                 margin: 0;
                             }
+
                             display: flex;
                             justify-content: center;
                             gap: 0.3rem;
@@ -147,10 +153,12 @@ $placeholder-color: #ffffff8e;
                             .addres-cpf-input {
                                 width: 50%;
                             }
+
                             .addres-cpf-input::placeholder {
                                 color: $placeholder-color;
                                 text-align: center;
                             }
+
                             .addres-cpf-input:focus {
                                 outline: none;
                                 border: 1px solid rgba(255, 255, 255, 0.774);
@@ -173,20 +181,40 @@ $placeholder-color: #ffffff8e;
                             color: white;
                             align-items: center;
                             font-size: 0.9rem;
+
                             .number {
                                 width: 100%;
+
                                 input::-webkit-outer-spin-button,
                                 input::-webkit-inner-spin-button {
                                     -webkit-appearance: none;
                                     margin: 0;
                                 }
+/* 
+                                input[type=number]::-webkit-outer-spin-button,
+                                input[type=number]::-webkit-inner-spin-button {
+                                    -webkit-appearance: none;
+                                    margin: 0;
+                                }
+
+                                input[type=number] {
+                                    -moz-appearance: textfield;
+                                    appearance: textfield;
+                                } */
+
+                                // input[type=number] { 
+                                //     -moz-appearance: textfield;
+                                //     appearance: textfield;                                 
+                                //  }
                                 input {
                                     width: 100%;
                                 }
+
                                 input::placeholder {
                                     color: $placeholder-color;
                                     text-align: center;
                                 }
+
                                 input:focus {
                                     outline: none;
                                     border: 1px solid rgba(255, 255, 255, 0.774);
@@ -196,21 +224,26 @@ $placeholder-color: #ffffff8e;
 
                         .input-password {
                             width: 100%;
+
                             .password {
                                 width: 100%;
                             }
+
                             .password::placeholder {
                                 color: $placeholder-color;
                                 text-align: center;
                             }
+
                             .password:focus {
                                 outline: none;
                                 border: 1px solid rgba(255, 255, 255, 0.774);
                             }
                         }
+
                         .open-account {
                             display: flex;
                             justify-content: center;
+
                             button {
                                 width: 80%;
                                 height: 2.5rem;
@@ -221,6 +254,7 @@ $placeholder-color: #ffffff8e;
                                 font-weight: bold;
                                 transition: all 0.3s linear;
                                 cursor: pointer;
+
                                 a {
                                     color: black;
                                     display: flex;
@@ -230,6 +264,7 @@ $placeholder-color: #ffffff8e;
                                     height: 100%;
                                 }
                             }
+
                             #submit-account {
                                 cursor: pointer;
                                 width: 80%;
@@ -264,10 +299,12 @@ $placeholder-color: #ffffff8e;
                 width: 100vw;
                 height: 100%;
             }
+
             img {
                 width: 100%;
                 height: 100%;
             }
+
             .sign-up-section {
                 display: flex;
 
@@ -275,14 +312,18 @@ $placeholder-color: #ffffff8e;
                     width: 50%;
                     height: 100%;
                     padding: 2rem;
+
                     .container {
                         gap: 0.3rem;
+
                         form {
                             gap: 0.7rem;
+
                             .inside-input {
                                 padding: 1.1rem;
                                 font-size: 1rem;
                             }
+
                             .open-account {
                                 button {
                                     height: 3.5rem;
@@ -290,11 +331,13 @@ $placeholder-color: #ffffff8e;
                                 }
                             }
                         }
+
                         .welcome {
                             img {
                                 width: 100px;
                                 height: 100px;
                             }
+
                             h3 {
                                 font-size: 2.5rem;
                             }
