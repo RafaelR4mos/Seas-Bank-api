@@ -99,18 +99,15 @@ if(origen == "login"){
       });
 }
 
-
-
 window.onload = () => {
     const userCpf = window.localStorage.getItem("userinfo");
     const clienteJSON = localStorage.getItem(userCpf);
     const cliente = Cliente.fromJSON(JSON.parse(clienteJSON));
 
-
     const userFormated = cliente.nome.toLowerCase();
     const userCardFormated = cliente.nome.toUpperCase();
     userName.innerText = `Olá, ${userFormated}`;
-    userNameCard.innerText = `${userFormated}`;
+    userNameCard.innerText = `${userCardFormated}`;
     if(origen == "sign-up"){
         saldoConta.innerText = 'R$ 0,00';
     } else {
@@ -248,34 +245,22 @@ async function pesquisarCambio() {
 }
 
 pesquisarCambio().then((cambio) => {
-    cambio; // fetched movies
-    let moeda = Object.keys(cambio);
-    const resultado = [];
-    for (let e of moeda) {
-        console.log(`
-        ${cambio[e]["code"]} > ${cambio[e]["codein"]}
-        low ${parseFloat(cambio[e]["low"], 10).toLocaleString("pt-BR", {
+    cambio; // fetched exchange rates
+let moeda = Object.keys(cambio);
+const resultado = [];
+for (let e of moeda) {
+    resultado.push(`
+        ${cambio[e]["code"]} / ${cambio[e]["codein"]}
+        Low: ${parseFloat(cambio[e]["low"], 10).toLocaleString("pt-BR", {
             style: "currency",
             currency: cambio[e]["codein"],
         })}
-        high ${parseFloat(cambio[e]["high"], 10).toLocaleString("pt-BR", {
+        High: ${parseFloat(cambio[e]["high"], 10).toLocaleString("pt-BR", {
             style: "currency",
             currency: cambio[e]["codein"],
-        })}`);
-
-        resultado.push(
-            `${cambio[e]["code"]} > ${cambio[e]["codein"]} - low ${parseFloat(
-                cambio[e]["low"],
-                10
-            ).toLocaleString("pt-BR", {
-                style: "currency",
-                currency: cambio[e]["codein"],
-            })} high ${parseFloat(cambio[e]["high"], 10).toLocaleString(
-                "pt-BR",
-                { style: "currency", currency: cambio[e]["codein"] }
-            )} | `
-        );
-    }
+        })}
+    `);
+}
 
     console.log(resultado);
     const item = document.getElementById("cambio");
