@@ -210,14 +210,10 @@ btnsubmitNews.addEventListener("click", validarEmail);
 commentForm.addEventListener("submit", getFormData);
 limitedInput.forEach((item) => item.addEventListener("keyup", countChars));
 limitedInput.forEach((item) =>
-    item.parentElement.firstElementChild.firstElementChild.addEventListener(
-        "blur",
-        () => {
-            item.parentElement.firstElementChild.firstElementChild.style.display =
-                "none";
-            console.log(item.target);
-        }
-    )
+    item.addEventListener("blur", (e) => {
+        e.target.parentElement.firstElementChild.firstElementChild.style.display =
+            "none";
+    })
 );
 commentForm.addEventListener("submit", getFormData);
 // commentTitle.addEventListener("keyup", countCharTitle);

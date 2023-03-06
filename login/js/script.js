@@ -27,13 +27,19 @@ submitBtn.addEventListener("click", (e) => {
         } else {
             accountPassword.classList.remove("invalid-input");
         }
-        alert(
-            "Por favor, preencha todos os campos. Algum campo do formulário está vazio."
+        swal(
+            "Tente novamente!",
+            "Por favor, preencha todos os campos. Os campos inválidos estão demarcados e devem ser preenhcidos novamente.",
+            "error"
         );
     } else {
         const clienteJSON = localStorage.getItem(accountNumbnerValue);
         if (clienteJSON == null) {
-            alert("Cliente inexistente na base.");
+            swal(
+                "Tente novamente!",
+                "Os dados digitados não conferem com nenhum cliente registrado no Seas.",
+                "error"
+            );
         } else {
             const cliente = Cliente.fromJSON(JSON.parse(clienteJSON));
             if (
@@ -44,7 +50,11 @@ submitBtn.addEventListener("click", (e) => {
                 window.localStorage.setItem("origen", origen);
                 window.location.href = "../dashboard/";
             } else {
-                alert("Dados do cliente não conferem. Tente novamente.");
+                swal(
+                    "Tente novamente!",
+                    "Os dados do cliente não conferem",
+                    "error"
+                );
             }
         }
     }
@@ -58,20 +68,30 @@ forgetPasswordButton.addEventListener("click", () => {
         } else {
             accountNumbner.classList.remove("invalid-input");
         }
-        alert(
-            "Por favor, preencha o campo cpf para envio da recuperação da senha."
+        swal(
+            "Preencha o campo CPF!",
+            "Para recuperar a sua senha precisamos que digite o seu CPF digitado no cadastro.",
+            "info"
         );
     } else {
         const clienteJSON = localStorage.getItem(accountNumbnerValue);
         if (clienteJSON == null) {
-            alert("Cliente inexistente na base para envio de e-mail.");
+            swal(
+                "Tente novamente!",
+                "O cliente não foi encontrado na base para o envio de e-mail. Revise o campo cpf e tente novamente",
+                "error"
+            );
         } else {
             const cliente = Cliente.fromJSON(JSON.parse(clienteJSON));
             const email = cliente.email;
             if (email) {
                 sendEmail(email);
             } else {
-                alert("Por favor, insira um email válido");
+                swal(
+                    "Tente novamente!",
+                    "Por favor, Preencha um e-mail válido.",
+                    "error"
+                );
             }
         }
     }
