@@ -106,6 +106,7 @@ a {
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+    font-weight: 700;
     padding: 8px;
 }
 
@@ -617,6 +618,11 @@ h3 {
 
 .contact-section {
     background-color: var(--color3);
+}
+
+.news-message {
+    color: #138141;
+    font-weight: 700;
 }
 
 .formu {

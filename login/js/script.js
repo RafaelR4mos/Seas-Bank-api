@@ -4,7 +4,7 @@ const submitBtn = document.getElementById("submit-btn");
 const accountNumbner = document.getElementById("account-number");
 const accountPassword = document.getElementById("account-password");
 const goBackBtnLogin = document.getElementById("go-back-btn-login");
-const forgetPasswordButton = document.querySelector('#forget-password');
+const forgetPasswordButton = document.querySelector("#forget-password");
 
 goBackBtnLogin.addEventListener("click", () => {
     window.location.href = "../";
@@ -50,7 +50,7 @@ submitBtn.addEventListener("click", (e) => {
     }
 });
 
-forgetPasswordButton.addEventListener('click', () => {
+forgetPasswordButton.addEventListener("click", () => {
     let accountNumbnerValue = accountNumbner.value;
     if (!accountNumbnerValue.trim()) {
         if (!accountNumbnerValue.trim()) {
@@ -70,13 +70,17 @@ forgetPasswordButton.addEventListener('click', () => {
             const email = cliente.email;
             if (email) {
                 sendEmail(email);
-            } else {  
-                alert('Por favor, insira um email válido');
+            } else {
+                alert("Por favor, insira um email válido");
             }
         }
-    }  
+    }
 });
 
 function sendEmail(email) {
-  alert(`Um email de recuperação foi enviado para ${email}`);
+    swal(
+        "Recuperação de conta",
+        `Um email de recuperação foi enviado para ${email}`,
+        "success"
+    );
 }

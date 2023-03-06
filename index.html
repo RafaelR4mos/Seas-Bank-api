@@ -22,7 +22,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
-
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <link rel="stylesheet" href="./assets/style.css" />
         <title>SeasBank</title>
     </head>
@@ -363,7 +363,7 @@
                             <input
                                 type="text"
                                 name="name"
-                                id=""
+                                id="name-input"
                                 placeholder="Digite seu nome"
                                 required
                             />
@@ -396,7 +396,6 @@
                             id="submit-btn-news"
                             type="submit"
                             value="Inscreva-se!"
-                            onclick="validarEmail()"
                         />
                     </form>
 

@@ -1,5 +1,6 @@
 const commentForm = document.getElementById("comment-form");
 const btnSubmit = document.getElementById("comment-submit");
+const btnsubmitNews = document.getElementById("submit-btn-news");
 const btnClose = document.getElementById("btn-close");
 const commentName = document.getElementById("comment-name");
 const commentEmail = document.getElementById("comment-email");
@@ -8,13 +9,31 @@ const commentTitle = document.getElementById("comment-title");
 const commentText = document.getElementById("comment-text");
 const testimonialsContainer = document.getElementById("testimonials-container");
 const headerHeight = document.querySelector("header").offsetHeight;
-const counterTitle = document.getElementById('counter-title');
-const limitedInput = document.querySelectorAll('.limited-input');
-const counter = document.querySelectorAll('.counter');
-console.log(counter)
+const counterTitle = document.getElementById("counter-title");
+const limitedInput = document.querySelectorAll(".limited-input");
+const counter = document.querySelectorAll(".counter");
+const sizeTitleComent = 30;
+const sizeTextComent = 140;
 
-const sizeTitleComent = 30
-const sizeTextComent = 140
+console.log(counter);
+
+const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
+
+window.onload = () => {
+    setSectionPadding();
+};
+
+fetch("https://jsonplaceholder.typicode.com/posts/")
+    .then((response) => response.json())
+    .then((comment) => {
+        setComments(
+            comment.filter((comment) => {
+                if (comment.id <= 6) {
+                    return comment;
+                }
+            })
+        );
+    });
 
 function setSectionPadding() {
     const testimonialSection = document.getElementById("testimonials");
@@ -29,43 +48,6 @@ function setSectionPadding() {
     contactSection.style.paddingTop = `${headerHeight}px`;
     faqSection.style.paddingTop = `${headerHeight}px`;
 }
-
-window.onload = () => {
-    setSectionPadding();
-};
-
-const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
-
-const alert = (message, type) => {
-    const wrapper = document.createElement("div");
-    wrapper.innerHTML = [
-        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-        `   <div>${message}</div>`,
-        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-        "</div>",
-    ].join("");
-
-    alertPlaceholder.append(wrapper);
-};
-
-const alertTrigger = document.getElementById("submit-btn-news");
-if (alertTrigger) {
-    alertTrigger.addEventListener("click", () => {
-        alert("Nice, you triggered this alert message!", "success");
-    });
-}
-
-fetch("https://jsonplaceholder.typicode.com/posts/")
-    .then((response) => response.json())
-    .then((comment) => {
-        setComments(
-            comment.filter((comment) => {
-                if (comment.id <= 6) {
-                    return comment;
-                }
-            })
-        );
-    });
 
 function setComments(results) {
     if (Array.isArray(results)) {
@@ -142,6 +124,42 @@ function getFormData(e) {
     btnClose.click();
 }
 
+function validarEmail(e) {
+    e.preventDefault();
+    var nomeInput = document.getElementById("name-input");
+    var telefone = document.getElementById("telefone");
+    var email = document.getElementById("email");
+    var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    console.log(telefone.value);
+    if (
+        !regex.test(email.value) ||
+        telefone.value == "" ||
+        nomeInput.value == ""
+    ) {
+        swal(
+            "Algo deu errado",
+            "Por favor, revise todos os campos e digite-os corretamente.",
+            "error"
+        );
+        email.focus();
+        return false;
+    } else {
+        swal(
+            "Agora sim! ;)",
+            "Seu cadastro foi um sucesso. Agora, você receberá todas as novidades do Seas",
+            "success"
+        );
+        return true;
+    }
+}
+
+function mascaraTelefone() {
+    var telefone = document.getElementById("telefone");
+    telefone.value = telefone.value.replace(/\D/g, "");
+    telefone.value = telefone.value.replace(/^(\d{2})(\d)/g, "($1) $2");
+    telefone.value = telefone.value.replace(/(\d)(\d{4})$/, "$1-$2");
+}
+
 function countCharTitle() {
     counterTitle.style.display = "flex";
     let charTitle = sizeTitleComent - commentTitle.value.length;
@@ -151,7 +169,9 @@ function countCharTitle() {
     } else {
         counterTitle.classList.remove("counter-overflow");
     }
-    console.log(`restantes: ${charTitle} | Ocupados: ${commentTitle.value.length}`)
+    console.log(
+        `restantes: ${charTitle} | Ocupados: ${commentTitle.value.length}`
+    );
     return charTitle;
 }
 
@@ -160,7 +180,7 @@ function countChars(e) {
     const size = parseInt(item.dataset.char, 10);
     const counter = item.parentElement.firstElementChild.firstElementChild;
     let chars = size - item.value.length;
-    console.log(item.parentElement.firstElementChild)
+    console.log(item.parentElement.firstElementChild);
     item.innerText = `${chars} / ${size}`;
 }
 
@@ -180,35 +200,17 @@ function verifyNameComment(e) {
     }
 }
 
-limitedInput.forEach((item) => item.addEventListener("keyup", countChars))
+btnsubmitNews.addEventListener("click", validarEmail);
+commentForm.addEventListener("submit", getFormData);
+limitedInput.forEach((item) => item.addEventListener("keyup", countChars));
 commentForm.addEventListener("submit", getFormData);
 commentTitle.addEventListener("keyup", countCharTitle);
-commentTitle.addEventListener("blur", () => counterTitle.style.display = "none");
+commentTitle.addEventListener(
+    "blur",
+    () => (counterTitle.style.display = "none")
+);
 // commentText.addEventListener("keyup", countCharText);
 commentName.addEventListener("blur", verifyNameComment);
 
-
 /* function limitLength(length) {
-function validarEmail(e) {
-    e.preventDefault();
-
-    var email = document.getElementById("email");
-    var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!regex.test(email.value)) {
-        alert("Por favor, informe um endereço de e-mail válido.");
-        email.focus();
-        return false;
-    } else {
-        return true;
-    }
-}
-
-function mascaraTelefone() {
-    var telefone = document.getElementById("telefone");
-    telefone.value = telefone.value.replace(/\D/g, "");
-    telefone.value = telefone.value.replace(/^(\d{2})(\d)/g, "($1) $2");
-    telefone.value = telefone.value.replace(/(\d)(\d{4})$/, "$1-$2");
-}
-
-commentForm.addEventListener("submit", getFormData);
-*/
+ */
