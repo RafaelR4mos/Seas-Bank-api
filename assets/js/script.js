@@ -9,6 +9,9 @@ const commentText = document.getElementById("comment-text");
 const testimonialsContainer = document.getElementById("testimonials-container");
 const headerHeight = document.querySelector("header").offsetHeight;
 
+const sizeTitleComent = 30
+const sizeTextComent = 140
+
 function setSectionPadding() {
     const testimonialSection = document.getElementById("testimonials");
     const infoSection = document.getElementById("second-section");
@@ -68,11 +71,11 @@ function setComments(results) {
             testimonialCard.classList.add("testimonial-card");
             const commentData = `
             <div class="card-header">
-                <strong>${results[i].title.slice(0, 30)}</strong>
+                <strong>${results[i].title.slice(0, sizeTitleComent)}</strong>
             </div>
             <div class="card-text">
                 <p>
-                    ${results[i].body.slice(0, 141)}
+                    ${results[i].body.slice(0, sizeTextComent)}
                 </p>
             </div>`;
 
@@ -85,12 +88,12 @@ function setComments(results) {
         testimonialCard.classList.add("testimonial-card");
         const commentData = `
         <div class="card-header">
-            <strong>${results.title.slice(0, 30)}</strong>
+            <strong>${results.title.slice(0, sizeTitleComent)}</strong>
         </div>
 
         <div class="card-text">
             <p>
-                ${results.body.slice(0, 141)}
+                ${results.body.slice(0, sizeTextComent)}
             </p>
         </div>`;
 
@@ -108,8 +111,8 @@ function clearList() {
 function getFormData(e) {
     e.preventDefault();
 
-    const title = commentTitle.value.slice(0, 31);
-    const text = commentText.value.slice(0, 141);
+    const title = commentTitle.value.slice(0, sizeTitleComent);
+    const text = commentText.value.slice(0, sizeTextComent);
 
     fetch("https://jsonplaceholder.typicode.com/posts", {
         method: "POST",
@@ -135,6 +138,37 @@ function getFormData(e) {
     btnClose.click();
 }
 
+function countCharTitle() {
+    // commentTitle.onkeyup()
+    let charTitle = sizeTitleComent - commentTitle.value.length;
+    // document.getElementById('counter-title').innerText = charTitle;
+    console.log(`restantes: ${charTitle} | Ocupados: ${commentTitle.value.length}`)
+    return charTitle;
+}
+
+function countCharText() {
+    let charText = sizeTextComent - commentText.value.length;
+    console.log(`restantes: ${charText} | Ocupados: ${commentText.value.length}`)
+    return charText;
+}
+
+function verifyNameComment(e) {
+    e.preventDefault();
+    regexName = /[a-zA-Z]{2}/g;
+    if (regexName.test(commentName.value)) {
+        commentName.classList.add("invalid-input");
+    } else {
+        commentName.classList.remove("invalid-input");
+    }
+}
+
+commentForm.addEventListener("submit", getFormData);
+commentTitle.addEventListener("keyup", countCharTitle);
+commentText.addEventListener("keyup", countCharText);
+commentName.addEventListener("blur", verifyNameComment);
+
+
+/* function limitLength(length) {
 function validarEmail(e) {
     e.preventDefault();
 
@@ -157,3 +191,4 @@ function mascaraTelefone() {
 }
 
 commentForm.addEventListener("submit", getFormData);
+*/
