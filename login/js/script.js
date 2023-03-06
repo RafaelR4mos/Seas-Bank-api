@@ -4,6 +4,7 @@ const submitBtn = document.getElementById("submit-btn");
 const accountNumbner = document.getElementById("account-number");
 const accountPassword = document.getElementById("account-password");
 const goBackBtnLogin = document.getElementById("go-back-btn-login");
+const forgetPasswordButton = document.querySelector('#forget-password');
 
 goBackBtnLogin.addEventListener("click", () => {
     window.location.href = "../";
@@ -31,22 +32,51 @@ submitBtn.addEventListener("click", (e) => {
         );
     } else {
         const clienteJSON = localStorage.getItem(accountNumbnerValue);
-        if(clienteJSON == null){
-            alert(
-                "Cliente inexistente na base."
-            );
-        }else{
+        if (clienteJSON == null) {
+            alert("Cliente inexistente na base.");
+        } else {
             const cliente = Cliente.fromJSON(JSON.parse(clienteJSON));
-            if(cliente.cpf == accountNumbnerValue && cliente.senha == accountPasswordValue){
-                const origen = 'login';
-                window.localStorage.setItem("origen",origen);
+            if (
+                cliente.cpf == accountNumbnerValue &&
+                cliente.senha == accountPasswordValue
+            ) {
+                const origen = "login";
+                window.localStorage.setItem("origen", origen);
                 window.location.href = "../dashboard/";
-            }else{
-                alert(
-                    "Dados do cliente não conferem. Tente novamente."
-                );
+            } else {
+                alert("Dados do cliente não conferem. Tente novamente.");
             }
-
         }
     }
 });
+
+forgetPasswordButton.addEventListener('click', () => {
+    let accountNumbnerValue = accountNumbner.value;
+    if (!accountNumbnerValue.trim()) {
+        if (!accountNumbnerValue.trim()) {
+            accountNumbner.classList.add("invalid-input");
+        } else {
+            accountNumbner.classList.remove("invalid-input");
+        }
+        alert(
+            "Por favor, preencha o campo cpf para envio da recuperação da senha."
+        );
+    } else {
+        const clienteJSON = localStorage.getItem(accountNumbnerValue);
+        if (clienteJSON == null) {
+            alert("Cliente inexistente na base para envio de e-mail.");
+        } else {
+            const cliente = Cliente.fromJSON(JSON.parse(clienteJSON));
+            const email = cliente.email;
+            if (email) {
+                sendEmail(email);
+            } else {  
+                alert('Por favor, insira um email válido');
+            }
+        }
+    }  
+});
+
+function sendEmail(email) {
+  alert(`Um email de recuperação foi enviado para ${email}`);
+}

@@ -1,297 +1,465 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="shortcut icon"
+            href="./imgs/gull-bird-flying-shape-svgrepo-com.svg"
+            type="image/SVG"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="./imgs/gull-bird-flying-shape-svgrepo-com.svg" type="image/SVG" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" href="./assets/style.css" />
-    <title>SeasBank</title>
-</head>
-
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="#">
-                    <p><span>Seas</span>Bank</p>
-                </a>
-                <a href="#"><img src="./assets/imgs/gull-bird-flying-shape-svgrepo-com.svg"
-                        alt="Logo do banco SeasBank (ave)" /></a>
-            </div>
-
-            <ul>
-                <li><a href="#testimonials">Depoimentos</a></li>
-                <li><a href="#second-section">Benefícios</a></li>
-                <li><a href="#contact">Contato</a></li>
-                <li><a href="#fourth">Perguntas frequentes</a></li>
-            </ul>
-
-            <div>
-                <button class="sign-up-btn">
-                    <a href="./plans/index.html">Faça parte</a>
-                </button>
-                <button class="login-btn">
-                    <a href="./login/">Faça login</a>
-                </button>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section class="first">
-            <div class="container1">
-                <h2>
-                    Navegue por um mar de possibilidades <br />com SeasBank
-                </h2>
-            </div>
-        </section>
-
-        <section id="testimonials" class="testimonials-section">
-            <div class="section-header">
-                <div>
-                    <img src="./assets/imgs/gull-bird-flying-shape-svgrepo-com.svg" alt="logo do seas" />
-                    <h2>
-                        <strong>Seas</strong>
-                        Bank
-                    </h2>
-                </div>
-                <span>Liberte-se da maré de burocracia</span>
-            </div>
-
-            <div id="testimonials-container" class="testimonials-cards"></div>
-            <button class="rate-btn" type="button" class="btn btn-primary" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">
-                <img src="./assets/imgs/star-icon.svg" alt="ícone de estrela" />
-                Avalie você também!
+        <link rel="stylesheet" href="./assets/style.css" />
+        <title>SeasBank</title>
+    </head>
+    <body>
+        <header>
+            <button
+                class="btn btn-primary custom-btn-menu"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasScrolling"
+                aria-controls="offcanvasScrolling"
+            >
+                <img
+                    src="./dashboard/imgs/hamburger-icon.svg"
+                    alt="ícone hamburguer para menu lateral"
+                />
             </button>
 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
-                            <button type="button" class="btn-close" id="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <h2>Preencha os campos</h2>
-                            <form id="comment-form">
-                                <div class="form-container">
-                                    <div class="input-container">
-                                        <label for="comment-name">Digite seu nome:</label>
-                                        <input id="comment-name" type="text" placeholder="Seu nome aqui" required />
+            <div
+                class="offcanvas offcanvas-start"
+                data-bs-scroll="true"
+                data-bs-backdrop="false"
+                tabindex="-1"
+                id="offcanvasScrolling"
+                aria-labelledby="offcanvasScrollingLabel"
+            >
+                <div class="offcanvas-header custom-menu-header">
+                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
+                        Seas Menu
+                    </h5>
+                    <button
+                        type="button"
+                        class="btn-close custom-header-btn-menu"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="offcanvas-body custom-menu-body">
+                    <ul>
+                        <li><a href="#testimonials">Depoimentos</a></li>
+                        <li><a href="#second-section">Benefícios</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                        <li><a href="#fourth">Perguntas Frequentes</a></li>
+                    </ul>
+
+                    <ul>
+                        <li><a href="./login/">Login</a></li>
+                        <li><a href="./plans/">Faça parte</a></li>
+                    </ul>
+                </div>
+            </div>
+            <nav>
+                <div class="logo">
+                    <a href="#">
+                        <p><span>Seas</span>Bank</p>
+                    </a>
+                    <a href="#"
+                        ><img
+                            src="./assets/imgs/gull-bird-flying-shape-svgrepo-com.svg"
+                            alt="Logo do banco SeasBank (ave)"
+                    /></a>
+                </div>
+
+                <ul>
+                    <li><a href="#testimonials">Depoimentos</a></li>
+                    <li><a href="#second-section">Benefícios</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#fourth">Perguntas frequentes</a></li>
+                </ul>
+
+                <div>
+                    <button class="sign-up-btn">
+                        <a href="./plans/index.html">Faça parte</a>
+                    </button>
+                    <button class="login-btn">
+                        <a href="./login/">Faça login</a>
+                    </button>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="first">
+                <div class="container1">
+                    <h2>
+                        Navegue por um mar de possibilidades <br />com SeasBank
+                    </h2>
+                </div>
+            </section>
+
+            <section id="testimonials" class="testimonials-section">
+                <div class="section-header">
+                    <div>
+                        <img
+                            src="./assets/imgs/gull-bird-flying-shape-svgrepo-com.svg"
+                            alt="logo do seas"
+                        />
+                        <h2>
+                            <strong>Seas</strong>
+                            Bank
+                        </h2>
+                    </div>
+                    <span>Liberte-se da maré de burocracia</span>
+                </div>
+
+                <div
+                    id="testimonials-container"
+                    class="testimonials-cards"
+                ></div>
+                <button
+                    class="rate-btn"
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                >
+                    <img
+                        src="./assets/imgs/star-icon.svg"
+                        alt="ícone de estrela"
+                    />
+                    Avalie você também!
+                </button>
+
+                <!-- Modal -->
+                <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                >
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1
+                                    class="modal-title fs-5"
+                                    id="exampleModalLabel"
+                                ></h1>
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    id="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                ></button>
+                            </div>
+                            <div class="modal-body">
+                                <h2>Preencha os campos</h2>
+                                <form id="comment-form">
+                                    <div class="form-container">
+                                        <div class="input-container">
+                                            <label for="comment-name"
+                                                >Digite seu nome:</label
+                                            >
+                                            <input
+                                                id="comment-name"
+                                                type="text"
+                                                placeholder="Seu nome aqui"
+                                                required
+                                            />
+                                        </div>
+
+                                        <div class="input-container">
+                                            <label for="comment-email"
+                                                >Digite seu e-mail:</label
+                                            >
+                                            <input
+                                                id="comment-email"
+                                                type="email"
+                                                placeholder="exemplo@email.com"
+                                                required
+                                            />
+                                        </div>
+
+                                        <div class="input-container">
+                                            <label for="comment-plan"
+                                                >Qual o seu plano?</label
+                                            >
+                                            <select
+                                                name="plan select"
+                                                id="comment-plan"
+                                                required
+                                            >
+                                                <option value="default">
+                                                    Escolha um plano
+                                                </option>
+                                                <option value="silver">
+                                                    Silver
+                                                </option>
+                                                <option value="gold">
+                                                    Gold
+                                                </option>
+                                                <option value="platinum">
+                                                    Platinum
+                                                </option>
+                                            </select>
+                                        </div>
+
+                                        <h3 for="rate-us">Nos avalie!</h3>
+
+                                        <div class="input-container">
+                                            <label
+                                                class="counter-container"
+                                                for="comment-title"
+                                                >Digite aqui o tópico/tema da
+                                                sua avaliação:
+                                                <span
+                                                    id="counter-title"
+                                                    class="counter"
+                                                ></span
+                                            ></label>
+                                            <input
+                                                type="text"
+                                                id="comment-title"
+                                                placeholder="tema/tópico do seu comentário aqui"
+                                                class="limited-input 30"
+                                                data-char="30"
+                                                required
+                                            />
+                                        </div>
+
+                                        <div class="input-container">
+                                            <label class="counter-container" for="comment-text"
+                                                >Teste<span
+                                                    id="counter-title"
+                                                    class="counter"
+                                                ></span
+                                            ></label>
+                                            <textarea
+                                                name="avaliação usuário"
+                                                id="comment-text"
+                                                cols="10"
+                                                rows="5"
+                                                placeholder="Digite aqui a sua avaliação do Seas Bank"
+                                                class="limited-input 140"
+                                                data-char="140"
+                                                required
+                                            >
+                                            </textarea>
+                                        </div>
+
+                                        <input
+                                            type="submit"
+                                            value="Submeter Resposta"
+                                            class="comment-submit"
+                                            id="comment-submit"
+                                        />
                                     </div>
-
-                                    <div class="input-container">
-                                        <label for="comment-email">Digite seu e-mail:</label>
-                                        <input id="comment-email" type="email" placeholder="exemplo@email.com"
-                                            required />
-                                    </div>
-
-                                    <div class="input-container">
-                                        <label for="comment-plan">Qual o seu plano?</label>
-                                        <select name="plan select" id="comment-plan" required>
-                                            <option value="default">
-                                                Escolha um plano
-                                            </option>
-                                            <option value="silver">
-                                                Silver
-                                            </option>
-                                            <option value="gold">
-                                                Gold
-                                            </option>
-                                            <option value="platinum">
-                                                Platinum
-                                            </option>
-                                        </select>
-                                    </div>
-
-                                    <h3 for="rate-us">Nos avalie!</h3>
-
-                                    <div class="input-container">
-                                        <label class="counter-container" for="comment-title">Digite aqui o
-                                            tópico/tema da
-                                            sua avaliação: <span id="counter-title" class="counter"></span></label>
-                                        <input type="text" id="comment-title"
-                                            placeholder="tema/tópico do seu comentário aqui" class="limited-input 30"
-                                            data-char='30' required />
-                                    </div>
-
-                                    <div class="input-container">
-                                        <label class="counter-container" for="comment-text">Teste<span id="counter-title" class="counter"></span></label>
-                                        <textarea name="avaliação usuário" id="comment-text" cols="10" rows="5"
-                                            placeholder="Digite aqui a sua avaliação do Seas Bank"
-                                            class="limited-input 140" data-char='140' required>
-                                        </textarea>
-                                    </div>
-
-                                    <input type="submit" value="Submeter Resposta" class="comment-submit"
-                                        id="comment-submit" />
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="second-section" class="second">
-            <div class="textos">
-                <div class="left-text">
-                    <i class="fa-regular fa-credit-card"></i>
-                    <p>
-                        Condições e benefícios exclusivos para o seu estilo
-                        de vida!
-                    </p>
+            <section id="second-section" class="second">
+                <div class="textos">
+                    <div class="left-text">
+                        <i class="fa-regular fa-credit-card"></i>
+                        <p>
+                            Condições e benefícios exclusivos para o seu estilo
+                            de vida!
+                        </p>
+                    </div>
+                    <div class="left-text">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <p>
+                            Todo o cuidado de nossa equipe financeira para
+                            oferecer o suporte necessário para você, sua família
+                            e seu negócio.
+                        </p>
+                    </div>
+                    <div class="left-text">
+                        <i class="fa-solid fa-money-bill-trend-up"></i>
+                        <p>
+                            Conte conosco, seja para investir no futuro ou
+                            aproveitar o agora.
+                        </p>
+                    </div>
                 </div>
-                <div class="left-text">
-                    <i class="fa-solid fa-hand-holding-dollar"></i>
-                    <p>
-                        Todo o cuidado de nossa equipe financeira para
-                        oferecer o suporte necessário para você, sua família
-                        e seu negócio.
-                    </p>
+                <div class="card-img">
+                    <img
+                        src="./assets/imgs/card-platinum-2.png"
+                        alt="Cartão SeaBank"
+                    />
                 </div>
-                <div class="left-text">
-                    <i class="fa-solid fa-money-bill-trend-up"></i>
-                    <p>
-                        Conte conosco, seja para investir no futuro ou
-                        aproveitar o agora.
-                    </p>
-                </div>
-            </div>
-            <div class="card-img">
-                <img src="./assets/imgs/card-platinum-2.png" alt="Cartão SeaBank" />
-            </div>
-        </section>
+            </section>
 
-        <section id="third" class="third">
-            <div class="section-title">
-                <h2>Entre na nossa Onda</h2>
-                <span>Escolha <strong>Seas!</strong></span>
-            </div>
-
-            <div class="cards">
-                <div class="card">
-                    <h3>Feito para você!</h3>
-                    <p>
-                        Possuímos vários moldes de conta, entre em contato e
-                        descubra qual combina com seu perfil.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Tudo pelo app!</h3>
-                    <p>
-                        Uma infinidade de ações na palma da sua mão, e se
-                        precisar de ajuda estaremos com você.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Vantagens exclusivas!</h3>
-                    <p>
-                        Uma grande variedade de vantagens conforme a sua
-                        necessidade e perfil.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Anuidade zero!</h3>
-                    <p>
-                        Cartão de limite ajustável e sem anuidade,contando
-                        também com clube de milhas.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-section">
-            <div class="formu">
+            <section id="third" class="third">
                 <div class="section-title">
-                    <h2>Fique por dentro das novidades!</h2>
-                    <span>Buscamos melhorias para facilitar a sua vida</span>
+                    <h2>Entre na nossa Onda</h2>
+                    <span>Escolha <strong>Seas!</strong></span>
                 </div>
 
-                <form>
-                    <div class="nome">
-                        <label for="name">Informe seu nome:</label>
-                        <input type="text" name="name" id="" placeholder="Digite seu nome" required />
+                <div class="cards">
+                    <div class="card">
+                        <h3>Feito para você!</h3>
+                        <p>
+                            Possuímos vários moldes de conta, entre em contato e
+                            descubra qual combina com seu perfil.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3>Tudo pelo app!</h3>
+                        <p>
+                            Uma infinidade de ações na palma da sua mão, e se
+                            precisar de ajuda estaremos com você.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3>Vantagens exclusivas!</h3>
+                        <p>
+                            Uma grande variedade de vantagens conforme a sua
+                            necessidade e perfil.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3>Anuidade zero!</h3>
+                        <p>
+                            Cartão de limite ajustável e sem anuidade,contando
+                            também com clube de milhas.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="contact-section">
+                <div class="formu">
+                    <div class="section-title">
+                        <h2>Fique por dentro das novidades!</h2>
+                        <span
+                            >Buscamos melhorias para facilitar a sua vida</span
+                        >
                     </div>
 
-                    <div class="email">
-                        <label for="email">Informe seu email:</label>
-                        <input type="email" name="email" id="email" placeholder="Digite seu email" required />
-                    </div>
+                    <form>
+                        <div class="nome">
+                            <label for="name">Informe seu nome:</label>
+                            <input
+                                type="text"
+                                name="name"
+                                id=""
+                                placeholder="Digite seu nome"
+                                required
+                            />
+                        </div>
 
-                    <div class="number">
-                        <label for="number">Informe seu número:</label>
-                        <input type="text" name="number" id="telefone" placeholder="(ddd) xxxx-xxxx"
-                            onkeyup="mascaraTelefone()" required />
-                    </div>
+                        <div class="email">
+                            <label for="email">Informe seu email:</label>
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="Digite seu email"
+                                required
+                            />
+                        </div>
 
-                    <input id="submit-btn-news" type="submit" value="Inscreva-se!" onclick="validarEmail()" />
-                </form>
+                        <div class="number">
+                            <label for="number">Informe seu número:</label>
+                            <input
+                                type="text"
+                                name="number"
+                                id="telefone"
+                                placeholder="(ddd) xxxx-xxxx"
+                                onkeyup="mascaraTelefone()"
+                                required
+                            />
+                        </div>
 
-                <div id="liveAlertPlaceholder"></div>
-                <!-- <button
+                        <input
+                            id="submit-btn-news"
+                            type="submit"
+                            value="Inscreva-se!"
+                            onclick="validarEmail()"
+                        />
+                    </form>
+
+                    <div id="liveAlertPlaceholder"></div>
+                    <!-- <button
                         type="button"
                         class="btn btn-primary"
                         id="liveAlertBtn"
                     >
                         Show live alert
                     </button> -->
-            </div>
-        </section>
-        <section id="fourth" class="fourth">
-            <h3>Perguntas Frequentes</h3>
-            <div>
-                <details>
-                    <summary>
-                        Quanto tempo leva para meu cartão chegar?<i class="fa-regular fa-compass"></i>
-                    </summary>
-                    <p>
-                        Geralmente até duas semanas, dependendo de sua
-                        localidade.
-                    </p>
-                </details>
-            </div>
-            <div>
-                <details>
-                    <summary>
-                        Tenho que passar por algum processo de análise?<i class="fa-regular fa-compass"></i>
-                    </summary>
-                    <p>
-                        Não, preenchendo os requisitos mínimos cadastrais
-                        você já estara fazendo parte do SeasBank.
-                    </p>
-                </details>
-            </div>
-            <div>
-                <details>
-                    <summary>
-                        Como funciona a conta SeasBank?<i class="fa-regular fa-compass"></i>
-                    </summary>
-                    <p>
-                        Sua conta no SeasBank funcionará como uma carteira
-                        digital, podendo efetuar diversas transações na
-                        palma da sua mão, além de realizar investimentos
-                        tanto em seu país quanto em qualquer outro mercado.
-                    </p>
-                </details>
-            </div>
-        </section>
-    </main>
-    <script src="./assets/js/script.js"></script>
-</body>
-
+                </div>
+            </section>
+            <section id="fourth" class="fourth">
+                <h3>Perguntas Frequentes</h3>
+                <div>
+                    <details>
+                        <summary>
+                            Quanto tempo leva para meu cartão chegar?<i
+                                class="fa-regular fa-compass"
+                            ></i>
+                        </summary>
+                        <p>
+                            Geralmente até duas semanas, dependendo de sua
+                            localidade.
+                        </p>
+                    </details>
+                </div>
+                <div>
+                    <details>
+                        <summary>
+                            Tenho que passar por algum processo de análise?<i
+                                class="fa-regular fa-compass"
+                            ></i>
+                        </summary>
+                        <p>
+                            Não, preenchendo os requisitos mínimos cadastrais
+                            você já estara fazendo parte do SeasBank.
+                        </p>
+                    </details>
+                </div>
+                <div>
+                    <details>
+                        <summary>
+                            Como funciona a conta SeasBank?<i
+                                class="fa-regular fa-compass"
+                            ></i>
+                        </summary>
+                        <p>
+                            Sua conta no SeasBank funcionará como uma carteira
+                            digital, podendo efetuar diversas transações na
+                            palma da sua mão, além de realizar investimentos
+                            tanto em seu país quanto em qualquer outro mercado.
+                        </p>
+                    </details>
+                </div>
+            </section>
+        </main>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"
+        ></script>
+        <script src="./assets/js/script.js"></script>
+    </body>
 </html>

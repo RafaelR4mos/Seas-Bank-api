@@ -13,7 +13,7 @@ if(origen == "login"){
     transactionData = [
         {
             transactionTitle: "cinema jung",
-            date: "28-02-2023",
+            date: "2023-02-23",
             time: "21:15",
             category: "entertainment",
             type: "spent",
@@ -21,7 +21,7 @@ if(origen == "login"){
         },
         {
             transactionTitle: "supermercado mayra",
-            date: "28-02-2023",
+            date: "2023-02-28",
             time: "12:00",
             category: "store",
             type: "spent",
@@ -29,7 +29,7 @@ if(origen == "login"){
         },
         {
             transactionTitle: "supermercado Pablo",
-            date: "28-02-2023",
+            date: "2023-02-28;",
             time: "09:00",
             category: "store",
             type: "spent",
@@ -37,7 +37,7 @@ if(origen == "login"){
         },
         {
             transactionTitle: "pix lucas amaral",
-            date: "28-02-2023",
+            date: "2023-02-28;",
             time: "10:00",
             category: "transference",
             type: "income",
@@ -45,7 +45,7 @@ if(origen == "login"){
         },
         {
             transactionTitle: "dog do maicon",
-            date: "28-02-2023",
+            date: "2023-02-28",
             time: "21:15",
             category: "entertainment",
             type: "spent",
@@ -53,7 +53,7 @@ if(origen == "login"){
         },
         {
             transactionTitle: "salario dbc",
-            date: "01-03-2023",
+            date: "2023-03-01",
             time: "08:00",
             category: "entertainment",
             type: "income",
@@ -61,7 +61,7 @@ if(origen == "login"){
         },
         {
             transactionTitle: "informatica da cris",
-            date: "01-03-2023",
+            date: "2023-03-01",
             time: "17:00",
             category: "store",
             type: "income",
@@ -69,7 +69,7 @@ if(origen == "login"){
         },
         {
             transactionTitle: "restaurante do rafa",
-            date: "01-03-2023",
+            date: "2023-03-01",
             time: "12:00",
             category: "store",
             type: "spent",
@@ -77,7 +77,7 @@ if(origen == "login"){
         },
         {
             transactionTitle: "lojas renner",
-            date: "01-03-2023",
+            date: "2023-03-01",
             time: "20:00",
             category: "food",
             type: "spent",
@@ -85,13 +85,18 @@ if(origen == "login"){
         },
         {
             transactionTitle: "pix do alisson",
-            date: "02-03-2023",
+            date: "2023-03-02",
             time: "10:00",
             category: "transference",
             type: "income",
             value: "15",
         }
     ];
+    transactionData.sort((a, b) => {
+        const dateA = new Date(`${a.date}T${a.time}`);
+        const dateB = new Date(`${b.date}T${b.time}`);
+        return dateA - dateB;
+      });
 }
 
 

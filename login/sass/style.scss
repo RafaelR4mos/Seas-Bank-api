@@ -18,6 +18,10 @@ $placeholder-color: #ffffff8e;
         height: 100vh;
         overflow-x: hidden;
 
+        a {
+            text-decoration: none;
+        }
+
         .go-back-btn {
             position: absolute;
             top: 48px;
@@ -289,8 +293,17 @@ $placeholder-color: #ffffff8e;
                                 width: 50%;
                                 text-align: end;
 
-                                a {
-                                    font-size: 1rem;
+                                button {
+                                    border: none;
+                                    background-color: transparent;
+                                    width: fit-content;
+                                    color: $text-color;
+                                }
+
+                                .modal-body {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 32px;
                                 }
                             }
 
