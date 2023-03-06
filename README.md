@@ -11,8 +11,17 @@ Projeto desenvolvido através do programa vem ser da DBC Company durante o módu
   <a href="#-licença">Licença</a>
 </p>
 
+## Como executar o Projeto
+Para conferir o nosso projeto basta clicar no link abaixo. Todas bibliotecas e dependências estão sendo consumidas via CDN. Não é necessário executar nenhum comando no terminal para executar a aplicação.
+
+
+
 <p align="center">
     <span>🔵Landing Page do Seas</span>
+</p>
+
+<p align="center">
+  <a href="https://seas-bank-api.vercel.app/" target="_blank"> -> Acesse o deploy do projeto!</a>
 </p>
 
 <p align="center">
