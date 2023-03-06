@@ -190,12 +190,6 @@ function countChars(e) {
     }
 }
 
-// function countCharText() {
-//     let charText = sizeTextComent - commentText.value.length;
-//     console.log(`restantes: ${charText} | Ocupados: ${commentText.value.length}`)
-//     return charText;
-// }
-
 function verifyNameComment(e) {
     e.preventDefault();
     regexName = /[a-zA-Z]{2}/g;
@@ -210,19 +204,11 @@ btnsubmitNews.addEventListener("click", validarEmail);
 commentForm.addEventListener("submit", getFormData);
 limitedInput.forEach((item) => item.addEventListener("keyup", countChars));
 limitedInput.forEach((item) =>
-    item.addEventListener("blur", (e) => {
-        e.target.parentElement.firstElementChild.firstElementChild.style.display =
+    item.addEventListener("blur", () => {
+        item.parentElement.firstElementChild.firstElementChild.style.display =
             "none";
+        console.log(item.target);
     })
 );
 commentForm.addEventListener("submit", getFormData);
-// commentTitle.addEventListener("keyup", countCharTitle);
-commentTitle.addEventListener(
-    "blur",
-    () => (counterTitle.style.display = "none")
-);
-// commentText.addEventListener("keyup", countCharText);
 commentName.addEventListener("blur", verifyNameComment);
-
-/* function limitLength(length) {
- */
