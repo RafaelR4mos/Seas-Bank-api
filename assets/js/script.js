@@ -142,7 +142,7 @@ function getFormData(e) {
     btnClose.click();
 }
 
-function countCharTitle() {
+/* function countCharTitle() {
     counterTitle.style.display = "flex";
     let charTitle = sizeTitleComent - commentTitle.value.length;
     counterTitle.innerText = `${charTitle} / ${sizeTitleComent}`;
@@ -153,15 +153,21 @@ function countCharTitle() {
     }
     console.log(`restantes: ${charTitle} | Ocupados: ${commentTitle.value.length}`)
     return charTitle;
-}
+} */
 
 function countChars(e) {
     const item = e.target;
     const size = parseInt(item.dataset.char, 10);
     const counter = item.parentElement.firstElementChild.firstElementChild;
+    counter.style.display = "flex";
     let chars = size - item.value.length;
-    console.log(item.parentElement.firstElementChild)
-    item.innerText = `${chars} / ${size}`;
+    console.log(item.parentElement.firstElementChild.firstElementChild)
+    counter.innerText = `${chars} / ${size}`;
+    if (chars < 0) {
+        counter.classList.add("counter-overflow");
+    } else {
+        counter.classList.remove("counter-overflow");
+    }
 }
 
 // function countCharText() {
@@ -181,8 +187,12 @@ function verifyNameComment(e) {
 }
 
 limitedInput.forEach((item) => item.addEventListener("keyup", countChars))
+limitedInput.forEach((item) => item.parentElement.firstElementChild.firstElementChild.addEventListener("blur", () => {
+    item.parentElement.firstElementChild.firstElementChild.style.display = "none"
+    console.log(item.target)
+}))
 commentForm.addEventListener("submit", getFormData);
-commentTitle.addEventListener("keyup", countCharTitle);
+// commentTitle.addEventListener("keyup", countCharTitle);
 commentTitle.addEventListener("blur", () => counterTitle.style.display = "none");
 // commentText.addEventListener("keyup", countCharText);
 commentName.addEventListener("blur", verifyNameComment);
