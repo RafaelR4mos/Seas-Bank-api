@@ -489,18 +489,17 @@ h3 {
     height: 100%;
 }
 
-.counter-title-container {
+.counter-container {
     display: flex;
     justify-content: space-between;
 }
 
-.counter-title {
+.counter {
     color: #777777;
     padding-right: 8px;
 }
 
-.counter-title.counter-overflow,
-.counter-text.counter-overflow {
+.counter.counter-overflow, .counter.counter-overflow {
     color: #e15656;
 }
 

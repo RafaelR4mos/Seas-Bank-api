@@ -179,9 +179,15 @@ function countChars(e) {
     const item = e.target;
     const size = parseInt(item.dataset.char, 10);
     const counter = item.parentElement.firstElementChild.firstElementChild;
+    counter.style.display = "flex";
     let chars = size - item.value.length;
-    console.log(item.parentElement.firstElementChild);
-    item.innerText = `${chars} / ${size}`;
+    console.log(item.parentElement.firstElementChild.firstElementChild);
+    counter.innerText = `${chars} / ${size}`;
+    if (chars < 0) {
+        counter.classList.add("counter-overflow");
+    } else {
+        counter.classList.remove("counter-overflow");
+    }
 }
 
 // function countCharText() {
@@ -203,8 +209,18 @@ function verifyNameComment(e) {
 btnsubmitNews.addEventListener("click", validarEmail);
 commentForm.addEventListener("submit", getFormData);
 limitedInput.forEach((item) => item.addEventListener("keyup", countChars));
+limitedInput.forEach((item) =>
+    item.parentElement.firstElementChild.firstElementChild.addEventListener(
+        "blur",
+        () => {
+            item.parentElement.firstElementChild.firstElementChild.style.display =
+                "none";
+            console.log(item.target);
+        }
+    )
+);
 commentForm.addEventListener("submit", getFormData);
-commentTitle.addEventListener("keyup", countCharTitle);
+// commentTitle.addEventListener("keyup", countCharTitle);
 commentTitle.addEventListener(
     "blur",
     () => (counterTitle.style.display = "none")
