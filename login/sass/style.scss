@@ -149,10 +149,12 @@ $placeholder-color: #ffffff8e;
                     }
 
                     .lower {
-                        a {
-                            color: #f0f0f0a2;
-                            font-size: 0.85rem;
+                        button {
+                            background-color: transparent;
+                            font-size: 1rem;
+                            color: $text-color;
                             font-weight: 400;
+                            cursor: pointer;
                         }
                     }
 

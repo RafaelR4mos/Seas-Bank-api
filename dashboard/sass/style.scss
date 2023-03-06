@@ -98,71 +98,112 @@ body {
                         padding: 6px 12px;
                         background-color: $color3;
                         span {
+                            text-transform: capitalize;
                             font-weight: bold;
                         }
                     }
                 }
-                .custom-card {
-                    .custom-card-plan.platinum {
+
+                .card-name {
+                    span:nth-child(2n) {
                         color: $white;
-                        background: linear-gradient(
-                            0.79deg,
-                            #295869 1.78%,
-                            rgba(255, 255, 255, 0) 99.35%
-                        );
                     }
-                    .custom-card-plan.platinum {
-                        .custom-card-number {
+                }
+
+                .card-footer {
+                    .card-expiration {
+                        span:nth-child(2n) {
                             color: $white;
                         }
+                    }
+                }
+            }
 
-                        .custom-card-name {
+            .custom-card {
+                .custom-card-plan.platinum {
+                    color: $white;
+                    background: linear-gradient(
+                        0.79deg,
+                        #295869 1.78%,
+                        rgba(255, 255, 255, 0) 99.35%
+                    );
+                }
+                .custom-card-plan.platinum {
+                    .custom-card-number {
+                        color: $white;
+                    }
+
+                    .custom-card-name {
+                        span:nth-child(2n) {
+                            color: $white;
+                        }
+                    }
+
+                    .custom-card-footer {
+                        .custom-card-expiration {
                             span:nth-child(2n) {
                                 color: $white;
                             }
                         }
+                    }
+                }
 
-                        .custom-card-footer {
-                            .custom-card-expiration {
-                                span:nth-child(2n) {
-                                    color: $white;
-                                }
-                            }
+                .custom-card-plan {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    padding: 12px;
+                    border-radius: 8px;
+                    border: 1px solid $white;
+                    background: linear-gradient(
+                        0.79deg,
+                        #f8f8f8 1.78%,
+                        rgba(255, 255, 255, 0) 99.35%,
+                        rgba(255, 255, 255, 0) 99.35%
+                    );
+
+                    .custom-card-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+
+                    .custom-card-number {
+                        padding: 4px 0;
+                        text-align: center;
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        color: $black;
+                    }
+
+                    .custom-card-name {
+                        display: flex;
+                        flex-direction: column;
+                        color: $black;
+
+                        span:nth-child(1n) {
+                            font-size: 0.8rem;
+                            font-weight: 700;
+                        }
+
+                        span:nth-child(2n) {
+                            font-size: 1rem;
+                            font-weight: 500;
                         }
                     }
 
-                    .custom-card-plan {
+                    .custom-card-footer {
                         display: flex;
-                        flex-direction: column;
-                        gap: 8px;
-                        padding: 12px;
-                        border-radius: 8px;
-                        border: 1px solid $white;
-                        background: linear-gradient(
-                            0.79deg,
-                            #f8f8f8 1.78%,
-                            rgba(255, 255, 255, 0) 99.35%,
-                            rgba(255, 255, 255, 0) 99.35%
-                        );
+                        justify-content: space-between;
+                        color: $black;
 
-                        .custom-card-header {
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
+                        img {
+                            width: 30px;
                         }
 
-                        .custom-card-number {
-                            padding: 4px 0;
-                            text-align: center;
-                            font-size: 1.2rem;
-                            font-weight: 600;
-                            color: $black;
-                        }
-
-                        .custom-card-name {
+                        .custom-card-expiration {
                             display: flex;
                             flex-direction: column;
-                            color: $black;
 
                             span:nth-child(1n) {
                                 font-size: 0.8rem;
@@ -174,31 +215,30 @@ body {
                                 font-weight: 500;
                             }
                         }
+                    }
+                }
+                .custom-card-plan.gold {
+                    background: linear-gradient(
+                        0.79deg,
+                        #ebb62d 1.78%,
+                        rgba(255, 255, 255, 0) 99.35%,
+                        rgba(255, 255, 255, 0) 99.35%
+                    );
+                }
 
-                        .custom-card-footer {
-                            display: flex;
-                            justify-content: space-between;
-                            color: $black;
+                .custom-card-plan.platinum {
+                    color: $white;
+                    background: linear-gradient(
+                        0.79deg,
+                        #295869 1.78%,
+                        rgba(255, 255, 255, 0) 99.35%
+                    );
+                }
 
-                            img {
-                                width: 30px;
-                            }
-
-                            .custom-card-expiration {
-                                display: flex;
-                                flex-direction: column;
-
-                                span:nth-child(1n) {
-                                    font-size: 0.8rem;
-                                    font-weight: 700;
-                                }
-
-                                span:nth-child(2n) {
-                                    font-size: 1rem;
-                                    font-weight: 500;
-                                }
-                            }
-                        }
+                .custom-card-plan.gold,
+                .custom-card-plan.platinum {
+                    .card-number {
+                        color: $white;
                     }
                 }
             }
@@ -481,6 +521,11 @@ header {
                                 }
                             }
                         }
+                    }
+                }
+                div {
+                    img {
+                        width: 50px;
                     }
                 }
             }

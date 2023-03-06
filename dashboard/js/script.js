@@ -9,7 +9,7 @@ const numberCard = document.getElementById("numberCard");
 
 var transactionData = [];
 const origen = window.localStorage.getItem("origen");
-if(origen == "login"){
+if (origen == "login") {
     transactionData = [
         {
             transactionTitle: "cinema jung",
@@ -90,14 +90,19 @@ if(origen == "login"){
             category: "transference",
             type: "income",
             value: "15",
-        }
+        },
     ];
     transactionData.sort((a, b) => {
         const dateA = new Date(`${a.date}T${a.time}`);
         const dateB = new Date(`${b.date}T${b.time}`);
         return dateA - dateB;
-      });
+    });
 }
+
+const cardPlanSpan = document.getElementById("card-plan");
+const cardPlanSpanContainer = document.querySelector(".span-title");
+const cardPlan = document.querySelector(".custom-card-plan");
+const seasLogoCard = document.getElementById("seas-logo-card");
 
 window.onload = () => {
     const userCpf = window.localStorage.getItem("userinfo");
@@ -108,11 +113,32 @@ window.onload = () => {
     const userCardFormated = cliente.nome.toUpperCase();
     userName.innerText = `Olá, ${userFormated}`;
     userNameCard.innerText = `${userCardFormated}`;
-    if(origen == "sign-up"){
-        saldoConta.innerText = 'R$ 0,00';
+    if (origen == "sign-up") {
+        saldoConta.innerText = "R$ 0,00";
     } else {
-        saldoConta.innerText = 'R$ 1.500,00';
+        saldoConta.innerText = "R$ 1.500,00";
     }
+
+    const selectedCard = localStorage.getItem("planCard");
+    cardPlanSpan.innerText = selectedCard;
+
+    if (selectedCard == "gold") {
+        cardPlanSpanContainer.style.backgroundColor = "#EBB62D";
+        cardPlanSpan.style.color = "#fff";
+        cardPlan.classList.add("gold");
+        seasLogoCard.src = "./imgs/seas-logo-gold.svg";
+    } else if (selectedCard == "silver") {
+        cardPlanSpanContainer.style.backgroundColor = "#F0F0F0";
+        cardPlanSpan.style.color = "#000000";
+        cardPlan.classList.add("silver");
+        seasLogoCard.src = "./imgs/seas-logo.svg";
+    } else if (selectedCard == "platinum") {
+        cardPlanSpanContainer.style.backgroundColor = "#4A7686";
+        cardPlanSpan.style.color = "#fff";
+        cardPlan.classList.add("platinum");
+        seasLogoCard.src = "./imgs/seas-logo-platinum.svg";
+    }
+
     numberCard.innerText = generateCreditCardNumber();
 };
 
@@ -223,7 +249,11 @@ function setList(results) {
     }
 
     if (results.length === 0) {
-        alert("Desulpe! Nenhum resultado encontrado.");
+        swal(
+            "Desculpe!",
+            "Não encontramos nenhuma transferência registrada na sua conta.",
+            "info"
+        );
     }
 }
 
@@ -246,10 +276,10 @@ async function pesquisarCambio() {
 
 pesquisarCambio().then((cambio) => {
     cambio; // fetched exchange rates
-let moeda = Object.keys(cambio);
-const resultado = [];
-for (let e of moeda) {
-    resultado.push(`
+    let moeda = Object.keys(cambio);
+    const resultado = [];
+    for (let e of moeda) {
+        resultado.push(`
         ${cambio[e]["code"]} / ${cambio[e]["codein"]}
         Low: ${parseFloat(cambio[e]["low"], 10).toLocaleString("pt-BR", {
             style: "currency",
@@ -260,7 +290,7 @@ for (let e of moeda) {
             currency: cambio[e]["codein"],
         })}
     `);
-}
+    }
 
     console.log(resultado);
     const item = document.getElementById("cambio");
@@ -275,33 +305,29 @@ function generateCreditCardNumber() {
     let creditCardNumber = "4";
 
     for (let i = 0; i < 14; i++) {
-      creditCardNumber += Math.floor(Math.random() * 10);
+        creditCardNumber += Math.floor(Math.random() * 10);
     }
-  
+
     const checkDigit = generateLuhnCheckDigit(creditCardNumber);
-  
+
     creditCardNumber += checkDigit;
 
     const formattedNumber = creditCardNumber.match(/.{1,4}/g).join(" ");
 
     return formattedNumber;
-  }
-  
-  function generateLuhnCheckDigit(number) {
+}
+
+function generateLuhnCheckDigit(number) {
     const reversedNumber = number.split("").reverse().join("");
     let sum = 0;
     for (let i = 0; i < reversedNumber.length; i++) {
-      const digit = parseInt(reversedNumber.charAt(i));
-      if (i % 2 === 1) {
-        sum += digit * 2 >= 10 ? digit * 2 - 9 : digit * 2;
-      } else {
-        sum += digit;
-      }
+        const digit = parseInt(reversedNumber.charAt(i));
+        if (i % 2 === 1) {
+            sum += digit * 2 >= 10 ? digit * 2 - 9 : digit * 2;
+        } else {
+            sum += digit;
+        }
     }
-    const checkDigit = (10 - sum % 10) % 10;
+    const checkDigit = (10 - (sum % 10)) % 10;
     return checkDigit.toString();
-  }
-  
-  
-  
-  
+}

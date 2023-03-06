@@ -7,7 +7,7 @@
         <title>Seas | Minha conta</title>
         <link
             rel="shortcut icon"
-            href="../imgs/gull-bird-flying-shape-svgrepo-com.svg"
+            href="../assets/imgs/gull-bird-flying-shape-svgrepo-com.svg"
             type="image/SVG"
         />
         <link
@@ -21,6 +21,7 @@
             integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
             crossorigin="anonymous"
         ></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <link rel="stylesheet" href="style/style.css" />
     </head>
     <body>
@@ -72,11 +73,15 @@
                                             >Planos</a
                                         >
                                     </li>
-                                    <li>
-                                        <a href="../" class="active">Contato</a>
-                                    </li>
                                 </ul>
                             </nav>
+                        </div>
+                        <div>
+                            <a href="../login/"
+                                ><img
+                                    src="./imgs/sign-out-icon.svg"
+                                    alt="ícone de sign out"
+                            /></a>
                         </div>
                     </div>
                 </div>
@@ -88,22 +93,27 @@
                     <div class="custom-card-container">
                         <div class="custom-card-title">
                             <h2>Meu Seas</h2>
-                            <div class="span-title"><span>Platinum</span></div>
+                            <div class="span-title">
+                                <span id="card-plan">Platinum</span>
+                            </div>
                         </div>
                         <div class="custom-card">
-                            <div class="custom-card-plan platinum">
+                            <div class="custom-card-plan">
                                 <div class="custom-card-header">
                                     <img
                                         src="./imgs/nfc-icon.svg"
                                         alt="ícone de nfc"
                                     />
                                     <img
+                                        id="seas-logo-card"
                                         src="./imgs/seas-logo-platinum.svg"
                                         alt="logo do seas bank"
                                     />
                                 </div>
-                                <span id="numberCard" class="custom-card-number"></span
-                                >
+                                <span
+                                    id="numberCard"
+                                    class="custom-card-number"
+                                ></span>
                                 <div class="custom-card-name">
                                     <span>Nome do titular</span>
                                     <span id="userNameCard"></span>

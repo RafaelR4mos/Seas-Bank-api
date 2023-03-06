@@ -121,10 +121,12 @@
   font-size: 0.85rem;
   font-weight: 400;
 }
-* body .login-section .container .features .lower a {
-  color: rgba(240, 240, 240, 0.6352941176);
-  font-size: 0.85rem;
+* body .login-section .container .features .lower button {
+  background-color: transparent;
+  font-size: 1rem;
+  color: #ffffff;
   font-weight: 400;
+  cursor: pointer;
 }
 * body .login-section .container .features .fingerprint {
   display: flex;

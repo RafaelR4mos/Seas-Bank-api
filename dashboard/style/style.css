@@ -73,22 +73,29 @@ body main .card-balance .custom-card-container .custom-card-title .span-title {
   background-color: #4a7686;
 }
 body main .card-balance .custom-card-container .custom-card-title .span-title span {
+  text-transform: capitalize;
   font-weight: bold;
 }
-body main .card-balance .custom-card-container .custom-card .custom-card-plan.platinum {
+body main .card-balance .custom-card-container .card-name span:nth-child(2n) {
+  color: #fff;
+}
+body main .card-balance .custom-card-container .card-footer .card-expiration span:nth-child(2n) {
+  color: #fff;
+}
+body main .card-balance .custom-card .custom-card-plan.platinum {
   color: #fff;
   background: linear-gradient(0.79deg, #295869 1.78%, rgba(255, 255, 255, 0) 99.35%);
 }
-body main .card-balance .custom-card-container .custom-card .custom-card-plan.platinum .custom-card-number {
+body main .card-balance .custom-card .custom-card-plan.platinum .custom-card-number {
   color: #fff;
 }
-body main .card-balance .custom-card-container .custom-card .custom-card-plan.platinum .custom-card-name span:nth-child(2n) {
+body main .card-balance .custom-card .custom-card-plan.platinum .custom-card-name span:nth-child(2n) {
   color: #fff;
 }
-body main .card-balance .custom-card-container .custom-card .custom-card-plan.platinum .custom-card-footer .custom-card-expiration span:nth-child(2n) {
+body main .card-balance .custom-card .custom-card-plan.platinum .custom-card-footer .custom-card-expiration span:nth-child(2n) {
   color: #fff;
 }
-body main .card-balance .custom-card-container .custom-card .custom-card-plan {
+body main .card-balance .custom-card .custom-card-plan {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -97,50 +104,61 @@ body main .card-balance .custom-card-container .custom-card .custom-card-plan {
   border: 1px solid #fff;
   background: linear-gradient(0.79deg, #f8f8f8 1.78%, rgba(255, 255, 255, 0) 99.35%, rgba(255, 255, 255, 0) 99.35%);
 }
-body main .card-balance .custom-card-container .custom-card .custom-card-plan .custom-card-header {
+body main .card-balance .custom-card .custom-card-plan .custom-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-body main .card-balance .custom-card-container .custom-card .custom-card-plan .custom-card-number {
+body main .card-balance .custom-card .custom-card-plan .custom-card-number {
   padding: 4px 0;
   text-align: center;
   font-size: 1.2rem;
   font-weight: 600;
   color: #000000;
 }
-body main .card-balance .custom-card-container .custom-card .custom-card-plan .custom-card-name {
+body main .card-balance .custom-card .custom-card-plan .custom-card-name {
   display: flex;
   flex-direction: column;
   color: #000000;
 }
-body main .card-balance .custom-card-container .custom-card .custom-card-plan .custom-card-name span:nth-child(1n) {
+body main .card-balance .custom-card .custom-card-plan .custom-card-name span:nth-child(1n) {
   font-size: 0.8rem;
   font-weight: 700;
 }
-body main .card-balance .custom-card-container .custom-card .custom-card-plan .custom-card-name span:nth-child(2n) {
+body main .card-balance .custom-card .custom-card-plan .custom-card-name span:nth-child(2n) {
   font-size: 1rem;
   font-weight: 500;
 }
-body main .card-balance .custom-card-container .custom-card .custom-card-plan .custom-card-footer {
+body main .card-balance .custom-card .custom-card-plan .custom-card-footer {
   display: flex;
   justify-content: space-between;
   color: #000000;
 }
-body main .card-balance .custom-card-container .custom-card .custom-card-plan .custom-card-footer img {
+body main .card-balance .custom-card .custom-card-plan .custom-card-footer img {
   width: 30px;
 }
-body main .card-balance .custom-card-container .custom-card .custom-card-plan .custom-card-footer .custom-card-expiration {
+body main .card-balance .custom-card .custom-card-plan .custom-card-footer .custom-card-expiration {
   display: flex;
   flex-direction: column;
 }
-body main .card-balance .custom-card-container .custom-card .custom-card-plan .custom-card-footer .custom-card-expiration span:nth-child(1n) {
+body main .card-balance .custom-card .custom-card-plan .custom-card-footer .custom-card-expiration span:nth-child(1n) {
   font-size: 0.8rem;
   font-weight: 700;
 }
-body main .card-balance .custom-card-container .custom-card .custom-card-plan .custom-card-footer .custom-card-expiration span:nth-child(2n) {
+body main .card-balance .custom-card .custom-card-plan .custom-card-footer .custom-card-expiration span:nth-child(2n) {
   font-size: 1rem;
   font-weight: 500;
+}
+body main .card-balance .custom-card .custom-card-plan.gold {
+  background: linear-gradient(0.79deg, #ebb62d 1.78%, rgba(255, 255, 255, 0) 99.35%, rgba(255, 255, 255, 0) 99.35%);
+}
+body main .card-balance .custom-card .custom-card-plan.platinum {
+  color: #fff;
+  background: linear-gradient(0.79deg, #295869 1.78%, rgba(255, 255, 255, 0) 99.35%);
+}
+body main .card-balance .custom-card .custom-card-plan.gold .card-number,
+body main .card-balance .custom-card .custom-card-plan.platinum .card-number {
+  color: #fff;
 }
 body main .card-balance .balance h2 {
   font-weight: bold;
@@ -370,6 +388,9 @@ header .offcanvas .offcanvas-body .offcanvas-container .offcanvas-links nav ul l
 }
 header .offcanvas .offcanvas-body .offcanvas-container .offcanvas-links nav ul li .active {
   color: white;
+}
+header .offcanvas .offcanvas-body .offcanvas-container div img {
+  width: 50px;
 }
 
 @media (min-width: 998px) {
