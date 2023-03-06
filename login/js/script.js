@@ -50,8 +50,6 @@ submitBtn.addEventListener("click", (e) => {
     }
 });
 
-// Seleciona o botão de "Recuperar Senha" e adiciona um evento de clique
-
 forgetPasswordButton.addEventListener('click', () => {
     let accountNumbnerValue = accountNumbner.value;
     if (!accountNumbnerValue.trim()) {
@@ -79,8 +77,6 @@ forgetPasswordButton.addEventListener('click', () => {
     }  
 });
 
-// Função que envia um email de recuperação de senha
 function sendEmail(email) {
-  // Aqui você pode colocar o código para enviar o email usando a API do seu provedor de email
   alert(`Um email de recuperação foi enviado para ${email}`);
 }
