@@ -4,6 +4,7 @@ const submitBtn = document.getElementById("submit-btn");
 const accountNumbner = document.getElementById("account-number");
 const accountPassword = document.getElementById("account-password");
 const goBackBtnLogin = document.getElementById("go-back-btn-login");
+const forgetPasswordBtn = document.getElementById("forget-password");
 
 goBackBtnLogin.addEventListener("click", () => {
     window.location.href = "../";
@@ -31,22 +32,20 @@ submitBtn.addEventListener("click", (e) => {
         );
     } else {
         const clienteJSON = localStorage.getItem(accountNumbnerValue);
-        if(clienteJSON == null){
-            alert(
-                "Cliente inexistente na base."
-            );
-        }else{
+        if (clienteJSON == null) {
+            alert("Cliente inexistente na base.");
+        } else {
             const cliente = Cliente.fromJSON(JSON.parse(clienteJSON));
-            if(cliente.cpf == accountNumbnerValue && cliente.senha == accountPasswordValue){
-                const origen = 'login';
-                window.localStorage.setItem("origen",origen);
+            if (
+                cliente.cpf == accountNumbnerValue &&
+                cliente.senha == accountPasswordValue
+            ) {
+                const origen = "login";
+                window.localStorage.setItem("origen", origen);
                 window.location.href = "../dashboard/";
-            }else{
-                alert(
-                    "Dados do cliente não conferem. Tente novamente."
-                );
+            } else {
+                alert("Dados do cliente não conferem. Tente novamente.");
             }
-
         }
     }
 });

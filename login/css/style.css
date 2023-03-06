@@ -233,8 +233,16 @@
     width: 50%;
     text-align: end;
   }
-  * body .login-section .left-container .container .features .lower a {
-    font-size: 1rem;
+  * body .login-section .left-container .container .features .lower button {
+    border: none;
+    background-color: transparent;
+    width: fit-content;
+    color: #ffffff;
+  }
+  * body .login-section .left-container .container .features .lower .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
   }
   * body .login-section .left-container .container .features .fingerprint {
     display: none;
