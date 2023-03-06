@@ -86,13 +86,16 @@ body main .card-balance .custom-card .custom-card-plan.platinum {
   color: #fff;
   background: linear-gradient(0.79deg, #295869 1.78%, rgba(255, 255, 255, 0) 99.35%);
 }
-body main .card-balance .custom-card .custom-card-plan.platinum .custom-card-number {
+body main .card-balance .custom-card .custom-card-plan.platinum .custom-card-number,
+body main .card-balance .custom-card .custom-card.gold .custom-card-number {
   color: #fff;
 }
-body main .card-balance .custom-card .custom-card-plan.platinum .custom-card-name span:nth-child(2n) {
+body main .card-balance .custom-card .custom-card-plan.platinum .custom-card-name span:nth-child(2n),
+body main .card-balance .custom-card .custom-card.gold .custom-card-name span:nth-child(2n) {
   color: #fff;
 }
-body main .card-balance .custom-card .custom-card-plan.platinum .custom-card-footer .custom-card-expiration span:nth-child(2n) {
+body main .card-balance .custom-card .custom-card-plan.platinum .custom-card-footer .custom-card-expiration span:nth-child(2n),
+body main .card-balance .custom-card .custom-card.gold .custom-card-footer .custom-card-expiration span:nth-child(2n) {
   color: #fff;
 }
 body main .card-balance .custom-card .custom-card-plan {

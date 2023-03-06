@@ -1,4 +1,4 @@
-import Cliente from "../../js/entidade/cliente.js"
+import Cliente from "../../js/entidade/cliente.js";
 const submitAccount = document.getElementById("submit-account");
 
 const nameInput = document.getElementById("name-input");
@@ -92,18 +92,27 @@ submitAccount.addEventListener("click", (e) => {
         } else {
             password.classList.remove("invalid-input");
         }
-        alert(
-            "Por favor, preencha todos os campos. Algum campo do formulário está vazio."
+        swal(
+            "Tente novamente!",
+            "Por favor, preencha todos os campos. Algum campo do formulário encontra-se vazio ou inválido",
+            "error"
         );
     } else {
-        const origen = 'sign-up';
-        const cliente = new Cliente(nameInputValue,emailInputValue, inputscpfvalue,
-            cepInputvalue,numeroresidenciavalue,numerocelularvalue,passwordvalue);
+        const origen = "sign-up";
+        const cliente = new Cliente(
+            nameInputValue,
+            emailInputValue,
+            inputscpfvalue,
+            cepInputvalue,
+            numeroresidenciavalue,
+            numerocelularvalue,
+            passwordvalue
+        );
 
-        localStorage.setItem("userinfo",cliente.cpf);        
+        localStorage.setItem("userinfo", cliente.cpf);
         const clienteJSON = JSON.stringify(cliente);
         localStorage.setItem(cliente.cpf, clienteJSON);
-        localStorage.setItem("origen",origen);
+        localStorage.setItem("origen", origen);
         window.location.href = "../dashboard/";
     }
 });
@@ -113,7 +122,11 @@ function buscarCep(cep) {
         .then((response) => response.json())
         .then((data) => {
             if (data.erro) {
-                alert("CEP não encontrado.");
+                swal(
+                    "Tente novamente!",
+                    "O CEP digitado não foi encontrado na nossa base de dados.",
+                    "error"
+                );
             } else {
                 document.getElementById("addres").value = data.logradouro;
                 document.getElementById("bairro").value = data.bairro;
@@ -123,6 +136,10 @@ function buscarCep(cep) {
         })
         .catch((error) => {
             console.error(error);
-            alert("Ocorreu um erro ao buscar o CEP.");
+            swal(
+                "Tente novamente!",
+                "Foi encontrado um erro ao buscar pelo CEP",
+                "error"
+            );
         });
 }

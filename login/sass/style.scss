@@ -149,12 +149,15 @@ $placeholder-color: #ffffff8e;
                     }
 
                     .lower {
+                        display: flex;
+                        justify-content: flex-end;
                         button {
                             background-color: transparent;
                             font-size: 1rem;
                             color: $text-color;
                             font-weight: 400;
                             cursor: pointer;
+                            border: none;
                         }
                     }
 

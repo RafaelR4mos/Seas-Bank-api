@@ -128,7 +128,8 @@ body {
                         rgba(255, 255, 255, 0) 99.35%
                     );
                 }
-                .custom-card-plan.platinum {
+                .custom-card-plan.platinum,
+                .custom-card.gold {
                     .custom-card-number {
                         color: $white;
                     }
