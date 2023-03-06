@@ -1,7 +1,7 @@
-<h1 align="center"> Seas Bank </h1>
+<h1 align="center"> Seas Bank API</h1>
 
 <p align="center">
-Projeto desenvolvido através do programa vem ser da DBC Company durante o módulo de HTML<br/>
+Projeto desenvolvido através do programa vem ser da DBC Company durante o módulo de JS<br/>
 </p>
 
 <p align="center">
@@ -12,7 +12,14 @@ Projeto desenvolvido através do programa vem ser da DBC Company durante o módu
 </p>
 
 ## Como executar o Projeto
-Para conferir o nosso projeto basta clicar no link abaixo. Todas bibliotecas e dependências estão sendo consumidas via CDN. Não é necessário executar nenhum comando no terminal para executar a aplicação.
+Para conferir o nosso projeto exitem 2 formas:
+1. Clicando no link abaixo para acessar o deploy, umas vez que, todas bibliotecas e dependências estão sendo consumidas via CDN. Não é necessário executar nenhum comando no terminal para executar a aplicação. Este link é um deploy realizado pela ferramenta "vercel" que faz a build do nosso projeto.
+<p align="center">
+  <a href="https://seas-bank-api.vercel.app/" target="_blank"> -> Acesse o deploy do projeto!</a>
+</p>
+
+2. Clonando ou baixando o repositório: Neste caso, a execução da aplicação pode ser feita utilizando a extensão do VSCODE "LiveServer" através do arquivo "index.html" localizado no root do projeto, ou seja, o "index.html" que não está em nenhuma das pastas das páginas.
+
 
 
 
@@ -20,9 +27,7 @@ Para conferir o nosso projeto basta clicar no link abaixo. Todas bibliotecas e d
     <span>🔵Landing Page do Seas</span>
 </p>
 
-<p align="center">
-  <a href="https://seas-bank-api.vercel.app/" target="_blank"> -> Acesse o deploy do projeto!</a>
-</p>
+
 
 <p align="center">
   <img alt="License" src="./assets/seas-api-done.png">
